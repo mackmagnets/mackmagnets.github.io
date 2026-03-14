@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Built by AjayaDesign — For Demo Purpose Only | Fingerprint: 414A4459-5245504F5254 -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Redesign Report — Old vs New | Mack Magnets by AjayaDesign</title>
+  <meta name="description" content="Side-by-side comparison of the old mackmagnets.com Shopify site versus the new redesigned modern website by AjayaDesign.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta name="generator" content="AjayaDesign-Demo-2026">
+
+  <style>
+    .report-hero {
+      background: linear-gradient(135deg, var(--color-charcoal), #1a1a2e);
+      color: #fff;
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+    .report-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .report-hero p {
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .report-badge {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 0.4rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .comparison-section {
+      padding: 4rem 0;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .comparison-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .comparison-card--old {
+      border: 3px solid #dc3545;
+    }
+    .comparison-card--new {
+      border: 3px solid var(--color-secondary);
+    }
+    .comparison-card__header {
+      padding: 1rem 1.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .comparison-card--old .comparison-card__header {
+      background: #dc3545;
+      color: #fff;
+    }
+    .comparison-card--new .comparison-card__header {
+      background: var(--color-secondary);
+      color: #fff;
+    }
+    .comparison-card__body {
+      padding: 1.5rem;
+      background: #fff;
+    }
+
+    /* Carousel */
+    .screenshot-carousel {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--color-surface);
+      aspect-ratio: 16/10;
+    }
+    .screenshot-carousel__track {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+    }
+    .screenshot-carousel__slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 2rem;
+      text-align: center;
+      background: var(--color-surface);
+    }
+    .screenshot-carousel__slide-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .screenshot-carousel__slide-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .screenshot-carousel__slide-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+    .carousel-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--color-charcoal);
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    .carousel-btn:hover {
+      background: var(--color-charcoal);
+      color: #fff;
+    }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .carousel-dot.active {
+      background: var(--color-primary);
+    }
+
+    /* Issue lists */
+    .issues-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+    .issues-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .issues-list li:last-child { border-bottom: none; }
+    .issue-icon { flex-shrink: 0; }
+
+    /* Score cards */
+    .scores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .score-card {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .score-card__label {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .score-card__value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .score-card__value--bad { color: #dc3545; }
+    .score-card__value--good { color: var(--color-secondary); }
+    .score-card__delta {
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    .score-card__delta--up { color: var(--color-secondary); }
+    .score-card__delta--down { color: #dc3545; }
+
+    /* Page inventory */
+    .page-inventory {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .page-inventory { grid-template-columns: 1fr; }
+    }
+    .inventory-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .inventory-card h3 {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .inventory-list {
+      list-style: none;
+      padding: 0;
+    }
+    .inventory-list li {
+      padding: 0.4rem 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.9rem;
+    }
+    .inventory-list li:last-child { border-bottom: none; }
+    .inventory-tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 1rem;
+      font-weight: 600;
+    }
+    .inventory-tag--missing { background: #fce4e4; color: #dc3545; }
+    .inventory-tag--exists { background: #e8f5e9; color: #2e7d32; }
+    .inventory-tag--new { background: #e3f2fd; color: #1565c0; }
+
+    /* Summary bar */
+    .summary-bar {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      padding: 3rem 0;
+      color: #fff;
+      text-align: center;
+    }
+    .summary-bar h2 { color: #fff; margin-bottom: 2rem; }
+    .summary-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .summary-stat {
+      text-align: center;
+    }
+    .summary-stat__number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .summary-stat__label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    .ajd-watermark {
+      text-align: center;
+      padding: 2rem;
+      background: var(--color-charcoal);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+    }
+    .ajd-watermark strong { color: rgba(255,255,255,0.9); }
+  </style>
+</head>
+<body data-ajaya-design="demo-property-2026">
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Report Hero -->
+  <div class="report-hero">
+    <div class="container">
+      <span class="report-badge">Website Redesign Report</span>
+      <h1>Mack Magnets: Old vs. New</h1>
+      <p>A comprehensive comparison of the current mackmagnets.com Shopify site versus the proposed modern redesign by AjayaDesign.</p>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- Summary Bar -->
+    <div class="summary-bar">
+      <div class="container">
+        <h2>At a Glance</h2>
+        <div class="summary-stats">
+          <div class="summary-stat">
+            <div class="summary-stat__number">1 → 12</div>
+            <div class="summary-stat__label">Products Listed</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat__number">2 → 14+</div>
+            <div class="summary-stat__label">Total Pages</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat__number">0 → 4</div>
+            <div class="summary-stat__label">Event Packages</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat__number">0 → 14</div>
+            <div class="summary-stat__label">FAQ Items</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screenshot Carousel Comparison -->
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-header__label">Visual Comparison</span>
+          <h2>Side-by-Side Screenshot Preview</h2>
+          <p>Swipe through key pages to see the transformation.</p>
+        </div>
+
+        <div class="comparison-grid">
+          <!-- Old Site -->
+          <div class="comparison-card comparison-card--old fade-in">
+            <div class="comparison-card__header">❌ Old Site — mackmagnets.com (Shopify)</div>
+            <div class="comparison-card__body">
+              <div class="screenshot-carousel" id="carousel-old">
+                <div class="screenshot-carousel__track">
+                  <div class="screenshot-carousel__slide">
+                    <div class="screenshot-carousel__slide-icon">🏠</div>
+                    <div class="screenshot-carousel__slide-title">Homepage</div>
+                    <div class="screenshot-carousel__slide-desc">Basic Shopify template with minimal branding. Single hero image, no feature sections, limited content.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide">
+                    <div class="screenshot-carousel__slide-icon">🛒</div>
+                    <div class="screenshot-carousel__slide-title">Product Page</div>
+                    <div class="screenshot-carousel__slide-desc">Only 1 product listed ($24.99 2×2 magnets). Default Shopify product layout with no customization.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide">
+                    <div class="screenshot-carousel__slide-icon">📄</div>
+                    <div class="screenshot-carousel__slide-title">About Page</div>
+                    <div class="screenshot-carousel__slide-desc">Minimal text-only page. No imagery, no values section, no team info. Basic Shopify template.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide">
+                    <div class="screenshot-carousel__slide-icon">📞</div>
+                    <div class="screenshot-carousel__slide-title">Contact Page</div>
+                    <div class="screenshot-carousel__slide-desc">Default Shopify contact form. No additional contact info, social links, or response time promises.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide">
+                    <div class="screenshot-carousel__slide-icon">🚫</div>
+                    <div class="screenshot-carousel__slide-title">Events Page</div>
+                    <div class="screenshot-carousel__slide-desc">Does not exist on the current site. No event packages, no booking form, no pricing.</div>
+                  </div>
+                </div>
+                <div class="carousel-dots" id="dots-old"></div>
+                <div class="carousel-controls">
+                  <button class="carousel-btn" onclick="moveCarousel('old', -1)" aria-label="Previous">◀</button>
+                  <button class="carousel-btn" onclick="moveCarousel('old', 1)" aria-label="Next">▶</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Site -->
+          <div class="comparison-card comparison-card--new fade-in">
+            <div class="comparison-card__header">✅ New Site — Redesigned by AjayaDesign</div>
+            <div class="comparison-card__body">
+              <div class="screenshot-carousel" id="carousel-new">
+                <div class="screenshot-carousel__track">
+                  <div class="screenshot-carousel__slide" style="background: linear-gradient(135deg, #FDF6EC, #fff);">
+                    <div class="screenshot-carousel__slide-icon">🏠</div>
+                    <div class="screenshot-carousel__slide-title">Homepage</div>
+                    <div class="screenshot-carousel__slide-desc">Modern hero with floating images. Features grid, how-it-works steps, testimonials, newsletter signup.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide" style="background: linear-gradient(135deg, #FDF6EC, #fff);">
+                    <div class="screenshot-carousel__slide-icon">🛍️</div>
+                    <div class="screenshot-carousel__slide-title">Shop Page</div>
+                    <div class="screenshot-carousel__slide-desc">12 products across 3 categories with filters, California pricing, and wholesale CTA. Rich product cards.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide" style="background: linear-gradient(135deg, #FDF6EC, #fff);">
+                    <div class="screenshot-carousel__slide-icon">🎉</div>
+                    <div class="screenshot-carousel__slide-title">Events Page</div>
+                    <div class="screenshot-carousel__slide-desc">4 pricing tiers ($550–$1,800), event types grid, booking form. Fully designed from scratch.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide" style="background: linear-gradient(135deg, #FDF6EC, #fff);">
+                    <div class="screenshot-carousel__slide-icon">📞</div>
+                    <div class="screenshot-carousel__slide-title">Contact Page</div>
+                    <div class="screenshot-carousel__slide-desc">Warm contact info cards with icon backgrounds, styled form card, FAQ prompt CTA — fully redesigned from flat layout.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide" style="background: linear-gradient(135deg, #FDF6EC, #fff);">
+                    <div class="screenshot-carousel__slide-icon">📄</div>
+                    <div class="screenshot-carousel__slide-title">About Page</div>
+                    <div class="screenshot-carousel__slide-desc">Magazine-style brand story with timeline journey, founder spotlight card, warm value cards with tinted icons, stats row, and gradient CTA.</div>
+                  </div>
+                  <div class="screenshot-carousel__slide" style="background: linear-gradient(135deg, #FDF6EC, #fff);">
+                    <div class="screenshot-carousel__slide-icon">❓</div>
+                    <div class="screenshot-carousel__slide-title">FAQ Page</div>
+                    <div class="screenshot-carousel__slide-desc">14 questions in card-based categories with colored icon headers, quick topic navigation pills, accordion per category, and warm CTA card.</div>
+                  </div>
+                </div>
+                <div class="carousel-dots" id="dots-new"></div>
+                <div class="carousel-controls">
+                  <button class="carousel-btn" onclick="moveCarousel('new', -1)" aria-label="Previous">◀</button>
+                  <button class="carousel-btn" onclick="moveCarousel('new', 1)" aria-label="Next">▶</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Issues Comparison -->
+    <section class="comparison-section" style="background: var(--color-surface);">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-header__label">Detailed Analysis</span>
+          <h2>What Changed &amp; Why</h2>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card comparison-card--old fade-in">
+            <div class="comparison-card__header">❌ Old Site Issues</div>
+            <div class="comparison-card__body">
+              <ul class="issues-list">
+                <li><span class="issue-icon">⚠️</span> Only 1 product listed — limited catalog and revenue potential</li>
+                <li><span class="issue-icon">⚠️</span> Basic Shopify template — no custom branding or differentiation</li>
+                <li><span class="issue-icon">⚠️</span> No event packages — missing major revenue stream</li>
+                <li><span class="issue-icon">⚠️</span> No FAQ page — customers have to contact for basic questions</li>
+                <li><span class="issue-icon">⚠️</span> No wholesale page — missing B2B opportunities</li>
+                <li><span class="issue-icon">⚠️</span> Minimal SEO — no Schema.org markup, missing meta tags</li>
+                <li><span class="issue-icon">⚠️</span> No structured data — poor search engine visibility</li>
+                <li><span class="issue-icon">⚠️</span> Limited mobile optimization — generic Shopify responsive</li>
+                <li><span class="issue-icon">⚠️</span> No testimonials — lack of social proof</li>
+                <li><span class="issue-icon">⚠️</span> No newsletter signup — missing email marketing</li>
+                <li><span class="issue-icon">⚠️</span> Shopify dependency — monthly fees, limited control</li>
+                <li><span class="issue-icon">⚠️</span> No accessibility features — skip links, ARIA labels missing</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="comparison-card comparison-card--new fade-in">
+            <div class="comparison-card__header">✅ New Site Improvements</div>
+            <div class="comparison-card__body">
+              <ul class="issues-list">
+                <li><span class="issue-icon">✅</span> 12 products across 3 categories with smart filtering</li>
+                <li><span class="issue-icon">✅</span> Custom modern design with Mack Magnets branding</li>
+                <li><span class="issue-icon">✅</span> 4 event packages with California pricing ($550–$1,800)</li>
+                <li><span class="issue-icon">✅</span> Comprehensive FAQ with 14 questions and Schema.org markup</li>
+                <li><span class="issue-icon">✅</span> Full wholesale page with tiered pricing and inquiry form</li>
+                <li><span class="issue-icon">✅</span> Full SEO: Schema.org, Open Graph, Twitter Cards, meta tags</li>
+                <li><span class="issue-icon">✅</span> JSON-LD structured data on every page</li>
+                <li><span class="issue-icon">✅</span> Mobile-first responsive design with custom breakpoints</li>
+                <li><span class="issue-icon">✅</span> Testimonials from California customers for social proof</li>
+                <li><span class="issue-icon">✅</span> Newsletter signup with engaging design</li>
+                <li><span class="issue-icon">✅</span> Static site — free GitHub Pages hosting, full control</li>
+                <li><span class="issue-icon">✅</span> Full accessibility: skip links, ARIA, keyboard navigation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estimated Performance Scores -->
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-header__label">Estimated Performance</span>
+          <h2>Projected Score Improvements</h2>
+          <p>Based on implementation of modern web standards and best practices.</p>
+        </div>
+
+        <div class="comparison-grid">
+          <div>
+            <h3 class="text-center" style="color: #dc3545; margin-bottom: 1rem;">Old Site (Estimated)</h3>
+            <div class="scores-grid">
+              <div class="score-card">
+                <div class="score-card__label">Performance</div>
+                <div class="score-card__value score-card__value--bad">58</div>
+              </div>
+              <div class="score-card">
+                <div class="score-card__label">Accessibility</div>
+                <div class="score-card__value score-card__value--bad">72</div>
+              </div>
+              <div class="score-card">
+                <div class="score-card__label">Best Practices</div>
+                <div class="score-card__value score-card__value--bad">68</div>
+              </div>
+              <div class="score-card">
+                <div class="score-card__label">SEO</div>
+                <div class="score-card__value score-card__value--bad">61</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-center" style="color: var(--color-secondary); margin-bottom: 1rem;">New Site (Projected)</h3>
+            <div class="scores-grid">
+              <div class="score-card">
+                <div class="score-card__label">Performance</div>
+                <div class="score-card__value score-card__value--good">95</div>
+                <div class="score-card__delta score-card__delta--up">▲ +37</div>
+              </div>
+              <div class="score-card">
+                <div class="score-card__label">Accessibility</div>
+                <div class="score-card__value score-card__value--good">98</div>
+                <div class="score-card__delta score-card__delta--up">▲ +26</div>
+              </div>
+              <div class="score-card">
+                <div class="score-card__label">Best Practices</div>
+                <div class="score-card__value score-card__value--good">96</div>
+                <div class="score-card__delta score-card__delta--up">▲ +28</div>
+              </div>
+              <div class="score-card">
+                <div class="score-card__label">SEO</div>
+                <div class="score-card__value score-card__value--good">100</div>
+                <div class="score-card__delta score-card__delta--up">▲ +39</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page Inventory -->
+    <section class="comparison-section" style="background: var(--color-surface);">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-header__label">Page Inventory</span>
+          <h2>Content Comparison</h2>
+        </div>
+
+        <div class="page-inventory">
+          <div class="inventory-card fade-in">
+            <h3>❌ Old Site Pages</h3>
+            <ul class="inventory-list">
+              <li><span>Homepage</span> <span class="inventory-tag inventory-tag--exists">Basic</span></li>
+              <li><span>Product Page (×1)</span> <span class="inventory-tag inventory-tag--exists">Minimal</span></li>
+              <li><span>About Page</span> <span class="inventory-tag inventory-tag--exists">Text only</span></li>
+              <li><span>Contact Page</span> <span class="inventory-tag inventory-tag--exists">Default</span></li>
+              <li><span>Events Page</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+              <li><span>FAQ Page</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+              <li><span>Wholesale Page</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+              <li><span>Shipping Policy</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+              <li><span>Refund Policy</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+              <li><span>Privacy Policy</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+              <li><span>Terms of Service</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+              <li><span>404 Page</span> <span class="inventory-tag inventory-tag--missing">Default</span></li>
+              <li><span>Sitemap</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+              <li><span>Robots.txt</span> <span class="inventory-tag inventory-tag--missing">Missing</span></li>
+            </ul>
+          </div>
+
+          <div class="inventory-card fade-in">
+            <h3>✅ New Site Pages (14+)</h3>
+            <ul class="inventory-list">
+              <li><span>Homepage</span> <span class="inventory-tag inventory-tag--new">Full redesign</span></li>
+              <li><span>Shop (12 products)</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+              <li><span>Events (4 packages)</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+              <li><span>About</span> <span class="inventory-tag inventory-tag--new">Warm redesign</span></li>
+              <li><span>Contact</span> <span class="inventory-tag inventory-tag--new">Card redesign</span></li>
+              <li><span>FAQ (14 items)</span> <span class="inventory-tag inventory-tag--new">Card categories</span></li>
+              <li><span>Wholesale</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+              <li><span>Shipping Policy</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+              <li><span>Refund Policy</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+              <li><span>Privacy Policy</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+              <li><span>Terms of Service</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+              <li><span>404 Page</span> <span class="inventory-tag inventory-tag--new">Custom</span></li>
+              <li><span>Sitemap XML</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+              <li><span>Robots.txt</span> <span class="inventory-tag inventory-tag--new">New</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-header__label">Tech Stack</span>
+          <h2>Technical Improvements</h2>
+        </div>
+        <div class="comparison-grid">
+          <div class="comparison-card comparison-card--old fade-in">
+            <div class="comparison-card__header">❌ Old Stack</div>
+            <div class="comparison-card__body">
+              <ul class="issues-list">
+                <li><span class="issue-icon">📦</span> Shopify hosted (monthly fee ~$39/mo)</li>
+                <li><span class="issue-icon">📦</span> Default Shopify theme</li>
+                <li><span class="issue-icon">📦</span> Shopify Liquid templating</li>
+                <li><span class="issue-icon">📦</span> Third-party dependencies</li>
+                <li><span class="issue-icon">📦</span> Limited customization control</li>
+                <li><span class="issue-icon">📦</span> Shopify CDN (shared resources)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="comparison-card comparison-card--new fade-in">
+            <div class="comparison-card__header">✅ New Stack</div>
+            <div class="comparison-card__body">
+              <ul class="issues-list">
+                <li><span class="issue-icon">🚀</span> GitHub Pages (free hosting)</li>
+                <li><span class="issue-icon">🚀</span> Custom-built responsive design</li>
+                <li><span class="issue-icon">🚀</span> Vanilla HTML/CSS/JS — zero dependencies</li>
+                <li><span class="issue-icon">🚀</span> No external JS frameworks needed</li>
+                <li><span class="issue-icon">🚀</span> Full control over every element</li>
+                <li><span class="issue-icon">🚀</span> GitHub CDN + Google Fonts only</li>
+                <li><span class="issue-icon">🚀</span> CSS Custom Properties design system</li>
+                <li><span class="issue-icon">🚀</span> Schema.org structured data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- AjayaDesign Watermark -->
+  <div class="ajd-watermark">
+    <p><strong>Property of AjayaDesign — For Demo Purpose Only</strong></p>
+    <p>This report and website redesign was created by AjayaDesign as a demonstration of web design capabilities.</p>
+    <p style="margin-top: 0.5rem;">© 2026 AjayaDesign. All rights reserved.</p>
+  </div>
+
+  <script>
+    // Report carousel functionality
+    const carousels = {};
+
+    function initCarousel(id) {
+      const el = document.getElementById('carousel-' + id);
+      if (!el) return;
+      const track = el.querySelector('.screenshot-carousel__track');
+      const slides = track.querySelectorAll('.screenshot-carousel__slide');
+      const dotsContainer = document.getElementById('dots-' + id);
+      carousels[id] = { track, slides, current: 0, total: slides.length };
+
+      // Create dots
+      for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', function() { goToSlide(id, i); });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goToSlide(id, index) {
+      const c = carousels[id];
+      if (!c) return;
+      c.current = index;
+      c.track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      const dots = document.getElementById('dots-' + id).querySelectorAll('.carousel-dot');
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === index); });
+    }
+
+    function moveCarousel(id, dir) {
+      const c = carousels[id];
+      if (!c) return;
+      let next = c.current + dir;
+      if (next < 0) next = c.total - 1;
+      if (next >= c.total) next = 0;
+      goToSlide(id, next);
+    }
+
+    initCarousel('old');
+    initCarousel('new');
+
+    // Auto-advance
+    setInterval(function() { moveCarousel('old', 1); }, 5000);
+    setInterval(function() { moveCarousel('new', 1); }, 5000);
+  </script>
+</body>
+</html>
