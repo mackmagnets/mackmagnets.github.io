@@ -15,7 +15,7 @@
   <meta property="og:description" content="Custom magnet station for your event. Starting at $550 in California.">
   <meta property="og:url" content="https://mackmagnets.com/events/">
   <meta property="og:site_name" content="Mack Magnets">
-  <meta property="og:image" content="https://mackmagnets.github.io/assets/images/og-image.jpg">
+  <meta property="og:image" content="https://mackmagnets.com/assets/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
@@ -25,11 +25,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Event Magnet Packages — Mack Magnets">
   <meta name="twitter:description" content="Custom magnet station for your event. Starting at $550 in California.">
-  <meta name="twitter:image" content="https://mackmagnets.github.io/assets/images/og-image.jpg">
+  <meta name="twitter:image" content="https://mackmagnets.com/assets/images/og-image.jpg">
 
   <!-- Favicon & Theme -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta name="theme-color" content="#E07A5F">
+  <meta name="theme-color" content="#81B29A">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
 
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
-      <a href="/" class="navbar__logo">Mack<span>Magnets</span></a>
+      <a href="/" class="navbar__logo"><img src="/assets/images/logo.svg" alt="Mack Magnets" height="40"></a>
       <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -58,6 +58,7 @@
         <li><a href="/faq/">FAQ</a></li>
         <li><a href="/contact/">Contact</a></li>
         <li><a href="/shop/" class="navbar__cta">Order Now</a></li>
+        <li><button class="cart-icon-btn" aria-label="Open cart">🛒<span class="cart-count">0</span></button></li>
       </ul>
     </div>
   </nav>
@@ -281,7 +282,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <span class="footer__logo">Mack<span>Magnets</span></span>
+          <span class="footer__logo"><img src="/assets/images/logo.svg" alt="Mack Magnets" height="36"></span>
           <p>Transforming your special moments into vibrant, high-quality magnets since 2024.</p>
           <p style="margin-top: 0.75rem;">📍 Rancho Cucamonga, California</p>
           <div class="footer__social">
@@ -324,5 +325,27 @@
   </footer>
 
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/shopify-cart.js" defer></script>
+<!-- Cart Drawer -->
+<div id="cart-overlay"></div>
+<div id="cart-drawer" aria-label="Shopping cart">
+  <div class="cart-drawer__header">
+    <h3>Your Cart</h3>
+    <button id="cart-drawer-close" aria-label="Close cart">&times;</button>
+  </div>
+  <div id="cart-drawer-items"></div>
+  <div id="cart-drawer-empty" style="display:block;">
+    <p>Your cart is empty</p>
+    <a href="/shop/" class="btn btn--primary" style="margin-top:1rem;display:inline-block;">Browse Products</a>
+  </div>
+  <div id="cart-drawer-footer" style="display:none;">
+    <div class="cart-drawer__total">
+      <span>Total</span>
+      <span id="cart-drawer-total">$0.00</span>
+    </div>
+    <button id="cart-checkout-btn">Checkout</button>
+  </div>
+</div>
+
 </body>
 </html>

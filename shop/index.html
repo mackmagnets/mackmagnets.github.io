@@ -15,7 +15,7 @@
   <meta property="og:description" content="Browse our full collection of custom photo magnets. Starting at $12.99.">
   <meta property="og:url" content="https://mackmagnets.com/shop/">
   <meta property="og:site_name" content="Mack Magnets">
-  <meta property="og:image" content="https://mackmagnets.github.io/assets/images/og-image.jpg">
+  <meta property="og:image" content="https://mackmagnets.com/assets/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
@@ -25,11 +25,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Shop Custom Photo Magnets — Mack Magnets">
   <meta name="twitter:description" content="Browse our full collection of custom photo magnets. Starting at $12.99.">
-  <meta name="twitter:image" content="https://mackmagnets.github.io/assets/images/og-image.jpg">
+  <meta name="twitter:image" content="https://mackmagnets.com/assets/images/og-image.jpg">
 
   <!-- Favicon & Theme -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta name="theme-color" content="#E07A5F">
+  <meta name="theme-color" content="#81B29A">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,7 @@
 
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
-      <a href="/" class="navbar__logo">Mack<span>Magnets</span></a>
+      <a href="/" class="navbar__logo"><img src="/assets/images/logo.svg" alt="Mack Magnets" height="40"></a>
       <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -77,6 +77,7 @@
         <li><a href="/faq/">FAQ</a></li>
         <li><a href="/contact/">Contact</a></li>
         <li><a href="/shop/" class="navbar__cta">Order Now</a></li>
+        <li><button class="cart-icon-btn" aria-label="Open cart">🛒<span class="cart-count">0</span></button></li>
       </ul>
     </div>
   </nav>
@@ -96,155 +97,8 @@
     <section class="section">
       <div class="container">
 
-        <div class="shop-filters" role="tablist" aria-label="Product filters">
-          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Products</button>
-          <button class="filter-btn" data-filter="custom" role="tab" aria-selected="false">Custom Photo</button>
-          <button class="filter-btn" data-filter="sets" role="tab" aria-selected="false">Gift Sets</button>
-          <button class="filter-btn" data-filter="events" role="tab" aria-selected="false">Event Packs</button>
-        </div>
-
-        <div class="products-grid">
-
-          <!-- Custom Photo Products -->
-          <div class="product-card fade-in" data-category="custom">
-            <span class="product-card__badge">Best Seller</span>
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400&h=400&fit=crop&auto=format" alt="2x2 Custom Photo Magnets set of 4" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">2×2 Custom Photo Magnets (Set of 4)</h3>
-              <div class="product-card__price">$24.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="custom">
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1522198734915-76c764a8ec07?w=400&h=400&fit=crop&auto=format" alt="2x2 Custom Photo Magnets set of 8" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">2×2 Custom Photo Magnets (Set of 8)</h3>
-              <div class="product-card__price">$44.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="custom">
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1502759683299-cdcd6974244f?w=400&h=400&fit=crop&auto=format" alt="2x2 Custom Photo Magnets set of 12" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">2×2 Custom Photo Magnets (Set of 12)</h3>
-              <div class="product-card__price">$59.99 <span class="original-price">$71.88</span></div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="custom">
-            <span class="product-card__badge">Popular</span>
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=400&fit=crop&auto=format" alt="3x3 Custom Photo Magnets set of 4" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">3×3 Custom Photo Magnets (Set of 4)</h3>
-              <div class="product-card__price">$34.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="custom">
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1530538095376-a4936b35b5f0?w=400&h=400&fit=crop&auto=format" alt="4x4 Custom Photo Magnets set of 4" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">4×4 Custom Photo Magnets (Set of 4)</h3>
-              <div class="product-card__price">$42.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Gift Sets -->
-          <div class="product-card fade-in" data-category="sets">
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1530982011887-3cc11cc85693?w=400&h=400&fit=crop&auto=format" alt="Mini Magnet Set 6 pack" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Mini Magnet Set (6-pack)</h3>
-              <div class="product-card__price">$19.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="sets">
-            <span class="product-card__badge">Gift Idea</span>
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1523867574998-1a336b6ded04?w=400&h=400&fit=crop&auto=format" alt="Pet Photo Magnets set of 4" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Pet Photo Magnets (Set of 4)</h3>
-              <div class="product-card__price">$26.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="sets">
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=400&h=400&fit=crop&auto=format" alt="Holiday Themed Magnets set of 4" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Holiday Themed Magnets (Set of 4)</h3>
-              <div class="product-card__price">$22.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="sets">
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400&h=400&fit=crop&auto=format" alt="Custom Shape Magnet" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Custom Shape Magnet</h3>
-              <div class="product-card__price">$12.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Event Packs -->
-          <div class="product-card fade-in" data-category="events">
-            <span class="product-card__badge">Events</span>
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop&auto=format" alt="Wedding Favor Magnets 25 pack" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Wedding Favor Magnets (25-pack)</h3>
-              <div class="product-card__price">$109.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="events">
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&h=400&fit=crop&auto=format" alt="Party Favor Magnets 10 pack" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Party Favor Magnets (10-pack)</h3>
-              <div class="product-card__price">$44.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card fade-in" data-category="events">
-            <div class="product-card__image">
-              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=400&fit=crop&auto=format" alt="Save the Date Magnets 25 pack" width="400" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Save the Date Magnets (25-pack)</h3>
-              <div class="product-card__price">$119.99</div>
-              <button class="product-card__btn">Add to Cart</button>
-            </div>
-          </div>
-
-        </div>
+        <!-- Dynamic products from Shopify -->
+        <div id="shopify-products-grid"></div>
 
         <div class="text-center mt-4 fade-in">
           <p style="color: var(--color-text-muted); font-size: 0.9rem;">All prices in USD. California sales tax (7.75%) applied at checkout. Free shipping on orders over $75.</p>
@@ -268,7 +122,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <span class="footer__logo">Mack<span>Magnets</span></span>
+          <span class="footer__logo"><img src="/assets/images/logo.svg" alt="Mack Magnets" height="36"></span>
           <p>Transforming your special moments into vibrant, high-quality magnets since 2024.</p>
           <p style="margin-top: 0.75rem;">📍 Rancho Cucamonga, California</p>
           <div class="footer__social">
@@ -311,5 +165,28 @@
   </footer>
 
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/shopify-cart.js" defer></script>
+  <script src="/assets/js/products.js" defer></script>
+<!-- Cart Drawer -->
+<div id="cart-overlay"></div>
+<div id="cart-drawer" aria-label="Shopping cart">
+  <div class="cart-drawer__header">
+    <h3>Your Cart</h3>
+    <button id="cart-drawer-close" aria-label="Close cart">&times;</button>
+  </div>
+  <div id="cart-drawer-items"></div>
+  <div id="cart-drawer-empty" style="display:block;">
+    <p>Your cart is empty</p>
+    <a href="/shop/" class="btn btn--primary" style="margin-top:1rem;display:inline-block;">Browse Products</a>
+  </div>
+  <div id="cart-drawer-footer" style="display:none;">
+    <div class="cart-drawer__total">
+      <span>Total</span>
+      <span id="cart-drawer-total">$0.00</span>
+    </div>
+    <button id="cart-checkout-btn">Checkout</button>
+  </div>
+</div>
+
 </body>
 </html>

@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🧲</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Horseshoe magnet forming an M shape -->
+  <path d="M6 28V14C6 7.4 11.4 2 18 2h0c4 0 7.5 2 9.6 5" stroke="#81B29A" stroke-width="0" fill="none"/>
+  <!-- Stylized M with magnet feel -->
+  <path d="M4 26V12C4 6.5 8.5 2 14 2c3 0 5.7 1.3 7.5 3.5C23.3 3.3 26 2 29 2v24h-6V12c0-1.7-1.3-3-3-3s-3 1.3-3 3v14h-6V12c0-1.7-1.3-3-3-3s-3 1.3-3 3v14H4z" fill="#81B29A"/>
+  <!-- Magnet poles at bottom -->
+  <rect x="4" y="24" width="6" height="4" rx="1" fill="#F2CC8F"/>
+  <rect x="11" y="24" width="6" height="4" rx="1" fill="#F2CC8F"/>
+  <rect x="23" y="24" width="6" height="4" rx="1" fill="#F2CC8F"/>
+</svg>

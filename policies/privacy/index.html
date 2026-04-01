@@ -14,7 +14,7 @@
   <meta property="og:description" content="How we collect, use, and protect your personal information.">
   <meta property="og:url" content="https://mackmagnets.com/policies/privacy/">
   <meta property="og:site_name" content="Mack Magnets">
-  <meta property="og:image" content="https://mackmagnets.github.io/assets/images/og-image.jpg">
+  <meta property="og:image" content="https://mackmagnets.com/assets/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
@@ -24,11 +24,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Privacy Policy — Mack Magnets">
   <meta name="twitter:description" content="How we collect, use, and protect your personal information.">
-  <meta name="twitter:image" content="https://mackmagnets.github.io/assets/images/og-image.jpg">
+  <meta name="twitter:image" content="https://mackmagnets.com/assets/images/og-image.jpg">
 
   <!-- Favicon & Theme -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta name="theme-color" content="#E07A5F">
+  <meta name="theme-color" content="#81B29A">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,6 +54,7 @@
         <li><a href="/faq/">FAQ</a></li>
         <li><a href="/wholesale/">Wholesale</a></li>
         <li><a href="/contact/">Contact</a></li>
+      <li><button class="cart-icon-btn" aria-label="Open cart">🛒<span class="cart-count">0</span></button></li>
       </ul>
     </div>
   </nav>
@@ -180,5 +181,27 @@
   </footer>
 
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/shopify-cart.js" defer></script>
+<!-- Cart Drawer -->
+<div id="cart-overlay"></div>
+<div id="cart-drawer" aria-label="Shopping cart">
+  <div class="cart-drawer__header">
+    <h3>Your Cart</h3>
+    <button id="cart-drawer-close" aria-label="Close cart">&times;</button>
+  </div>
+  <div id="cart-drawer-items"></div>
+  <div id="cart-drawer-empty" style="display:block;">
+    <p>Your cart is empty</p>
+    <a href="/shop/" class="btn btn--primary" style="margin-top:1rem;display:inline-block;">Browse Products</a>
+  </div>
+  <div id="cart-drawer-footer" style="display:none;">
+    <div class="cart-drawer__total">
+      <span>Total</span>
+      <span id="cart-drawer-total">$0.00</span>
+    </div>
+    <button id="cart-checkout-btn">Checkout</button>
+  </div>
+</div>
+
 </body>
 </html>
