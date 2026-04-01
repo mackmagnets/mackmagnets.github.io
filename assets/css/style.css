@@ -1048,7 +1048,7 @@ p { margin-bottom: 1rem; }
   color: rgba(255,255,255,0.7);
 }
 
-.footer__demo-notice {
+.footer-credit {
   background: rgba(129, 178, 154, 0.15);
   border: 1px solid rgba(129, 178, 154, 0.3);
   border-radius: var(--radius-sm);
@@ -2154,4 +2154,14 @@ a:focus-visible {
 @media print {
   .navbar, .footer, .newsletter, .announcement-bar { display: none; }
   body { background: #fff; color: #000; }
+}
+
+/* Footer credit link */
+.footer-credit a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-credit a:hover {
+  text-decoration: underline;
 }
