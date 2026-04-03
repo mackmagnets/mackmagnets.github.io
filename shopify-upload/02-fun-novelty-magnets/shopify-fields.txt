@@ -1,0 +1,31 @@
+== SHOPIFY PRODUCT FIELDS ==
+(NEW product)
+
+Title:              Fun & Novelty Magnets (Assorted Pack)
+Description:        Add some personality to your fridge! Our fun & novelty magnets feature hilarious sayings, cute animals, and quirky designs. From "Clean/Dirty" dishwasher magnets to sassy cow art and pop culture humor — there's something for everyone. Each magnet is printed on premium material with a strong magnetic backing. Perfect housewarming gift, stocking stuffer, or just treating yourself.
+Status:             Active
+Media:              fun-magnets-wood.jpg (PRIMARY), fun-magnets-wood-2.jpg
+Category:           Home & Garden > Decor > Refrigerator Magnets
+Price:              14.99
+Compare-at:         (leave blank)
+Charge tax:         Yes
+Cost per item:      (leave blank or your actual cost)
+SKU:                MACK-FUN-NOVELTY-ASST
+Barcode:            (leave blank)
+Inventory tracked:  Yes
+Quantity:           100
+Sell when out of stock: Off
+Shipping:           Physical product: Yes
+Product weight:     0.2 lb
+Package:            Store default
+
+-- Product organization --
+Type:               Novelty Magnets
+Vendor:             Mack Magnets
+Collections:        Fun Magnets, All Products
+Tags:               fun magnets, novelty, funny, clean dirty, dishwasher, gift, stocking stuffer, housewarming, humor, animals
+
+-- SEO --
+Page title:         Fun & Novelty Magnets — Hilarious Fridge Magnets | Mack Magnets
+Meta description:   Funny & quirky fridge magnets — from Clean/Dirty dishwasher magnets to sassy animal art. Premium quality, strong magnetic backing. Perfect gifts. $14.99
+URL handle:         fun-novelty-magnets-assorted

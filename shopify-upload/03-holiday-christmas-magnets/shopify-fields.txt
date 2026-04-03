@@ -1,0 +1,31 @@
+== SHOPIFY PRODUCT FIELDS ==
+(NEW product)
+
+Title:              Holiday & Christmas Magnets
+Description:        Celebrate the season with our festive holiday magnet collection! Features Christmas-themed designs, winter scenes, and seasonal artwork. Beautiful as stocking stuffers, gift toppers, or fridge decor for the holidays. Printed on premium material with strong magnetic backing.
+Status:             Active
+Media:              christmas-display.jpg (PRIMARY)
+Category:           Home & Garden > Decor > Refrigerator Magnets
+Price:              16.99
+Compare-at:         (leave blank)
+Charge tax:         Yes
+Cost per item:      (leave blank or your actual cost)
+SKU:                MACK-HOLIDAY-XMAS
+Barcode:            (leave blank)
+Inventory tracked:  Yes
+Quantity:           75
+Sell when out of stock: Off
+Shipping:           Physical product: Yes
+Product weight:     0.2 lb
+Package:            Store default
+
+-- Product organization --
+Type:               Holiday Magnets
+Vendor:             Mack Magnets
+Collections:        Holiday Collection, All Products
+Tags:               christmas, holiday, seasonal, stocking stuffer, winter, festive, gift, christmas magnets
+
+-- SEO --
+Page title:         Holiday & Christmas Magnets — Festive Fridge Decor | Mack Magnets
+Meta description:   Festive holiday & Christmas magnets — perfect stocking stuffers and seasonal fridge decor. Premium quality, strong magnets. $16.99
+URL handle:         holiday-christmas-magnets

@@ -1,0 +1,298 @@
+{
+  "lastUpdated": "2026-04-03T02:52:26.806260+00:00",
+  "shopifyDomain": "1pp0pw-1f.myshopify.com",
+  "productCount": 4,
+  "products": [
+    {
+      "id": 8357898321954,
+      "title": "2x2 Custom Photo Magnets (Set of 9)",
+      "handle": "2x2-custom-photo-magnets-set-of-9",
+      "body_html": "<p>Our compact 2x2\" magnets pack more memories into less space! Perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. Upload 9 of your favorite shots and we'll turn them into adorable mini magnets. UV-resistant coating keeps them looking fresh. Made in USA.</p>",
+      "published_at": "2026-04-02T19:05:35-07:00",
+      "created_at": "2026-04-02T19:05:34-07:00",
+      "updated_at": "2026-04-02T19:52:26-07:00",
+      "vendor": "Mack Magnets",
+      "product_type": "Custom Photo Magnets",
+      "tags": [
+        "2x2",
+        "custom photo magnets",
+        "gift",
+        "mini magnets",
+        "personalized",
+        "photo gifts",
+        "set of 9",
+        "square magnets"
+      ],
+      "variants": [
+        {
+          "id": 45133787660322,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-CUSTOM-2X2-9",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "24.99",
+          "grams": 91,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8357898321954,
+          "created_at": "2026-04-02T19:05:34-07:00",
+          "updated_at": "2026-04-02T19:52:26-07:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 39526912294946,
+          "created_at": "2026-04-02T19:03:40-07:00",
+          "position": 1,
+          "updated_at": "2026-04-02T19:03:41-07:00",
+          "product_id": 8357898321954,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1775181821",
+          "width": 1280,
+          "height": 1223
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8357898223650,
+      "title": "Holiday & Christmas Magnets",
+      "handle": "holiday-christmas-magnets",
+      "body_html": "<p>Celebrate the season with our festive holiday magnet collection! Features Christmas-themed designs, winter scenes, and seasonal artwork. Beautiful as stocking stuffers, gift toppers, or fridge decor for the holidays. Printed on premium material with strong magnetic backing.</p>",
+      "published_at": "2026-04-02T19:03:13-07:00",
+      "created_at": "2026-04-02T19:03:12-07:00",
+      "updated_at": "2026-04-02T19:52:26-07:00",
+      "vendor": "Mack Magnets",
+      "product_type": "Holiday Magnets",
+      "tags": [
+        "christmas",
+        "christmas magnets",
+        "festive",
+        "gift",
+        "holiday",
+        "seasonal",
+        "stocking stuffer",
+        "winter"
+      ],
+      "variants": [
+        {
+          "id": 45133786808354,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-HOLIDAY-XMAS",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "16.99",
+          "grams": 91,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8357898223650,
+          "created_at": "2026-04-02T19:03:12-07:00",
+          "updated_at": "2026-04-02T19:52:26-07:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 39526909902882,
+          "created_at": "2026-04-02T19:01:19-07:00",
+          "position": 1,
+          "updated_at": "2026-04-02T19:01:21-07:00",
+          "product_id": 8357898223650,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/christmas-display.jpg?v=1775181681",
+          "width": 1265,
+          "height": 1280
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8357897895970,
+      "title": "Fun & Novelty Magnets (Assorted Pack)",
+      "handle": "fun-novelty-magnets-assorted-pack",
+      "body_html": "<p>Add some personality to your fridge! Our fun &amp; novelty magnets feature hilarious sayings, cute animals, and quirky designs. From \"Clean/Dirty\" dishwasher magnets to sassy cow art and pop culture humor \u2014 there's something for everyone. Each magnet is printed on premium material with a strong magnetic backing. Perfect housewarming gift, stocking stuffer, or just treating yourself.</p>",
+      "published_at": "2026-04-02T19:00:27-07:00",
+      "created_at": "2026-04-02T19:00:26-07:00",
+      "updated_at": "2026-04-02T19:52:26-07:00",
+      "vendor": "Mack Magnets",
+      "product_type": "Novelty Magnets",
+      "tags": [
+        "animals",
+        "clean dirty",
+        "dishwasher",
+        "fun magnets",
+        "funny",
+        "gift",
+        "housewarming",
+        "humor",
+        "novelty",
+        "stocking stuffer"
+      ],
+      "variants": [
+        {
+          "id": 45133783597090,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-FUN-NOVELTY-ASST",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "14.99",
+          "grams": 91,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8357897895970,
+          "created_at": "2026-04-02T19:00:26-07:00",
+          "updated_at": "2026-04-02T19:52:26-07:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 39526903021602,
+          "created_at": "2026-04-02T18:58:09-07:00",
+          "position": 1,
+          "updated_at": "2026-04-02T18:58:11-07:00",
+          "product_id": 8357897895970,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fun-magnets-wood.jpg?v=1775181491",
+          "width": 1272,
+          "height": 1280
+        },
+        {
+          "id": 39526903054370,
+          "created_at": "2026-04-02T18:58:09-07:00",
+          "position": 2,
+          "updated_at": "2026-04-02T18:58:11-07:00",
+          "product_id": 8357897895970,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fun-magnets-wood-2.jpg?v=1775181491",
+          "width": 591,
+          "height": 1280
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8355682517026,
+      "title": "2x3 Custom Photo Magnets (Set of 6)",
+      "handle": "2x3-custom-photo-magnets-set-of-6",
+      "body_html": "<pre class=\"quote-like quote-like-border code\">Turn your favorite memories into beautiful 2x3\" custom photo magnets! Upload 6 of your best photos and we'll create high-quality, UV-resistant magnets perfect for your fridge, locker, or office. Made with love in the USA. Great gift for birthdays, holidays, and everyday moments.</pre>",
+      "published_at": "2026-03-31T20:39:23-07:00",
+      "created_at": "2026-03-31T20:39:22-07:00",
+      "updated_at": "2026-04-02T19:52:26-07:00",
+      "vendor": "Mack Magnets",
+      "product_type": "Custom Photo Magnets",
+      "tags": [
+        "2x3",
+        "best seller",
+        "custom photo magnets",
+        "fridge magnets",
+        "gift",
+        "personalized",
+        "photo gifts",
+        "set of 6"
+      ],
+      "variants": [
+        {
+          "id": 45119343558690,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-CUSTOM-2X3-6",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "24.99",
+          "grams": 136,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8355682517026,
+          "created_at": "2026-03-31T20:39:22-07:00",
+          "updated_at": "2026-04-02T19:52:26-07:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 39526894567458,
+          "created_at": "2026-04-02T18:53:13-07:00",
+          "position": 1,
+          "updated_at": "2026-04-02T18:53:15-07:00",
+          "product_id": 8355682517026,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/brand-flyer_edc0cd09-1a34-4d82-af0e-8b504ed7a86d.jpg?v=1775181195",
+          "width": 591,
+          "height": 1280
+        },
+        {
+          "id": 39526894600226,
+          "created_at": "2026-04-02T18:53:13-07:00",
+          "position": 2,
+          "updated_at": "2026-04-02T18:53:15-07:00",
+          "product_id": 8355682517026,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/flat-lay-marble_f7c13e03-4b4a-4233-8618-83e4f81a5d50.jpg?v=1775181195",
+          "width": 1280,
+          "height": 1260
+        },
+        {
+          "id": 39526894632994,
+          "created_at": "2026-04-02T18:53:13-07:00",
+          "position": 3,
+          "updated_at": "2026-04-02T18:53:15-07:00",
+          "product_id": 8355682517026,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-closeup_bc4938d3-7f65-4d1c-9469-c995dc47b39d.jpg?v=1775181195",
+          "width": 591,
+          "height": 1280
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    }
+  ]
+}

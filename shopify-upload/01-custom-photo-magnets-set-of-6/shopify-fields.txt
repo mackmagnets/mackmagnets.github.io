@@ -1,0 +1,31 @@
+== SHOPIFY PRODUCT FIELDS ==
+(UPDATE existing product: "2x3 Custom Photo Magnets (Set of 6)")
+
+Title:              2x3 Custom Photo Magnets (Set of 6)
+Description:        Turn your favorite memories into beautiful 2x3" custom photo magnets! Upload 6 of your best photos and we'll create high-quality, UV-resistant magnets perfect for your fridge, locker, or office. Made with love in the USA. Great gift for birthdays, holidays, and everyday moments.
+Status:             Active
+Media:              flat-lay-marble.jpg (PRIMARY), brand-flyer.jpg, fridge-closeup.jpg
+Category:           Home & Garden > Decor > Refrigerator Magnets
+Price:              24.99
+Compare-at:         (leave blank)
+Charge tax:         Yes
+Cost per item:      (leave blank or your actual cost)
+SKU:                MACK-CUSTOM-2X3-6
+Barcode:            (leave blank)
+Inventory tracked:  Yes
+Quantity:           50
+Sell when out of stock: Off
+Shipping:           Physical product: Yes
+Product weight:     0.3 lb
+Package:            Store default
+
+-- Product organization --
+Type:               Custom Photo Magnets
+Vendor:             Mack Magnets
+Collections:        Custom Magnets, Best Sellers, All Products
+Tags:               custom photo magnets, personalized, gift, fridge magnets, 2x3, set of 6, photo gifts, best seller
+
+-- SEO --
+Page title:         2x3 Custom Photo Magnets (Set of 6) — Mack Magnets
+Meta description:   Upload 6 photos to create beautiful 2x3" custom photo magnets. UV-resistant, made in USA. Perfect gift for any occasion. $24.99
+URL handle:         2x3-custom-photo-magnets-set-of-6

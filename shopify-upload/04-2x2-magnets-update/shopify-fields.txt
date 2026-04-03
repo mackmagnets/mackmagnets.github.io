@@ -1,0 +1,31 @@
+== SHOPIFY PRODUCT FIELDS ==
+(UPDATE existing product: "2x2 Magnets")
+
+Title:              2x2 Custom Photo Magnets (Set of 9)
+Description:        Our compact 2x2" magnets pack more memories into less space! Perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. Upload 9 of your favorite shots and we'll turn them into adorable mini magnets. UV-resistant coating keeps them looking fresh. Made in USA.
+Status:             Active
+Media:              fridge-display-2.jpg (PRIMARY) — add to existing images
+Category:           Home & Garden > Decor > Refrigerator Magnets
+Price:              24.99
+Compare-at:         (leave blank)
+Charge tax:         Yes
+Cost per item:      (leave blank or your actual cost)
+SKU:                MACK-CUSTOM-2X2-9
+Barcode:            (leave blank)
+Inventory tracked:  Yes
+Quantity:           50
+Sell when out of stock: Off
+Shipping:           Physical product: Yes
+Product weight:     0.2 lb
+Package:            Store default
+
+-- Product organization --
+Type:               Custom Photo Magnets
+Vendor:             Mack Magnets
+Collections:        Custom Magnets, All Products
+Tags:               custom photo magnets, 2x2, mini magnets, personalized, gift, square magnets, set of 9, photo gifts
+
+-- SEO --
+Page title:         2x2 Custom Photo Magnets (Set of 9) — Mack Magnets
+Meta description:   Compact 2x2" custom photo magnets — upload 9 photos for adorable mini magnets. UV-resistant, made in USA. $24.99
+URL handle:         2x2-magnets
