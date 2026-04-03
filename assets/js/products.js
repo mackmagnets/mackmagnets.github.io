@@ -6,7 +6,7 @@
 (function() {
   'use strict';
 
-  const PRODUCTS_URL = 'https://mackmagnets.com/products.json';
+  const PRODUCTS_URL = 'https://1pp0pw-1f.myshopify.com/products.json';
   const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400&h=400&fit=crop&auto=format';
 
   async function fetchProducts() {
@@ -61,12 +61,16 @@
     const grid = document.getElementById('shopify-products-grid');
     if (!grid) return;
 
+    // Save static fallback cards (from sync script) before overwriting
+    const staticFallback = grid.innerHTML;
     grid.innerHTML = '<div class="products-loading" style="text-align:center;padding:2rem;color:var(--color-text-muted);">Loading products...</div>';
 
     const products = await fetchProducts();
 
     if (products.length === 0) {
-      grid.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);padding:2rem;">Products coming soon! Check back shortly.</p>';
+      // Restore static cards if dynamic fetch failed
+      grid.innerHTML = staticFallback || '<p style="text-align:center;color:var(--color-text-muted);padding:2rem;">Products coming soon! Check back shortly.</p>';
+      bindStaticButtons();
       return;
     }
 
