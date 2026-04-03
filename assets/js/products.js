@@ -1,39 +1,64 @@
 /**
- * Mack Magnets — Dynamic Products from Shopify
+ * Mack Magnets — Dynamic Products from Shopify Storefront API
  * Built by AjayaDesign | Fingerprint: 414A4459-50524F44
+ *
+ * Uses Storefront API (CORS-friendly) for dynamic product loading.
+ * Static cards from sync script serve as SEO fallback.
  */
 
 (function() {
   'use strict';
 
-  const PRODUCTS_URL = 'https://1pp0pw-1f.myshopify.com/products.json';
+  const SHOPIFY_DOMAIN = '1pp0pw-1f.myshopify.com';
+  const STOREFRONT_TOKEN = 'e0369b1b658648502923373bb0cf6d27';
   const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400&h=400&fit=crop&auto=format';
 
   async function fetchProducts() {
     try {
-      const res = await fetch(PRODUCTS_URL);
+      // Try Storefront API (CORS-friendly)
+      const query = `{
+        products(first: 50, sortKey: PRICE) {
+          nodes {
+            id handle title availableForSale
+            priceRange { minVariantPrice { amount } }
+            featuredImage { url altText }
+            variants(first: 5) { nodes { id title price { amount } availableForSale } }
+          }
+        }
+      }`;
+      const res = await fetch(`https://${SHOPIFY_DOMAIN}/api/2024-01/graphql.json`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Shopify-Storefront-Access-Token': STOREFRONT_TOKEN
+        },
+        body: JSON.stringify({ query })
+      });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      return data.products || [];
+      if (data.errors) throw new Error(data.errors[0].message);
+      return data.data.products.nodes || [];
     } catch (e) {
-      console.warn('Failed to fetch products from Shopify:', e);
+      console.warn('Storefront API failed, using static cards:', e);
       return [];
     }
   }
 
   function renderProductCard(product) {
-    const variant = product.variants?.[0];
-    const price = variant?.price || '0.00';
+    const variant = product.variants?.nodes?.[0];
+    const price = variant?.price?.amount || product.priceRange?.minVariantPrice?.amount || '0.00';
     const variantId = variant?.id || '';
-    const image = product.images?.[0]?.src || product.image?.src || FALLBACK_IMAGE;
+    const image = product.featuredImage?.url || FALLBACK_IMAGE;
+    const imageAlt = product.featuredImage?.altText || product.title || '';
     const title = product.title || 'Custom Magnet';
+    const handle = product.handle || '';
 
     const card = document.createElement('div');
     card.className = 'product-card fade-in';
     card.dataset.category = 'shopify';
     card.innerHTML = `
       <div class="product-card__image">
-        <img src="${image}" alt="${title}" width="400" height="400" loading="lazy">
+        <img src="${image}${image.includes('?') ? '&' : '?'}width=400" alt="${imageAlt}" width="400" height="400" loading="lazy">
       </div>
       <div class="product-card__body">
         <h3 class="product-card__title">${title}</h3>
@@ -61,22 +86,24 @@
     const grid = document.getElementById('shopify-products-grid');
     if (!grid) return;
 
-    // Save static fallback cards (from sync script) before overwriting
-    const staticFallback = grid.innerHTML;
-    grid.innerHTML = '<div class="products-loading" style="text-align:center;padding:2rem;color:var(--color-text-muted);">Loading products...</div>';
+    // If static cards exist (from sync script), just bind their buttons and done
+    // The static cards are the primary display; dynamic is an enhancement
+    const hasStaticCards = grid.querySelectorAll('.product-card').length > 0;
 
     const products = await fetchProducts();
 
-    if (products.length === 0) {
-      // Restore static cards if dynamic fetch failed
-      grid.innerHTML = staticFallback || '<p style="text-align:center;color:var(--color-text-muted);padding:2rem;">Products coming soon! Check back shortly.</p>';
+    if (products.length > 0) {
+      // Dynamic cards available — replace static with fresh data
+      grid.innerHTML = '';
+      grid.classList.add('products-grid');
+      products.forEach(p => grid.appendChild(renderProductCard(p)));
+    } else if (hasStaticCards) {
+      // Keep static cards, just bind buttons
       bindStaticButtons();
-      return;
+    } else {
+      // No static cards AND no dynamic — show fallback message
+      grid.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);padding:2rem;">Products coming soon! Check back shortly.</p>';
     }
-
-    grid.innerHTML = '';
-    grid.classList.add('products-grid');
-    products.forEach(p => grid.appendChild(renderProductCard(p)));
   }
 
   async function renderFeaturedProducts() {
@@ -84,15 +111,17 @@
     if (!grid) return;
 
     const products = await fetchProducts();
-    if (products.length === 0) return; // keep static fallback
+    if (products.length === 0) {
+      // Keep static fallback cards
+      bindStaticButtons();
+      return;
+    }
 
     grid.innerHTML = '';
     grid.classList.add('products-grid');
-    // Show up to 4 featured
     products.slice(0, 4).forEach(p => grid.appendChild(renderProductCard(p)));
   }
 
-  // Also bind static Add to Cart buttons (existing cards not from Shopify)
   function bindStaticButtons() {
     document.querySelectorAll('.product-card__btn[data-variant-id]').forEach(btn => {
       if (btn._bound) return;
