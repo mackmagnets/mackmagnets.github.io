@@ -36,7 +36,7 @@ jobs:
       - name: Sync products from Shopify
         env:
           SHOPIFY_DOMAIN: 1pp0pw-1f.myshopify.com
-          SHOPIFY_STOREFRONT_TOKEN: ${{ secrets.SHOPIFY_STOREFRONT_TOKEN || 'e0369b1b658648502923373bb0cf6d27' }}
+          SHOPIFY_STOREFRONT_TOKEN: ${{ secrets.SHOPIFY_STOREFRONT_TOKEN || '58bb75ddbaf6ee38b7e98b629d296178' }}
         run: python scripts/sync-products.py
 
       - name: Check for changes

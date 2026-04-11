@@ -160,10 +160,12 @@ def build_product_card(product):
     is_custom = is_custom_product(product)
     variant_id = get_first_variant_id(product)
 
+    # All products link to local PDP pages
+    product_url = f'/shop/{handle}/'
+
     # CTA button
     if is_custom:
-        shopify_url = f'https://{SHOPIFY_DOMAIN}/products/{handle}'
-        cta = f'<a href="{escape(shopify_url)}" class="product-card__btn" target="_blank" rel="noopener">View &amp; Customize →</a>'
+        cta = f'<a href="{escape(product_url)}" class="product-card__btn">View &amp; Customize →</a>'
     elif not available:
         cta = f'<button class="product-card__btn" data-variant-id="{escape(variant_id)}" disabled>Sold Out</button>'
     else:
@@ -178,12 +180,16 @@ def build_product_card(product):
         img_html = f'<div style="width:400px;height:400px;background:var(--color-surface,#f5f5f5);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted,#999);">No image</div>'
 
     return f"""        <div class="product-card fade-in{sold_class}" data-category="shopify">
-          <div class="product-card__image">
-            {img_html}
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">{title}</h3>
-            <div class="product-card__price">{price_html}</div>
+          <a href="{escape(product_url)}" class="product-card__link">
+            <div class="product-card__image">
+              {img_html}
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">{title}</h3>
+              <div class="product-card__price">{price_html}</div>
+            </div>
+          </a>
+          <div class="product-card__actions" style="padding: 0 1.25rem 1.25rem;">
             {cta}
           </div>
         </div>"""
@@ -263,8 +269,13 @@ def build_product_page_html(product, all_products):
 
     # CTA
     if is_custom:
+        # Custom products link to Shopify hosted page (photo upload)
+        # The cart JS intercepts this link and shows a modal if cart has items
         shopify_url = f'https://{SHOPIFY_DOMAIN}/products/{handle}'
-        cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" target="_blank" rel="noopener">Customize &amp; Order →</a>'
+        if not available:
+            cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" target="_blank" rel="noopener" style="pointer-events:none;opacity:0.5;">Sold Out</a>'
+        else:
+            cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" target="_blank" rel="noopener">Customize &amp; Order →</a>'
     elif not available:
         cta_html = f'<button class="btn btn--primary btn--lg pdp-cta" data-variant-id="{escape(variant_id)}" disabled>Sold Out</button>'
     else:
@@ -350,6 +361,8 @@ def build_product_page_html(product, all_products):
   <meta property="og:description" content="{escape(description_text)}">
   <meta property="og:url" content="{SITE_URL}/shop/{handle}/">
   <meta property="og:image" content="{og_image}">
+  <meta property="og:site_name" content="{BRAND_NAME}">
+  <meta property="og:locale" content="en_US">
   <meta property="product:price:amount" content="{min_price}">
   <meta property="product:price:currency" content="USD">
   <meta name="twitter:card" content="summary_large_image">
@@ -367,7 +380,7 @@ def build_product_page_html(product, all_products):
   {jsonld_str}
   </script>
 </head>
-<body>
+<body data-ajaya-design="demo-property-2026">
   <a href="#main" class="skip-link">Skip to main content</a>
   <div class="mobile-overlay" aria-hidden="true"></div>
 

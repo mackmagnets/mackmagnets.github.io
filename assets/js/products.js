@@ -21,8 +21,8 @@
 
   // ─── Config ─────────────────────────────────────────
   var SHOPIFY_DOMAIN = '1pp0pw-1f.myshopify.com';
-  var STOREFRONT_TOKEN = 'e0369b1b658648502923373bb0cf6d27';
-  var API_VERSION = '2024-01';
+  var STOREFRONT_TOKEN = '58bb75ddbaf6ee38b7e98b629d296178';
+  var API_VERSION = '2025-01';
   var ENDPOINT = 'https://' + SHOPIFY_DOMAIN + '/api/' + API_VERSION + '/graphql.json';
 
   // ─── GraphQL query ──────────────────────────────────
@@ -163,27 +163,10 @@
   }
 
   // ─── Bind Add to Cart buttons on static cards ──────
-
+  // NOTE: Click handling is done by shopify-cart.js via event delegation.
+  // This function is kept as a no-op for backwards compatibility.
   function bindStaticButtons() {
-    document.querySelectorAll('.product-card__btn[data-variant-id]').forEach(function (btn) {
-      if (btn._bound) return;
-      btn._bound = true;
-      btn.addEventListener('click', function () {
-        var vid = this.dataset.variantId;
-        if (vid && window.MackCart) {
-          this.textContent = 'Adding...';
-          this.disabled = true;
-          var self = this;
-          window.MackCart.addToCart(vid, 1).then(function () {
-            self.textContent = 'Added ✓';
-            setTimeout(function () { self.textContent = 'Add to Cart'; self.disabled = false; }, 1500);
-          }).catch(function () {
-            self.textContent = 'Add to Cart';
-            self.disabled = false;
-          });
-        }
-      });
-    });
+    // Handled by shopify-cart.js
   }
 
   // ─── Update PDP (product detail page) ──────────────
