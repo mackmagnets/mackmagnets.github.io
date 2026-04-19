@@ -52,6 +52,7 @@
     '      node {',
     '        id',
     '        quantity',
+    '        attributes { key value }',
     '        merchandise {',
     '          ... on ProductVariant {',
     '            id title',
@@ -85,7 +86,8 @@
           variantTitle: m.title || '',
           variantId: m.id || '',
           price: (m.price && m.price.amount) || '0.00',
-          image: (m.image && m.image.url) || ''
+          image: (m.image && m.image.url) || '',
+          attributes: Array.isArray(n.attributes) ? n.attributes : []
         };
       });
     }
@@ -136,10 +138,16 @@
   }
 
   // ─── Add to cart ──────────────────────────────────────
-  function addToCart(variantId, quantity) {
+  function addToCart(variantId, quantity, attributes) {
     quantity = quantity || 1;
     if (variantId.indexOf('gid://') !== 0) {
       variantId = 'gid://shopify/ProductVariant/' + variantId;
+    }
+    var lineInput = { merchandiseId: variantId, quantity: quantity };
+    if (attributes && attributes.length) {
+      lineInput.attributes = attributes.map(function (a) {
+        return { key: String(a.key), value: String(a.value) };
+      });
     }
 
     // Wait for cart to be ready (handles race condition on page load)
@@ -162,7 +170,7 @@
 
     return gql(q, {
         cartId: cart.id,
-        lines: [{ merchandiseId: variantId, quantity: quantity }]
+        lines: [lineInput]
       }).then(function (data) {
         var errs = data.cartLinesAdd.userErrors;
         if (errs && errs.length) {
@@ -191,7 +199,8 @@
           CART_FRAGMENT
         ].join('\n');
         return gql(q2, {
-          lines: [{ merchandiseId: variantId, quantity: quantity }]
+          cartId: cart.id,
+          lines: [lineInput]
         }).then(function (data) {
           cart = parseCart(data.cartLinesAdd.cart);
           if (cart) localStorage.setItem(CART_STORAGE_KEY, cart.id);
@@ -339,11 +348,29 @@
         : '';
       var lineTotal = (parseFloat(item.price) * item.quantity).toFixed(2);
 
+      // Photo thumbnails from line-item attributes (Photo 1, Photo 2, ...)
+      var photoThumbs = '';
+      if (item.attributes && item.attributes.length) {
+        var photos = item.attributes.filter(function (a) {
+          return a && /^Photo\s+\d+$/i.test(a.key) && /^https?:\/\//.test(a.value);
+        });
+        if (photos.length) {
+          photoThumbs = '<div class="cart-item-photos" aria-label="Uploaded photos">' +
+            photos.map(function (p) {
+              return '<a href="' + p.value + '" target="_blank" rel="noopener" title="' + p.key + '">' +
+                '<img src="' + p.value + '" alt="' + p.key + '" width="32" height="32" loading="lazy">' +
+              '</a>';
+            }).join('') +
+          '</div>';
+        }
+      }
+
       return '<div class="cart-item">' +
         imgTag +
         '<div class="cart-item-details">' +
           '<h4 class="cart-item-title">' + item.title + '</h4>' +
           variantLabel +
+          photoThumbs +
           '<div class="cart-item-qty">' +
             '<button class="qty-btn" data-line-id="' + item.id + '" data-qty="' + (item.quantity - 1) + '" aria-label="Decrease quantity">\u2212</button>' +
             '<span class="qty-value">' + item.quantity + '</span>' +

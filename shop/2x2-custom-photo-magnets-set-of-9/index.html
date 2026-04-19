@@ -141,9 +141,13 @@
             </div>
           </div>
 
-          <a href="https://1pp0pw-1f.myshopify.com/products/2x2-custom-photo-magnets-set-of-9?variant=45254920896546" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener">Customize Your Photo →</a>
+          <div class="pdp-uploader" id="pdp-uploader-slots" aria-label="Photo uploads"></div>
 
-          <script type="application/json" id="pdp-variants-data">[{"id": "45254920896546", "title": "1 Magnet", "price": "3.99", "available": true, "option1": "1 Magnet", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_114311.jpg?v=1776628868"}, {"id": "45254920929314", "title": "3 Magnets", "price": "9.99", "available": true, "option1": "3 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1776628868"}, {"id": "45254920962082", "title": "6 Magnets", "price": "17.99", "available": true, "option1": "6 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1776628868"}, {"id": "45254920994850", "title": "9 Magnets", "price": "24.99", "available": true, "option1": "9 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_114311.jpg?v=1776628868"}]</script>
+          <button class="btn btn--primary btn--lg pdp-cta is-disabled" id="pdp-cta" data-variant-id="45254920896546" disabled aria-label="Add 2x2 Custom Photo Magnets to cart after uploading photos">Upload Photos First</button>
+
+          <p class="pdp-uploader__status" id="pdp-uploader-status" role="status" aria-live="polite"></p>
+
+          <script type="application/json" id="pdp-variants-data">[{"id": "45254920896546", "title": "1 Magnet", "price": "3.99", "available": true, "option1": "1 Magnet", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_114311.jpg?v=1776628868", "photos_required": 1}, {"id": "45254920929314", "title": "3 Magnets", "price": "9.99", "available": true, "option1": "3 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1776628868", "photos_required": 3}, {"id": "45254920962082", "title": "6 Magnets", "price": "17.99", "available": true, "option1": "6 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1776628868", "photos_required": 6}, {"id": "45254920994850", "title": "9 Magnets", "price": "24.99", "available": true, "option1": "9 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_114311.jpg?v=1776628868", "photos_required": 9}]</script>
 
           <div class="pdp-description">
             <p>Capture your favorite memories on compact 2x2" square magnets. Choose your quantity below — perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>
@@ -268,6 +272,8 @@
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/shopify-cart.js" defer></script>
   <script src="/assets/js/products.js" defer></script>
+  <script src="/assets/js/uploader-config.js" defer></script>
+  <script src="/assets/js/pdp-uploader.js" defer></script>
 
   <!-- Image gallery -->
   <script>

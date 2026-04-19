@@ -287,14 +287,12 @@ def build_product_page_html(product, all_products):
         for img in images if img.get('src')
     ])
 
-    # CTA — for custom products, link to Shopify hosted page (photo upload via Uploadery app)
-    # Variant ID is appended via JS as customer changes selection
+    # CTA — custom products use on-site uploader + Add to Cart (powered by Cloudflare Worker)
     if is_custom:
-        shopify_url = f'https://{SHOPIFY_DOMAIN}/products/{handle}?variant={variant_id}'
         if not available:
-            cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener" style="pointer-events:none;opacity:0.5;">Sold Out</a>'
+            cta_html = f'<button class="btn btn--primary btn--lg pdp-cta is-disabled" id="pdp-cta" disabled>Sold Out</button>'
         else:
-            cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener">Customize Your Photo →</a>'
+            cta_html = f'<button class="btn btn--primary btn--lg pdp-cta is-disabled" id="pdp-cta" data-variant-id="{escape(variant_id)}" disabled aria-label="Add {title} to cart after uploading photos">Upload Photos First</button>'
     elif not available:
         cta_html = f'<button class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" data-variant-id="{escape(variant_id)}" disabled>Sold Out</button>'
     else:
@@ -370,6 +368,15 @@ def build_product_page_html(product, all_products):
     variants_data = []
     for v in variants:
         feat = v.get('featured_image') or {}
+        # Compute required photo count from option1 (or title) leading digit.
+        # Puzzle products use 1 photo (we split into 9 tiles in fulfillment).
+        opt_str = (v.get('option1') or v.get('title') or '').lower()
+        title_lower = (product.get('title') or '').lower()
+        if 'puzzle' in opt_str or 'puzzle' in title_lower or 'mosaic' in title_lower:
+            photos_required = 1
+        else:
+            m = re.match(r'^\s*(\d+)', v.get('option1') or v.get('title') or '')
+            photos_required = int(m.group(1)) if m else 1
         variants_data.append({
             'id': str(v.get('id', '')),
             'title': v.get('title', ''),
@@ -379,6 +386,7 @@ def build_product_page_html(product, all_products):
             'option2': v.get('option2', ''),
             'option3': v.get('option3', ''),
             'image': feat.get('src', '') if isinstance(feat, dict) else '',
+            'photos_required': photos_required,
         })
     variants_json = json.dumps(variants_data)
     is_custom_json = json.dumps(is_custom)
@@ -411,6 +419,12 @@ def build_product_page_html(product, all_products):
         }
     }
     jsonld_str = json.dumps(product_jsonld, indent=2).replace('\n', '\n  ')
+
+    # Uploader UI (only renders for custom products; pdp-uploader.js takes over)
+    if is_custom:
+        uploader_section = '<div class="pdp-uploader" id="pdp-uploader-slots" aria-label="Photo uploads"></div>'
+    else:
+        uploader_section = ''
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -514,7 +528,11 @@ def build_product_page_html(product, all_products):
 
           {variant_section}
 
+          {uploader_section}
+
           {cta_html}
+
+          <p class="pdp-uploader__status" id="pdp-uploader-status" role="status" aria-live="polite"></p>
 
           <script type="application/json" id="pdp-variants-data">{variants_json}</script>
 
@@ -611,6 +629,8 @@ def build_product_page_html(product, all_products):
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/shopify-cart.js" defer></script>
   <script src="/assets/js/products.js" defer></script>
+  <script src="/assets/js/uploader-config.js" defer></script>
+  <script src="/assets/js/pdp-uploader.js" defer></script>
 
   <!-- Image gallery -->
   <script>

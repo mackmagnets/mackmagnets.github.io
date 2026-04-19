@@ -1,0 +1,12 @@
+name = "mackmagnets-uploader"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Public env vars (non-secrets) — set the rest with `wrangler secret put`
+[vars]
+SHOPIFY_STORE_DOMAIN = "1pp0pw-1f.myshopify.com"
+SHOPIFY_API_VERSION = "2025-01"
+ALLOWED_ORIGINS = "https://mackmagnets.com,https://www.mackmagnets.com,http://localhost:3000"
+
+# Secrets (set with: wrangler secret put SHOPIFY_ADMIN_TOKEN)
+#   SHOPIFY_ADMIN_TOKEN  <-- obtained one-time via worker/get-token.mjs

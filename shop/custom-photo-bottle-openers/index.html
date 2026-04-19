@@ -145,9 +145,13 @@
             </div>
           </div>
 
-          <a href="https://1pp0pw-1f.myshopify.com/products/custom-photo-bottle-openers?variant=45255085359138" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener">Customize Your Photo →</a>
+          <div class="pdp-uploader" id="pdp-uploader-slots" aria-label="Photo uploads"></div>
 
-          <script type="application/json" id="pdp-variants-data">[{"id": "45255085359138", "title": "1 Opener / Magnet Back", "price": "5.99", "available": true, "option1": "1 Opener", "option2": "Magnet Back", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235"}, {"id": "45255085391906", "title": "1 Opener / Keyring", "price": "5.99", "available": true, "option1": "1 Opener", "option2": "Keyring", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235"}, {"id": "45255085424674", "title": "1 Opener / Flat", "price": "5.99", "available": true, "option1": "1 Opener", "option2": "Flat", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235"}, {"id": "45255085457442", "title": "3 Openers / Magnet Back", "price": "14.99", "available": true, "option1": "3 Openers", "option2": "Magnet Back", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235"}, {"id": "45255085490210", "title": "3 Openers / Keyring", "price": "14.99", "available": true, "option1": "3 Openers", "option2": "Keyring", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235"}, {"id": "45255085522978", "title": "3 Openers / Flat", "price": "14.99", "available": true, "option1": "3 Openers", "option2": "Flat", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235"}]</script>
+          <button class="btn btn--primary btn--lg pdp-cta is-disabled" id="pdp-cta" data-variant-id="45255085359138" disabled aria-label="Add Custom Photo Bottle Openers to cart after uploading photos">Upload Photos First</button>
+
+          <p class="pdp-uploader__status" id="pdp-uploader-status" role="status" aria-live="polite"></p>
+
+          <script type="application/json" id="pdp-variants-data">[{"id": "45255085359138", "title": "1 Opener / Magnet Back", "price": "5.99", "available": true, "option1": "1 Opener", "option2": "Magnet Back", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235", "photos_required": 1}, {"id": "45255085391906", "title": "1 Opener / Keyring", "price": "5.99", "available": true, "option1": "1 Opener", "option2": "Keyring", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235", "photos_required": 1}, {"id": "45255085424674", "title": "1 Opener / Flat", "price": "5.99", "available": true, "option1": "1 Opener", "option2": "Flat", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235", "photos_required": 1}, {"id": "45255085457442", "title": "3 Openers / Magnet Back", "price": "14.99", "available": true, "option1": "3 Openers", "option2": "Magnet Back", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235", "photos_required": 3}, {"id": "45255085490210", "title": "3 Openers / Keyring", "price": "14.99", "available": true, "option1": "3 Openers", "option2": "Keyring", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235", "photos_required": 3}, {"id": "45255085522978", "title": "3 Openers / Flat", "price": "14.99", "available": true, "option1": "3 Openers", "option2": "Flat", "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235", "photos_required": 3}]</script>
 
           <div class="pdp-description">
             <p>Functional keepsakes that pop open your favorite drink. Choose your quantity and back type — magnet for the fridge, keyring for your keys, or flat for a clean look. Upload your photo and we'll do the rest.</p>
@@ -272,6 +276,8 @@
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/shopify-cart.js" defer></script>
   <script src="/assets/js/products.js" defer></script>
+  <script src="/assets/js/uploader-config.js" defer></script>
+  <script src="/assets/js/pdp-uploader.js" defer></script>
 
   <!-- Image gallery -->
   <script>

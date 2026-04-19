@@ -137,9 +137,13 @@
             </div>
           </div>
 
-          <a href="https://1pp0pw-1f.myshopify.com/products/photo-puzzle-magnets?variant=45255174717474" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener">Customize Your Photo →</a>
+          <div class="pdp-uploader" id="pdp-uploader-slots" aria-label="Photo uploads"></div>
 
-          <script type="application/json" id="pdp-variants-data">[{"id": "45255174717474", "title": "2x2 Puzzle (9 tiles)", "price": "19.99", "available": true, "option1": "2x2 Puzzle (9 tiles)", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_114542.jpg?v=1776632294"}, {"id": "45255174750242", "title": "2x3 Puzzle (9 tiles)", "price": "29.99", "available": true, "option1": "2x3 Puzzle (9 tiles)", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_113354.jpg?v=1776632294"}]</script>
+          <button class="btn btn--primary btn--lg pdp-cta is-disabled" id="pdp-cta" data-variant-id="45255174717474" disabled aria-label="Add Photo Puzzle Magnets to cart after uploading photos">Upload Photos First</button>
+
+          <p class="pdp-uploader__status" id="pdp-uploader-status" role="status" aria-live="polite"></p>
+
+          <script type="application/json" id="pdp-variants-data">[{"id": "45255174717474", "title": "2x2 Puzzle (9 tiles)", "price": "19.99", "available": true, "option1": "2x2 Puzzle (9 tiles)", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_114542.jpg?v=1776632294", "photos_required": 1}, {"id": "45255174750242", "title": "2x3 Puzzle (9 tiles)", "price": "29.99", "available": true, "option1": "2x3 Puzzle (9 tiles)", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_113354.jpg?v=1776632294", "photos_required": 1}]</script>
 
           <div class="pdp-description">
             <p>Turn one favorite photo into a 9-magnet mosaic. We split your image across 9 magnets that assemble into a single large picture on your fridge. Choose 2x2" tiles (6"×6" finished) or 2x3" tiles (6"×9" finished). Just upload one high-resolution photo — we handle the splitting and alignment. Made in USA.</p>
@@ -264,6 +268,8 @@
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/shopify-cart.js" defer></script>
   <script src="/assets/js/products.js" defer></script>
+  <script src="/assets/js/uploader-config.js" defer></script>
+  <script src="/assets/js/pdp-uploader.js" defer></script>
 
   <!-- Image gallery -->
   <script>

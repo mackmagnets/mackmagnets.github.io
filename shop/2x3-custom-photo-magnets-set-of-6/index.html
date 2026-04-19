@@ -140,9 +140,13 @@
             </div>
           </div>
 
-          <a href="https://1pp0pw-1f.myshopify.com/products/2x3-custom-photo-magnets-set-of-6?variant=45254968410146" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener">Customize Your Photo →</a>
+          <div class="pdp-uploader" id="pdp-uploader-slots" aria-label="Photo uploads"></div>
 
-          <script type="application/json" id="pdp-variants-data">[{"id": "45254968410146", "title": "1 Magnet", "price": "4.99", "available": true, "option1": "1 Magnet", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115331.jpg?v=1776629729"}, {"id": "45254968442914", "title": "3 Magnets", "price": "12.99", "available": true, "option1": "3 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_113651_0cc7b075-08db-4ab7-9a5f-14d6a1183670.jpg?v=1776629729"}, {"id": "45254968475682", "title": "6 Magnets", "price": "21.99", "available": true, "option1": "6 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115025_45881703-dd6c-4470-a739-6ed16fac2388.jpg?v=1776629729"}]</script>
+          <button class="btn btn--primary btn--lg pdp-cta is-disabled" id="pdp-cta" data-variant-id="45254968410146" disabled aria-label="Add 2x3 Custom Photo Magnets to cart after uploading photos">Upload Photos First</button>
+
+          <p class="pdp-uploader__status" id="pdp-uploader-status" role="status" aria-live="polite"></p>
+
+          <script type="application/json" id="pdp-variants-data">[{"id": "45254968410146", "title": "1 Magnet", "price": "4.99", "available": true, "option1": "1 Magnet", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115331.jpg?v=1776629729", "photos_required": 1}, {"id": "45254968442914", "title": "3 Magnets", "price": "12.99", "available": true, "option1": "3 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_113651_0cc7b075-08db-4ab7-9a5f-14d6a1183670.jpg?v=1776629729", "photos_required": 3}, {"id": "45254968475682", "title": "6 Magnets", "price": "21.99", "available": true, "option1": "6 Magnets", "option2": null, "option3": null, "image": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115025_45881703-dd6c-4470-a739-6ed16fac2388.jpg?v=1776629729", "photos_required": 6}]</script>
 
           <div class="pdp-description">
             <p>Capture your favorite memories on compact 2x3" square magnets. Choose your quantity below — perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>
@@ -267,6 +271,8 @@
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/shopify-cart.js" defer></script>
   <script src="/assets/js/products.js" defer></script>
+  <script src="/assets/js/uploader-config.js" defer></script>
+  <script src="/assets/js/pdp-uploader.js" defer></script>
 
   <!-- Image gallery -->
   <script>
