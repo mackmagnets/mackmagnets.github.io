@@ -18,6 +18,7 @@ const pages = [
   { name: 'PDP - 2x3 Custom Photo', path: '/shop/2x3-custom-photo-magnets-set-of-6/' },
   { name: 'PDP - Round Photo', path: '/shop/2-inch-round-custom-photo-magnets/' },
   { name: 'PDP - Bottle Openers', path: '/shop/custom-photo-bottle-openers/' },
+  { name: 'PDP - Photo Puzzle', path: '/shop/photo-puzzle-magnets/' },
 ];
 
 const viewports = [

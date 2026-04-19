@@ -811,13 +811,11 @@ def update_home_page(products):
     """Update the home page with featured products."""
     print('\nUpdating home page...')
 
-    # Featured = products tagged 'featured', or first 4 if none
+    # Featured = products tagged 'featured' first, then fill up to 4 with the rest
     tags_list = lambda p: [t.lower().strip() for t in p.get('tags', '').split(',') if t.strip()] if isinstance(p.get('tags'), str) else [t.lower() for t in p.get('tags', [])]
-    featured = [p for p in products if 'featured' in tags_list(p)]
-    if not featured:
-        featured = products[:4]
-    else:
-        featured = featured[:4]
+    tagged = [p for p in products if 'featured' in tags_list(p)]
+    rest = [p for p in products if 'featured' not in tags_list(p)]
+    featured = (tagged + rest)[:4]
 
     print(f'  {len(featured)} featured products')
 
