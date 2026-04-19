@@ -545,6 +545,30 @@ p { margin-bottom: 1rem; }
   gap: 1.5rem;
 }
 
+/* Featured grid on home: 3 columns, with leftover items centered on the last row */
+#featured-products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+#featured-products-grid > .product-card {
+  flex: 0 1 calc((100% - 3rem) / 3); /* 3 per row, accounting for 2 gaps of 1.5rem */
+  max-width: calc((100% - 3rem) / 3);
+}
+@media (max-width: 900px) {
+  #featured-products-grid > .product-card {
+    flex: 0 1 calc((100% - 1.5rem) / 2);
+    max-width: calc((100% - 1.5rem) / 2);
+  }
+}
+@media (max-width: 600px) {
+  #featured-products-grid > .product-card {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+}
+
 .product-card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
