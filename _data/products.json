@@ -1,16 +1,379 @@
 {
-  "lastUpdated": "2026-04-19T18:54:59.014957+00:00",
+  "lastUpdated": "2026-04-19T20:42:03.929689+00:00",
   "shopifyDomain": "1pp0pw-1f.myshopify.com",
-  "productCount": 2,
+  "productCount": 4,
   "products": [
     {
+      "id": 8378809647138,
+      "title": "Custom Photo Bottle Openers",
+      "handle": "custom-photo-bottle-openers",
+      "body_html": "<p>Functional keepsakes that pop open your favorite drink. Choose your quantity and back type \u2014 magnet for the fridge, keyring for your keys, or flat for a clean look. Upload your photo and we'll do the rest.</p>",
+      "published_at": "2026-04-19T13:39:07-07:00",
+      "created_at": "2026-04-19T13:39:06-07:00",
+      "updated_at": "2026-04-19T13:42:03-07:00",
+      "vendor": "Mack Magnets",
+      "product_type": "Custom Photo Bottle Openers",
+      "tags": [
+        "bottle openers",
+        "custom",
+        "keychain",
+        "magnet",
+        "personalized"
+      ],
+      "variants": [
+        {
+          "id": 45255085359138,
+          "title": "1 Opener / Magnet Back",
+          "option1": "1 Opener",
+          "option2": "Magnet Back",
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656623865890,
+            "product_id": 8378809647138,
+            "position": 2,
+            "created_at": "2026-04-19T13:23:53-07:00",
+            "updated_at": "2026-04-19T13:23:55-07:00",
+            "alt": null,
+            "width": 1726,
+            "height": 1006,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235",
+            "variant_ids": [
+              45255085359138,
+              45255085391906,
+              45255085424674
+            ]
+          },
+          "available": true,
+          "price": "5.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8378809647138,
+          "created_at": "2026-04-19T13:39:06-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45255085391906,
+          "title": "1 Opener / Keyring",
+          "option1": "1 Opener",
+          "option2": "Keyring",
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656623865890,
+            "product_id": 8378809647138,
+            "position": 2,
+            "created_at": "2026-04-19T13:23:53-07:00",
+            "updated_at": "2026-04-19T13:23:55-07:00",
+            "alt": null,
+            "width": 1726,
+            "height": 1006,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235",
+            "variant_ids": [
+              45255085359138,
+              45255085391906,
+              45255085424674
+            ]
+          },
+          "available": true,
+          "price": "5.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 2,
+          "product_id": 8378809647138,
+          "created_at": "2026-04-19T13:39:06-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45255085424674,
+          "title": "1 Opener / Flat",
+          "option1": "1 Opener",
+          "option2": "Flat",
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656623865890,
+            "product_id": 8378809647138,
+            "position": 2,
+            "created_at": "2026-04-19T13:23:53-07:00",
+            "updated_at": "2026-04-19T13:23:55-07:00",
+            "alt": null,
+            "width": 1726,
+            "height": 1006,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235",
+            "variant_ids": [
+              45255085359138,
+              45255085391906,
+              45255085424674
+            ]
+          },
+          "available": true,
+          "price": "5.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 3,
+          "product_id": 8378809647138,
+          "created_at": "2026-04-19T13:39:06-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45255085457442,
+          "title": "3 Openers / Magnet Back",
+          "option1": "3 Openers",
+          "option2": "Magnet Back",
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656623898658,
+            "product_id": 8378809647138,
+            "position": 1,
+            "created_at": "2026-04-19T13:23:53-07:00",
+            "updated_at": "2026-04-19T13:23:55-07:00",
+            "alt": null,
+            "width": 1722,
+            "height": 1932,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235",
+            "variant_ids": [
+              45255085457442,
+              45255085490210,
+              45255085522978
+            ]
+          },
+          "available": true,
+          "price": "14.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 4,
+          "product_id": 8378809647138,
+          "created_at": "2026-04-19T13:39:06-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45255085490210,
+          "title": "3 Openers / Keyring",
+          "option1": "3 Openers",
+          "option2": "Keyring",
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656623898658,
+            "product_id": 8378809647138,
+            "position": 1,
+            "created_at": "2026-04-19T13:23:53-07:00",
+            "updated_at": "2026-04-19T13:23:55-07:00",
+            "alt": null,
+            "width": 1722,
+            "height": 1932,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235",
+            "variant_ids": [
+              45255085457442,
+              45255085490210,
+              45255085522978
+            ]
+          },
+          "available": true,
+          "price": "14.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 5,
+          "product_id": 8378809647138,
+          "created_at": "2026-04-19T13:39:06-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45255085522978,
+          "title": "3 Openers / Flat",
+          "option1": "3 Openers",
+          "option2": "Flat",
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656623898658,
+            "product_id": 8378809647138,
+            "position": 1,
+            "created_at": "2026-04-19T13:23:53-07:00",
+            "updated_at": "2026-04-19T13:23:55-07:00",
+            "alt": null,
+            "width": 1722,
+            "height": 1932,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235",
+            "variant_ids": [
+              45255085457442,
+              45255085490210,
+              45255085522978
+            ]
+          },
+          "available": true,
+          "price": "14.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 6,
+          "product_id": 8378809647138,
+          "created_at": "2026-04-19T13:39:06-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 39656623898658,
+          "created_at": "2026-04-19T13:23:53-07:00",
+          "position": 1,
+          "updated_at": "2026-04-19T13:23:55-07:00",
+          "product_id": 8378809647138,
+          "variant_ids": [
+            45255085457442,
+            45255085490210,
+            45255085522978
+          ],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235",
+          "width": 1722,
+          "height": 1932
+        },
+        {
+          "id": 39656623865890,
+          "created_at": "2026-04-19T13:23:53-07:00",
+          "position": 2,
+          "updated_at": "2026-04-19T13:23:55-07:00",
+          "product_id": 8378809647138,
+          "variant_ids": [
+            45255085359138,
+            45255085391906,
+            45255085424674
+          ],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235",
+          "width": 1726,
+          "height": 1006
+        }
+      ],
+      "options": [
+        {
+          "name": "Quantity",
+          "position": 1,
+          "values": [
+            "1 Opener",
+            "3 Openers"
+          ]
+        },
+        {
+          "name": "Type",
+          "position": 2,
+          "values": [
+            "Magnet Back",
+            "Keyring",
+            "Flat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8378760429602,
+      "title": "2\u00bc Inch Round Custom Photo Magnets",
+      "handle": "2-inch-round-custom-photo-magnets",
+      "body_html": "<p>Round photo magnets \u2014 a classic shape with a modern twist. 2\u00bc inches in diameter, perfect for headshots, logos, or single-subject photos. Choose how many you'd like below.</p>",
+      "published_at": "2026-04-19T13:21:20-07:00",
+      "created_at": "2026-04-19T13:21:19-07:00",
+      "updated_at": "2026-04-19T13:42:03-07:00",
+      "vendor": "Mack Magnets",
+      "product_type": "Custom Photo Magnets",
+      "tags": [
+        "2.25 inch",
+        "personalized",
+        "photo gifts",
+        "round magnets"
+      ],
+      "variants": [
+        {
+          "id": 45255020773410,
+          "title": "1 Magnet",
+          "option1": "1 Magnet",
+          "option2": null,
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "2.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8378760429602,
+          "created_at": "2026-04-19T13:21:19-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45255020806178,
+          "title": "3 Magnets",
+          "option1": "3 Magnets",
+          "option2": null,
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "8.50",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 2,
+          "product_id": 8378760429602,
+          "created_at": "2026-04-19T13:21:19-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45255020838946,
+          "title": "6 Magnets",
+          "option1": "6 Magnets",
+          "option2": null,
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "16.50",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 3,
+          "product_id": 8378760429602,
+          "created_at": "2026-04-19T13:21:19-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        }
+      ],
+      "images": [],
+      "options": [
+        {
+          "name": "Quantity",
+          "position": 1,
+          "values": [
+            "1 Magnet",
+            "3 Magnets",
+            "6 Magnets"
+          ]
+        }
+      ]
+    },
+    {
       "id": 8357898321954,
-      "title": "2x2 Custom Photo Magnets (Set of 9)",
+      "title": "2x2 Custom Photo Magnets",
       "handle": "2x2-custom-photo-magnets-set-of-9",
-      "body_html": "<p>Our compact 2x2\" magnets pack more memories into less space! Perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. Upload 9 of your favorite shots and we'll turn them into adorable mini magnets. UV-resistant coating keeps them looking fresh. Made in USA.</p>",
+      "body_html": "<p>Capture your favorite memories on compact 2x2\" square magnets. Choose your quantity below \u2014 perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>",
       "published_at": "2026-04-02T19:05:35-07:00",
       "created_at": "2026-04-02T19:05:34-07:00",
-      "updated_at": "2026-04-19T11:54:58-07:00",
+      "updated_at": "2026-04-19T13:42:03-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -20,202 +383,205 @@
         "mini magnets",
         "personalized",
         "photo gifts",
-        "set of 9",
+        "quantity tiers",
         "square magnets"
       ],
       "variants": [
         {
-          "id": 45133787660322,
-          "title": "Default Title",
-          "option1": "Default Title",
+          "id": 45254920896546,
+          "title": "1 Magnet",
+          "option1": "1 Magnet",
           "option2": null,
           "option3": null,
           "sku": "MACK-CUSTOM-2X2-9",
           "requires_shipping": true,
           "taxable": true,
-          "featured_image": null,
+          "featured_image": {
+            "id": 39656538734626,
+            "product_id": 8357898321954,
+            "position": 1,
+            "created_at": "2026-04-19T12:58:52-07:00",
+            "updated_at": "2026-04-19T13:01:08-07:00",
+            "alt": null,
+            "width": 1832,
+            "height": 1858,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_114311.jpg?v=1776628868",
+            "variant_ids": [
+              45254920896546,
+              45254920994850
+            ]
+          },
           "available": true,
-          "price": "24.99",
+          "price": "3.99",
           "grams": 91,
           "compare_at_price": null,
           "position": 1,
           "product_id": 8357898321954,
-          "created_at": "2026-04-02T19:05:34-07:00",
-          "updated_at": "2026-04-19T11:54:58-07:00"
+          "created_at": "2026-04-19T12:55:17-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45254920929314,
+          "title": "3 Magnets",
+          "option1": "3 Magnets",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-CUSTOM-2X2-10",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39526912294946,
+            "product_id": 8357898321954,
+            "position": 3,
+            "created_at": "2026-04-02T19:03:40-07:00",
+            "updated_at": "2026-04-19T13:01:08-07:00",
+            "alt": null,
+            "width": 1280,
+            "height": 1223,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1776628868",
+            "variant_ids": [
+              45254920929314,
+              45254920962082
+            ]
+          },
+          "available": true,
+          "price": "9.99",
+          "grams": 91,
+          "compare_at_price": null,
+          "position": 2,
+          "product_id": 8357898321954,
+          "created_at": "2026-04-19T12:55:17-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45254920962082,
+          "title": "6 Magnets",
+          "option1": "6 Magnets",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-CUSTOM-2X2-11",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39526912294946,
+            "product_id": 8357898321954,
+            "position": 3,
+            "created_at": "2026-04-02T19:03:40-07:00",
+            "updated_at": "2026-04-19T13:01:08-07:00",
+            "alt": null,
+            "width": 1280,
+            "height": 1223,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1776628868",
+            "variant_ids": [
+              45254920929314,
+              45254920962082
+            ]
+          },
+          "available": true,
+          "price": "17.99",
+          "grams": 91,
+          "compare_at_price": null,
+          "position": 3,
+          "product_id": 8357898321954,
+          "created_at": "2026-04-19T12:55:17-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45254920994850,
+          "title": "9 Magnets",
+          "option1": "9 Magnets",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-CUSTOM-2X2-12",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656538734626,
+            "product_id": 8357898321954,
+            "position": 1,
+            "created_at": "2026-04-19T12:58:52-07:00",
+            "updated_at": "2026-04-19T13:01:08-07:00",
+            "alt": null,
+            "width": 1832,
+            "height": 1858,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_114311.jpg?v=1776628868",
+            "variant_ids": [
+              45254920896546,
+              45254920994850
+            ]
+          },
+          "available": true,
+          "price": "24.99",
+          "grams": 91,
+          "compare_at_price": null,
+          "position": 4,
+          "product_id": 8357898321954,
+          "created_at": "2026-04-19T12:55:17-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
         }
       ],
       "images": [
         {
-          "id": 39526912294946,
-          "created_at": "2026-04-02T19:03:40-07:00",
+          "id": 39656538734626,
+          "created_at": "2026-04-19T12:58:52-07:00",
           "position": 1,
-          "updated_at": "2026-04-02T19:03:41-07:00",
+          "updated_at": "2026-04-19T13:01:08-07:00",
+          "product_id": 8357898321954,
+          "variant_ids": [
+            45254920896546,
+            45254920994850
+          ],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_114311.jpg?v=1776628868",
+          "width": 1832,
+          "height": 1858
+        },
+        {
+          "id": 39656546730018,
+          "created_at": "2026-04-19T13:00:59-07:00",
+          "position": 2,
+          "updated_at": "2026-04-19T13:01:08-07:00",
           "product_id": 8357898321954,
           "variant_ids": [],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1775181821",
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_114051_620c9bde-42b2-47ce-9241-f9ad40fba74e.jpg?v=1776628868",
+          "width": 1808,
+          "height": 1862
+        },
+        {
+          "id": 39526912294946,
+          "created_at": "2026-04-02T19:03:40-07:00",
+          "position": 3,
+          "updated_at": "2026-04-19T13:01:08-07:00",
+          "product_id": 8357898321954,
+          "variant_ids": [
+            45254920929314,
+            45254920962082
+          ],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-display-2.jpg?v=1776628868",
           "width": 1280,
           "height": 1223
         }
       ],
       "options": [
         {
-          "name": "Title",
+          "name": "Quantity",
           "position": 1,
           "values": [
-            "Default Title"
-          ]
-        }
-      ]
-    },
-    {
-      "id": 8357898223650,
-      "title": "Holiday & Christmas Magnets",
-      "handle": "holiday-christmas-magnets",
-      "body_html": "<p>Celebrate the season with our festive holiday magnet collection! Features Christmas-themed designs, winter scenes, and seasonal artwork. Beautiful as stocking stuffers, gift toppers, or fridge decor for the holidays. Printed on premium material with strong magnetic backing.</p>",
-      "published_at": "2026-04-02T19:03:13-07:00",
-      "created_at": "2026-04-02T19:03:12-07:00",
-      "updated_at": "2026-04-19T11:54:58-07:00",
-      "vendor": "Mack Magnets",
-      "product_type": "Holiday Magnets",
-      "tags": [
-        "christmas",
-        "christmas magnets",
-        "festive",
-        "gift",
-        "holiday",
-        "seasonal",
-        "stocking stuffer",
-        "winter"
-      ],
-      "variants": [
-        {
-          "id": 45133786808354,
-          "title": "Default Title",
-          "option1": "Default Title",
-          "option2": null,
-          "option3": null,
-          "sku": "MACK-HOLIDAY-XMAS",
-          "requires_shipping": true,
-          "taxable": true,
-          "featured_image": null,
-          "available": true,
-          "price": "16.99",
-          "grams": 91,
-          "compare_at_price": null,
-          "position": 1,
-          "product_id": 8357898223650,
-          "created_at": "2026-04-02T19:03:12-07:00",
-          "updated_at": "2026-04-19T11:54:58-07:00"
-        }
-      ],
-      "images": [
-        {
-          "id": 39526909902882,
-          "created_at": "2026-04-02T19:01:19-07:00",
-          "position": 1,
-          "updated_at": "2026-04-02T19:01:21-07:00",
-          "product_id": 8357898223650,
-          "variant_ids": [],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/christmas-display.jpg?v=1775181681",
-          "width": 1265,
-          "height": 1280
-        }
-      ],
-      "options": [
-        {
-          "name": "Title",
-          "position": 1,
-          "values": [
-            "Default Title"
-          ]
-        }
-      ]
-    },
-    {
-      "id": 8357897895970,
-      "title": "Fun & Novelty Magnets (Assorted Pack)",
-      "handle": "fun-novelty-magnets-assorted-pack",
-      "body_html": "<p>Add some personality to your fridge! Our fun &amp; novelty magnets feature hilarious sayings, cute animals, and quirky designs. From \"Clean/Dirty\" dishwasher magnets to sassy cow art and pop culture humor \u2014 there's something for everyone. Each magnet is printed on premium material with a strong magnetic backing. Perfect housewarming gift, stocking stuffer, or just treating yourself.</p>",
-      "published_at": "2026-04-02T19:00:27-07:00",
-      "created_at": "2026-04-02T19:00:26-07:00",
-      "updated_at": "2026-04-19T11:54:58-07:00",
-      "vendor": "Mack Magnets",
-      "product_type": "Novelty Magnets",
-      "tags": [
-        "animals",
-        "clean dirty",
-        "dishwasher",
-        "fun magnets",
-        "funny",
-        "gift",
-        "housewarming",
-        "humor",
-        "novelty",
-        "stocking stuffer"
-      ],
-      "variants": [
-        {
-          "id": 45133783597090,
-          "title": "Default Title",
-          "option1": "Default Title",
-          "option2": null,
-          "option3": null,
-          "sku": "MACK-FUN-NOVELTY-ASST",
-          "requires_shipping": true,
-          "taxable": true,
-          "featured_image": null,
-          "available": true,
-          "price": "14.99",
-          "grams": 91,
-          "compare_at_price": null,
-          "position": 1,
-          "product_id": 8357897895970,
-          "created_at": "2026-04-02T19:00:26-07:00",
-          "updated_at": "2026-04-19T11:54:58-07:00"
-        }
-      ],
-      "images": [
-        {
-          "id": 39526903021602,
-          "created_at": "2026-04-02T18:58:09-07:00",
-          "position": 1,
-          "updated_at": "2026-04-02T18:58:11-07:00",
-          "product_id": 8357897895970,
-          "variant_ids": [],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fun-magnets-wood.jpg?v=1775181491",
-          "width": 1272,
-          "height": 1280
-        },
-        {
-          "id": 39526903054370,
-          "created_at": "2026-04-02T18:58:09-07:00",
-          "position": 2,
-          "updated_at": "2026-04-02T18:58:11-07:00",
-          "product_id": 8357897895970,
-          "variant_ids": [],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fun-magnets-wood-2.jpg?v=1775181491",
-          "width": 591,
-          "height": 1280
-        }
-      ],
-      "options": [
-        {
-          "name": "Title",
-          "position": 1,
-          "values": [
-            "Default Title"
+            "1 Magnet",
+            "3 Magnets",
+            "6 Magnets",
+            "9 Magnets"
           ]
         }
       ]
     },
     {
       "id": 8355682517026,
-      "title": "2x3 Custom Photo Magnets (Set of 6)",
+      "title": "2x3 Custom Photo Magnets",
       "handle": "2x3-custom-photo-magnets-set-of-6",
-      "body_html": "<pre class=\"quote-like quote-like-border code\">Turn your favorite memories into beautiful 2x3\" custom photo magnets! Upload 6 of your best photos and we'll create high-quality, UV-resistant magnets perfect for your fridge, locker, or office. Made with love in the USA. Great gift for birthdays, holidays, and everyday moments.</pre>",
+      "body_html": "<p>Capture your favorite memories on compact 2x3\" square magnets. Choose your quantity below \u2014 perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>",
       "published_at": "2026-03-31T20:39:23-07:00",
       "created_at": "2026-03-31T20:39:22-07:00",
-      "updated_at": "2026-04-19T11:54:58-07:00",
+      "updated_at": "2026-04-19T13:42:03-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -225,71 +591,155 @@
         "fridge magnets",
         "gift",
         "personalized",
-        "photo gifts",
-        "set of 6"
+        "photo gifts"
       ],
       "variants": [
         {
-          "id": 45119343558690,
-          "title": "Default Title",
-          "option1": "Default Title",
+          "id": 45254968410146,
+          "title": "1 Magnet",
+          "option1": "1 Magnet",
           "option2": null,
           "option3": null,
           "sku": "MACK-CUSTOM-2X3-6",
           "requires_shipping": true,
           "taxable": true,
-          "featured_image": null,
+          "featured_image": {
+            "id": 39656583561250,
+            "product_id": 8355682517026,
+            "position": 2,
+            "created_at": "2026-04-19T13:12:09-07:00",
+            "updated_at": "2026-04-19T13:15:29-07:00",
+            "alt": null,
+            "width": 1778,
+            "height": 1844,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115331.jpg?v=1776629729",
+            "variant_ids": [
+              45254968410146
+            ]
+          },
           "available": true,
-          "price": "24.99",
+          "price": "4.99",
           "grams": 136,
           "compare_at_price": null,
           "position": 1,
           "product_id": 8355682517026,
-          "created_at": "2026-03-31T20:39:22-07:00",
-          "updated_at": "2026-04-19T11:54:58-07:00"
+          "created_at": "2026-04-19T13:11:26-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45254968442914,
+          "title": "3 Magnets",
+          "option1": "3 Magnets",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-CUSTOM-2X3-7",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656590344226,
+            "product_id": 8355682517026,
+            "position": 1,
+            "created_at": "2026-04-19T13:14:22-07:00",
+            "updated_at": "2026-04-19T13:15:29-07:00",
+            "alt": null,
+            "width": 1848,
+            "height": 2326,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_113651_0cc7b075-08db-4ab7-9a5f-14d6a1183670.jpg?v=1776629729",
+            "variant_ids": [
+              45254968442914
+            ]
+          },
+          "available": true,
+          "price": "12.99",
+          "grams": 136,
+          "compare_at_price": null,
+          "position": 2,
+          "product_id": 8355682517026,
+          "created_at": "2026-04-19T13:11:26-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
+        },
+        {
+          "id": 45254968475682,
+          "title": "6 Magnets",
+          "option1": "6 Magnets",
+          "option2": null,
+          "option3": null,
+          "sku": "MACK-CUSTOM-2X3-8",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 39656588312610,
+            "product_id": 8355682517026,
+            "position": 3,
+            "created_at": "2026-04-19T13:13:39-07:00",
+            "updated_at": "2026-04-19T13:15:29-07:00",
+            "alt": null,
+            "width": 1786,
+            "height": 2172,
+            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115025_45881703-dd6c-4470-a739-6ed16fac2388.jpg?v=1776629729",
+            "variant_ids": [
+              45254968475682
+            ]
+          },
+          "available": true,
+          "price": "21.99",
+          "grams": 136,
+          "compare_at_price": null,
+          "position": 3,
+          "product_id": 8355682517026,
+          "created_at": "2026-04-19T13:11:26-07:00",
+          "updated_at": "2026-04-19T13:42:03-07:00"
         }
       ],
       "images": [
         {
-          "id": 39526894567458,
-          "created_at": "2026-04-02T18:53:13-07:00",
+          "id": 39656590344226,
+          "created_at": "2026-04-19T13:14:22-07:00",
           "position": 1,
-          "updated_at": "2026-04-02T18:53:15-07:00",
+          "updated_at": "2026-04-19T13:15:29-07:00",
           "product_id": 8355682517026,
-          "variant_ids": [],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/brand-flyer_edc0cd09-1a34-4d82-af0e-8b504ed7a86d.jpg?v=1775181195",
-          "width": 591,
-          "height": 1280
+          "variant_ids": [
+            45254968442914
+          ],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260408_113651_0cc7b075-08db-4ab7-9a5f-14d6a1183670.jpg?v=1776629729",
+          "width": 1848,
+          "height": 2326
         },
         {
-          "id": 39526894600226,
-          "created_at": "2026-04-02T18:53:13-07:00",
+          "id": 39656583561250,
+          "created_at": "2026-04-19T13:12:09-07:00",
           "position": 2,
-          "updated_at": "2026-04-02T18:53:15-07:00",
+          "updated_at": "2026-04-19T13:15:29-07:00",
           "product_id": 8355682517026,
-          "variant_ids": [],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/flat-lay-marble_f7c13e03-4b4a-4233-8618-83e4f81a5d50.jpg?v=1775181195",
-          "width": 1280,
-          "height": 1260
+          "variant_ids": [
+            45254968410146
+          ],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115331.jpg?v=1776629729",
+          "width": 1778,
+          "height": 1844
         },
         {
-          "id": 39526894632994,
-          "created_at": "2026-04-02T18:53:13-07:00",
+          "id": 39656588312610,
+          "created_at": "2026-04-19T13:13:39-07:00",
           "position": 3,
-          "updated_at": "2026-04-02T18:53:15-07:00",
+          "updated_at": "2026-04-19T13:15:29-07:00",
           "product_id": 8355682517026,
-          "variant_ids": [],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fridge-closeup_bc4938d3-7f65-4d1c-9469-c995dc47b39d.jpg?v=1775181195",
-          "width": 591,
-          "height": 1280
+          "variant_ids": [
+            45254968475682
+          ],
+          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115025_45881703-dd6c-4470-a739-6ed16fac2388.jpg?v=1776629729",
+          "width": 1786,
+          "height": 2172
         }
       ],
       "options": [
         {
-          "name": "Title",
+          "name": "Quantity",
           "position": 1,
           "values": [
-            "Default Title"
+            "1 Magnet",
+            "3 Magnets",
+            "6 Magnets"
           ]
         }
       ]
