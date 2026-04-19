@@ -369,6 +369,7 @@ def build_product_page_html(product, all_products):
     # Variants data for client-side JS (variant lookup by option combo)
     variants_data = []
     for v in variants:
+        feat = v.get('featured_image') or {}
         variants_data.append({
             'id': str(v.get('id', '')),
             'title': v.get('title', ''),
@@ -377,6 +378,7 @@ def build_product_page_html(product, all_products):
             'option1': v.get('option1', ''),
             'option2': v.get('option2', ''),
             'option3': v.get('option3', ''),
+            'image': feat.get('src', '') if isinstance(feat, dict) else '',
         })
     variants_json = json.dumps(variants_data)
     is_custom_json = json.dumps(is_custom)

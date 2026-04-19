@@ -203,6 +203,25 @@
         const v = findVariant();
         if (!v) return;
         if (priceEl) priceEl.textContent = fmtPrice(v.price);
+        // Swap main image if variant has its own featured image
+        if (v.image) {
+          const baseUrl = v.image.split('?')[0];
+          const sizedUrl = v.image + (v.image.indexOf('?') > -1 ? '&width=800' : '?width=800');
+          const mainImg = document.getElementById('pdp-main-img');
+          if (mainImg && mainImg.getAttribute('src') !== sizedUrl) {
+            mainImg.setAttribute('src', sizedUrl);
+          }
+          // Highlight matching thumbnail (compare by base URL, ignoring size params)
+          document.querySelectorAll('.pdp-thumb').forEach(t => {
+            const tImg = t.querySelector('img');
+            const tBase = tImg ? (tImg.getAttribute('src') || '').split('?')[0] : '';
+            if (tBase === baseUrl) {
+              t.classList.add('active');
+            } else {
+              t.classList.remove('active');
+            }
+          });
+        }
         if (ctaEl) {
           if (isCustom && shopifyBase) {
             ctaEl.setAttribute('href', shopifyBase + '?variant=' + encodeURIComponent(v.id));
