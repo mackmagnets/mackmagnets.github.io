@@ -163,4 +163,85 @@
     }
   });
 
+  // --- PDP Variant Selector ---
+  // Reads variant data injected by sync-products.py and wires up
+  // option chips to update price + CTA URL live.
+  const pdpEl = document.querySelector('.pdp');
+  const variantsDataEl = document.getElementById('pdp-variants-data');
+  if (pdpEl && variantsDataEl) {
+    let variants = [];
+    try { variants = JSON.parse(variantsDataEl.textContent || '[]'); } catch (e) {}
+
+    if (variants.length > 1) {
+      const priceEl = document.getElementById('pdp-price');
+      const ctaEl = document.getElementById('pdp-cta');
+      const isCustom = pdpEl.dataset.isCustom === 'true';
+      const shopifyBase = pdpEl.dataset.shopifyUrl || '';
+      const selected = {}; // { 1: "1 Magnet", 2: "Magnet Back" }
+
+      // Initialize defaults from currently-pressed chips
+      document.querySelectorAll('.pdp-option-chip[aria-pressed="true"]').forEach(btn => {
+        const idx = parseInt(btn.dataset.optionIndex, 10);
+        selected[idx] = btn.dataset.optionValue;
+      });
+
+      function findVariant() {
+        return variants.find(v => {
+          if (selected[1] !== undefined && v.option1 !== selected[1]) return false;
+          if (selected[2] !== undefined && v.option2 !== selected[2]) return false;
+          if (selected[3] !== undefined && v.option3 !== selected[3]) return false;
+          return true;
+        });
+      }
+
+      function fmtPrice(p) {
+        const n = parseFloat(p || '0');
+        return '$' + n.toFixed(2);
+      }
+
+      function updateUI() {
+        const v = findVariant();
+        if (!v) return;
+        if (priceEl) priceEl.textContent = fmtPrice(v.price);
+        if (ctaEl) {
+          if (isCustom && shopifyBase) {
+            ctaEl.setAttribute('href', shopifyBase + '?variant=' + encodeURIComponent(v.id));
+          } else {
+            ctaEl.setAttribute('data-variant-id', v.id);
+          }
+          if (v.available === false) {
+            ctaEl.setAttribute('aria-disabled', 'true');
+            ctaEl.classList.add('is-disabled');
+            ctaEl.textContent = 'Sold Out';
+          } else {
+            ctaEl.removeAttribute('aria-disabled');
+            ctaEl.classList.remove('is-disabled');
+            // Restore default text only if it was changed to Sold Out
+            if (ctaEl.textContent === 'Sold Out') {
+              ctaEl.textContent = isCustom ? 'Customize Your Photo →' : 'Add to Cart';
+            }
+          }
+        }
+      }
+
+      // Wire up chip clicks
+      document.querySelectorAll('.pdp-option-chip').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const idx = parseInt(this.dataset.optionIndex, 10);
+          const val = this.dataset.optionValue;
+          // Deselect siblings in same group
+          document.querySelectorAll(`.pdp-option-chip[data-option-index="${idx}"]`).forEach(sib => {
+            sib.setAttribute('aria-pressed', 'false');
+          });
+          this.setAttribute('aria-pressed', 'true');
+          selected[idx] = val;
+          updateUI();
+        });
+      });
+
+      // Initial sync
+      updateUI();
+    }
+  }
+
 })();

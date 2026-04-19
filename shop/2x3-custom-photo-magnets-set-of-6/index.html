@@ -103,7 +103,11 @@
   </section>
 
   <!-- Product Detail -->
-  <section class="pdp" data-product-id="8355682517026">
+  <section class="pdp"
+           data-product-id="8355682517026"
+           data-product-handle="2x3-custom-photo-magnets-set-of-6"
+           data-shopify-url="https://1pp0pw-1f.myshopify.com/products/2x3-custom-photo-magnets-set-of-6"
+           data-is-custom="true">
     <div class="container">
       <div class="pdp-layout">
 
@@ -123,11 +127,13 @@
         <!-- Info -->
         <div class="pdp-info">
           <h1 class="pdp-title">2x3 Custom Photo Magnets (Set of 6)</h1>
-          <p class="pdp-price">$24.99</p>
+          <p class="pdp-price" id="pdp-price">$24.99</p>
 
           
 
-          <a href="https://1pp0pw-1f.myshopify.com/products/2x3-custom-photo-magnets-set-of-6" class="btn btn--primary btn--lg pdp-cta" target="_blank" rel="noopener">Customize &amp; Order →</a>
+          <a href="https://1pp0pw-1f.myshopify.com/products/2x3-custom-photo-magnets-set-of-6?variant=45119343558690" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener">Customize Your Photo →</a>
+
+          <script type="application/json" id="pdp-variants-data">[{"id": "45119343558690", "title": "Default Title", "price": "24.99", "available": true, "option1": "Default Title", "option2": null, "option3": null}]</script>
 
           <div class="pdp-description">
             <pre class="quote-like quote-like-border code">Turn your favorite memories into beautiful 2x3" custom photo magnets! Upload 6 of your best photos and we'll create high-quality, UV-resistant magnets perfect for your fridge, locker, or office. Made with love in the USA. Great gift for birthdays, holidays, and everyday moments.</pre>
@@ -168,22 +174,6 @@
           </div>
           <h4 class="related-card-title">2x2 Custom Photo Magnets (Set of 9)</h4>
           <p class="related-card-price">$24.99</p>
-        </a>
-
-        <a href="/shop/holiday-christmas-magnets/" class="related-card">
-          <div class="related-card-image">
-            <img src="https://cdn.shopify.com/s/files/1/0778/5732/5090/files/christmas-display.jpg?v=1775181681&width=400" alt="Holiday &amp; Christmas Magnets" width="400" height="400" loading="lazy">
-          </div>
-          <h4 class="related-card-title">Holiday &amp; Christmas Magnets</h4>
-          <p class="related-card-price">$16.99</p>
-        </a>
-
-        <a href="/shop/fun-novelty-magnets-assorted-pack/" class="related-card">
-          <div class="related-card-image">
-            <img src="https://cdn.shopify.com/s/files/1/0778/5732/5090/files/fun-magnets-wood.jpg?v=1775181491&width=400" alt="Fun &amp; Novelty Magnets (Assorted Pack)" width="400" height="400" loading="lazy">
-          </div>
-          <h4 class="related-card-title">Fun &amp; Novelty Magnets (Assorted Pack)</h4>
-          <p class="related-card-price">$14.99</p>
         </a>
       </div>
       <div style="text-align:center;margin-top:2rem;">
@@ -260,25 +250,6 @@
             mainImg.alt = this.querySelector('img').alt;
             thumbs.forEach(function(t) { t.classList.remove('active'); });
             this.classList.add('active');
-          }
-        });
-      });
-    }
-  })();
-  </script>
-
-  <!-- Variant selector -->
-  <script>
-  (function() {
-    var radios = document.querySelectorAll('input[name="variant"]');
-    var ctaBtn = document.querySelector('.pdp-cta[data-variant-id]');
-    if (radios.length > 1 && ctaBtn) {
-      radios.forEach(function(radio) {
-        radio.addEventListener('change', function() {
-          ctaBtn.setAttribute('data-variant-id', this.value);
-          var priceEl = document.querySelector('.pdp-price');
-          if (priceEl && this.dataset.price) {
-            priceEl.textContent = this.dataset.price;
           }
         });
       });

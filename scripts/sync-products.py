@@ -75,12 +75,32 @@ def save_json(products):
 
 
 def is_custom_product(product):
-    """Check if product requires Shopify hosted page (photo upload)."""
-    tags = [t.lower().strip() for t in product.get('tags', '').split(',') if t.strip()] if isinstance(product.get('tags'), str) else [t.lower() for t in product.get('tags', [])]
-    if 'custom photo magnets' in tags:
+    """Check if product requires Shopify hosted page (photo upload).
+
+    A product is "custom" (needs photo upload) when:
+    - tag includes 'custom photo magnets', 'custom', or 'custom-bottle-openers', OR
+    - title contains 'custom photo' or 'custom bottle' or 'custom keychain', OR
+    - product_type starts with 'Custom'
+    """
+    tags_raw = product.get('tags', [])
+    if isinstance(tags_raw, str):
+        tags = [t.lower().strip() for t in tags_raw.split(',') if t.strip()]
+    else:
+        tags = [str(t).lower().strip() for t in tags_raw]
+
+    custom_tags = {'custom photo magnets', 'custom', 'custom bottle openers', 'custom-bottle-openers'}
+    if any(t in custom_tags for t in tags):
         return True
+
     title_lower = product.get('title', '').lower()
-    return 'custom photo' in title_lower
+    if 'custom photo' in title_lower or 'custom bottle' in title_lower or 'custom keychain' in title_lower:
+        return True
+
+    ptype = (product.get('product_type', '') or '').lower()
+    if ptype.startswith('custom'):
+        return True
+
+    return False
 
 
 def get_badge(product):
@@ -267,19 +287,18 @@ def build_product_page_html(product, all_products):
         for img in images if img.get('src')
     ])
 
-    # CTA
+    # CTA — for custom products, link to Shopify hosted page (photo upload via Uploadery app)
+    # Variant ID is appended via JS as customer changes selection
     if is_custom:
-        # Custom products link to Shopify hosted page (photo upload)
-        # The cart JS intercepts this link and shows a modal if cart has items
-        shopify_url = f'https://{SHOPIFY_DOMAIN}/products/{handle}'
+        shopify_url = f'https://{SHOPIFY_DOMAIN}/products/{handle}?variant={variant_id}'
         if not available:
-            cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" target="_blank" rel="noopener" style="pointer-events:none;opacity:0.5;">Sold Out</a>'
+            cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener" style="pointer-events:none;opacity:0.5;">Sold Out</a>'
         else:
-            cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" target="_blank" rel="noopener">Customize &amp; Order →</a>'
+            cta_html = f'<a href="{escape(shopify_url)}" class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" target="_blank" rel="noopener">Customize Your Photo →</a>'
     elif not available:
-        cta_html = f'<button class="btn btn--primary btn--lg pdp-cta" data-variant-id="{escape(variant_id)}" disabled>Sold Out</button>'
+        cta_html = f'<button class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" data-variant-id="{escape(variant_id)}" disabled>Sold Out</button>'
     else:
-        cta_html = f'<button class="btn btn--primary btn--lg pdp-cta" data-variant-id="{escape(variant_id)}" aria-label="Add {title} to cart">Add to Cart</button>'
+        cta_html = f'<button class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" data-variant-id="{escape(variant_id)}" aria-label="Add {title} to cart">Add to Cart</button>'
 
     # Related products (excluding self, max 4)
     related = [p for p in all_products if str(p.get('id', '')) != product_id][:4]
@@ -299,24 +318,69 @@ def build_product_page_html(product, all_products):
         </a>''')
     related_html = '\n\n'.join(related_cards)
 
-    # Variant selector
+    # ─── Variant selector ───────────────────────────────────────
+    # Build a multi-axis option selector (Quantity, Type, etc.).
+    # Shopify products have `options` (e.g. [{name:"Quantity", values:["1","3","6"]}])
+    # and `variants` with option1/option2/option3 fields.
     variant_section = ''
-    if len(variants) > 1:
-        variant_options = []
-        for v in variants:
-            v_title = escape(v.get('title', ''))
-            v_price = float(v.get('price', '0'))
-            v_id = escape(str(v.get('id', '')))
-            v_avail = v.get('available', True)
-            disabled = ' disabled' if not v_avail else ''
-            checked = ' checked' if v == variants[0] else ''
-            variant_options.append(
-                f'<label class="pdp-variant-option">'
-                f'<input type="radio" name="variant" value="{v_id}" data-price="${v_price:.2f}"{checked}{disabled}>'
-                f'<span>{v_title} — ${v_price:.2f}</span>'
-                f'</label>'
+    options_meta = product.get('options', []) or []
+    # Filter out the default "Title" option that Shopify adds for single-variant products
+    real_options = [
+        o for o in options_meta
+        if not (len(o.get('values', [])) == 1 and o.get('values', [''])[0] == 'Default Title')
+    ]
+
+    if len(variants) > 1 and real_options:
+        option_groups = []
+        for opt_idx, opt in enumerate(real_options, start=1):
+            opt_name = opt.get('name', f'Option {opt_idx}')
+            opt_values = opt.get('values', [])
+            opt_key = f'option{opt_idx}'
+            buttons = []
+            for val in opt_values:
+                val_esc = escape(val)
+                # Check if any available variant uses this value (for disabled state)
+                has_available = any(
+                    v.get(opt_key) == val and v.get('available', True)
+                    for v in variants
+                )
+                disabled_attr = '' if has_available else ' data-unavailable="true"'
+                # First value is selected by default
+                checked = ' aria-pressed="true"' if val == opt_values[0] else ' aria-pressed="false"'
+                buttons.append(
+                    f'<button type="button" class="pdp-option-chip" '
+                    f'data-option-index="{opt_idx}" data-option-value="{val_esc}"'
+                    f'{checked}{disabled_attr}>{val_esc}</button>'
+                )
+            option_groups.append(
+                f'<div class="pdp-option-group" data-option-name="{escape(opt_name)}">\n'
+                f'              <h3 class="pdp-variants-label">{escape(opt_name)}</h3>\n'
+                f'              <div class="pdp-option-chips">\n                '
+                + '\n                '.join(buttons) +
+                f'\n              </div>\n'
+                f'            </div>'
             )
-        variant_section = '<div class="pdp-variants">\n            <h3 class="pdp-variants-label">Options</h3>\n            ' + '\n            '.join(variant_options) + '\n          </div>'
+        variant_section = (
+            '<div class="pdp-variants" id="pdp-variants">\n            '
+            + '\n            '.join(option_groups)
+            + '\n          </div>'
+        )
+
+    # Variants data for client-side JS (variant lookup by option combo)
+    variants_data = []
+    for v in variants:
+        variants_data.append({
+            'id': str(v.get('id', '')),
+            'title': v.get('title', ''),
+            'price': v.get('price', '0'),
+            'available': v.get('available', True),
+            'option1': v.get('option1', ''),
+            'option2': v.get('option2', ''),
+            'option3': v.get('option3', ''),
+        })
+    variants_json = json.dumps(variants_data)
+    is_custom_json = json.dumps(is_custom)
+    shopify_product_url = f'https://{SHOPIFY_DOMAIN}/products/{handle}'
 
     # Description fallback
     if not body_html:
@@ -425,7 +489,11 @@ def build_product_page_html(product, all_products):
   </section>
 
   <!-- Product Detail -->
-  <section class="pdp" data-product-id="{escape(product_id)}">
+  <section class="pdp"
+           data-product-id="{escape(product_id)}"
+           data-product-handle="{escape(handle)}"
+           data-shopify-url="{escape(shopify_product_url)}"
+           data-is-custom="{str(is_custom).lower()}">
     <div class="container">
       <div class="pdp-layout">
 
@@ -440,11 +508,13 @@ def build_product_page_html(product, all_products):
         <!-- Info -->
         <div class="pdp-info">
           <h1 class="pdp-title">{title}</h1>
-          <p class="pdp-price">{price_html}</p>
+          <p class="pdp-price" id="pdp-price">{price_html}</p>
 
           {variant_section}
 
           {cta_html}
+
+          <script type="application/json" id="pdp-variants-data">{variants_json}</script>
 
           <div class="pdp-description">
             {body_html}
@@ -555,25 +625,6 @@ def build_product_page_html(product, all_products):
             mainImg.alt = this.querySelector('img').alt;
             thumbs.forEach(function(t) {{ t.classList.remove('active'); }});
             this.classList.add('active');
-          }}
-        }});
-      }});
-    }}
-  }})();
-  </script>
-
-  <!-- Variant selector -->
-  <script>
-  (function() {{
-    var radios = document.querySelectorAll('input[name="variant"]');
-    var ctaBtn = document.querySelector('.pdp-cta[data-variant-id]');
-    if (radios.length > 1 && ctaBtn) {{
-      radios.forEach(function(radio) {{
-        radio.addEventListener('change', function() {{
-          ctaBtn.setAttribute('data-variant-id', this.value);
-          var priceEl = document.querySelector('.pdp-price');
-          if (priceEl && this.dataset.price) {{
-            priceEl.textContent = this.dataset.price;
           }}
         }});
       }});

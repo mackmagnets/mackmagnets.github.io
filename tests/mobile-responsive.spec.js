@@ -16,8 +16,6 @@ const pages = [
   { name: 'Terms of Service', path: '/policies/terms/' },
   { name: 'PDP - 2x2 Custom Photo', path: '/shop/2x2-custom-photo-magnets-set-of-9/' },
   { name: 'PDP - 2x3 Custom Photo', path: '/shop/2x3-custom-photo-magnets-set-of-6/' },
-  { name: 'PDP - Fun Novelty', path: '/shop/fun-novelty-magnets-assorted-pack/' },
-  { name: 'PDP - Holiday Christmas', path: '/shop/holiday-christmas-magnets/' },
 ];
 
 const viewports = [

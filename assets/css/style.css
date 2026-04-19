@@ -776,6 +776,47 @@ p { margin-bottom: 1rem; }
   text-decoration: line-through;
 }
 
+/* Multi-axis variant chips (Quantity, Type, etc.) */
+.pdp-option-group {
+  margin-bottom: 1.25rem;
+}
+.pdp-option-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.pdp-option-chip {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  border: 2px solid var(--color-border, #ddd);
+  border-radius: 999px;
+  background: var(--color-surface, #fff);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 42px;
+}
+.pdp-option-chip:hover:not([data-unavailable]) {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+.pdp-option-chip[aria-pressed="true"] {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: #fff;
+}
+.pdp-option-chip[data-unavailable="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+.pdp-cta.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .pdp-cta {
   width: 100%;
   display: block;

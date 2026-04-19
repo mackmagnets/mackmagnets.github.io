@@ -748,10 +748,10 @@
     <h1>Mack Magnets: Website Rebuild</h1>
     <p class="subtitle">From Basic Shopify Theme to Modern, SEO-Optimized Static Site</p>
     <div class="report-meta">
-      <span>Prepared: March 2026</span>
-      <span>For: Mack Magnets</span>
+      <span>Prepared: March 2026 &middot; Updated: April 2026</span>
+      <span>For: Anita / Mack Magnets</span>
       <span>By: AjayaDesign</span>
-      <span>Version: 1.0</span>
+      <span>Version: 2.0</span>
     </div>
   </header>
 
@@ -778,6 +778,10 @@
       <li><a href="#performance">Performance Projections</a></li>
       <li><a href="#testing">Testing Results</a></li>
       <li><a href="#next-steps">Next Steps</a></li>
+      <li><a href="#shopify-integration">Shopify Integration &amp; Cart System</a></li>
+      <li><a href="#product-sync">Automatic Product Sync</a></li>
+      <li><a href="#product-pages">Individual Product Detail Pages (PDPs)</a></li>
+      <li><a href="#shopify-guide">How to Add Products in Shopify</a></li>
     </ol>
   </nav>
 
@@ -799,10 +803,15 @@
       <p>
         I took the Mack Magnets website off of Shopify's built-in storefront (which looked generic and had limited pages)
         and rebuilt it from scratch as a beautiful, custom-designed website. The new site has <strong>14+ pages</strong> &mdash;
-        including a full Shop with 12 products across 3 categories, Events booking with 4 pricing tiers, Wholesale inquiry,
+        including a full Shop with Shopify-synced products, individual product detail pages (auto-generated), Events booking, Wholesale inquiry,
         your About story, FAQ with 14 categorized questions, Contact page,
         4 policy pages (shipping, refund, terms, privacy), and a custom 404 page &mdash;
-        all designed to match Mack Magnets' warm, Sacramento-made personality.
+        all designed to match Mack Magnets' warm, California-made personality.
+      </p>
+      <p>
+        <strong>New in v2 (April 2026):</strong> The site now has full Shopify e-commerce integration with a cart system,
+        automatic product sync every 6 hours, and individual product detail pages with image galleries, variant selectors,
+        and full SEO structured data. Products you add in Shopify automatically appear on the website.
       </p>
 
       <h3>What it costs</h3>
@@ -1340,6 +1349,7 @@
 <span class="dir">mackmagnets.com/</span>
 ├── <span class="file">index.html</span>             <span class="comment">← Homepage (hero, products, testimonials)</span>
 ├── <span class="dir">shop/</span><span class="file">index.html</span>        <span class="comment">← Full product catalog + filters</span>
+├── <span class="dir">shop/</span><span class="dir">{product}/</span><span class="file">index.html</span> <span class="comment">← Auto-generated product detail pages</span>
 ├── <span class="dir">events/</span><span class="file">index.html</span>      <span class="comment">← Event booking with 4 pricing tiers</span>
 ├── <span class="dir">wholesale/</span><span class="file">index.html</span>   <span class="comment">← Bulk orders &amp; wholesale inquiry</span>
 ├── <span class="dir">about/</span><span class="file">index.html</span>       <span class="comment">← Brand story &amp; founder spotlight</span>
@@ -1352,7 +1362,14 @@
 │   └── <span class="dir">privacy/</span><span class="file">index.html</span>
 ├── <span class="dir">assets/</span>
 │   ├── <span class="dir">css/</span><span class="file">style.css</span>      <span class="comment">← ~2,000+ line design system</span>
-│   └── <span class="dir">js/</span><span class="file">main.js</span>         <span class="comment">← Nav, animations, FAQ accordion, popup</span>
+│   └── <span class="dir">js/</span>
+│       ├── <span class="file">main.js</span>          <span class="comment">← Nav, animations, FAQ accordion, popup</span>
+│       ├── <span class="file">shopify-cart.js</span>  <span class="comment">← Cart system (Shopify API)</span>
+│       └── <span class="file">products.js</span>      <span class="comment">← Live product overlay</span>
+├── <span class="dir">scripts/</span><span class="file">sync-products.py</span> <span class="comment">← Shopify sync + PDP generator</span>
+├── <span class="dir">_data/</span><span class="file">products.json</span>    <span class="comment">← Auto-generated product data</span>
+├── <span class="dir">.github/workflows/</span>
+│   └── <span class="file">sync-products.yml</span> <span class="comment">← 6-hour auto sync + deploy</span>
 ├── <span class="file">report.html</span>            <span class="comment">← This report</span>
 ├── <span class="file">404.html</span>               <span class="comment">← Branded 404 page</span>
 ├── <span class="file">robots.txt</span>
@@ -1559,7 +1576,7 @@
       <span class="section-num">09</span>
       <h2>Next Steps</h2>
 
-      <p>The site is built, tested, and ready to go. Here are the remaining steps to get it live:</p>
+      <p>Here's the current status of the project milestones:</p>
 
       <div class="table-wrap">
         <table>
@@ -1568,27 +1585,32 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>1. Review</strong></td>
-              <td>Review the site pages and provide feedback on content, images, pricing</td>
-              <td>⏳ Awaiting</td>
+              <td><strong>1. Website redesign</strong></td>
+              <td>Full rebuild from Shopify theme to custom static site with 14+ pages</td>
+              <td style="color:var(--color-secondary-dark);font-weight:700;">✅ Complete</td>
             </tr>
             <tr>
-              <td><strong>2. Content updates</strong></td>
-              <td>Swap placeholder images with real product photos, verify all pricing and contact info</td>
-              <td>⏳ Awaiting</td>
+              <td><strong>2. Shopify integration</strong></td>
+              <td>Cart system, Add to Cart buttons, checkout redirect via Shopify /products.json API</td>
+              <td style="color:var(--color-secondary-dark);font-weight:700;">✅ Complete</td>
             </tr>
             <tr>
-              <td><strong>3. DNS migration</strong></td>
+              <td><strong>3. Automatic product sync</strong></td>
+              <td>GitHub Actions workflow syncs products from Shopify every 6 hours</td>
+              <td style="color:var(--color-secondary-dark);font-weight:700;">✅ Complete</td>
+            </tr>
+            <tr>
+              <td><strong>4. Product detail pages</strong></td>
+              <td>Auto-generated SEO-optimized individual product pages at /shop/&lt;handle&gt;/</td>
+              <td style="color:var(--color-secondary-dark);font-weight:700;">✅ Complete</td>
+            </tr>
+            <tr>
+              <td><strong>5. DNS migration</strong></td>
               <td>Point mackmagnets.com to GitHub Pages (A record + CNAME)</td>
               <td>⏳ Ready when approved</td>
             </tr>
             <tr>
-              <td><strong>4. SSL certificate</strong></td>
-              <td>GitHub Pages provisions a free SSL cert automatically after DNS propagation</td>
-              <td>⏳ Automatic</td>
-            </tr>
-            <tr>
-              <td><strong>5. Go live</strong></td>
+              <td><strong>6. Go live</strong></td>
               <td>Remove <code>noindex</code> meta tag, verify in Google Search Console</td>
               <td>⏳ After DNS</td>
             </tr>
@@ -1598,20 +1620,300 @@
 
       <h3>Future enhancements (optional)</h3>
       <ul>
-        <li><strong>E-commerce integration</strong> &mdash; connect Shopify Buy Button or Stripe for direct checkout</li>
         <li><strong>Blog / news section</strong> &mdash; share magnet-making stories, event recaps, behind-the-scenes</li>
         <li><strong>Analytics dashboard</strong> &mdash; Firebase or Plausible for privacy-friendly visitor tracking</li>
         <li><strong>Email marketing</strong> &mdash; Mailchimp or ConvertKit integration for the newsletter popup</li>
         <li><strong>Image gallery</strong> &mdash; lightbox gallery for event photos and product close-ups</li>
       </ul>
+    </section>
 
-      <div class="callout">
-        <div class="callout-title">💬 Questions?</div>
-        If anything in this report is unclear or you'd like to discuss any of the design decisions,
-        I'm happy to walk through it. The goal was to build something that feels like <em>your</em> brand
-        and works beautifully for your customers.
+    <!-- ── 10. Shopify Integration ── -->
+    <section class="section" id="shopify-integration">
+      <span class="section-num">10</span>
+      <h2>Shopify Integration &amp; Cart System</h2>
+
+      <p>
+        The website is now fully integrated with your Shopify store (<code>1pp0pw-1f.myshopify.com</code>).
+        Customers can browse products, add items to their cart, and check out &mdash; all starting from the custom website.
+      </p>
+
+      <h3>How shopping works</h3>
+      <p>
+        Products are fetched from Shopify's public <code>/products.json</code> API. When a customer clicks
+        "Add to Cart," the item is added to a Shopify-managed cart. When they're ready to pay, they're
+        redirected to Shopify's secure checkout. <strong>Shopify still handles all payments and orders</strong> &mdash;
+        you see everything in your Shopify admin, print shipping labels there, and manage inventory the same way.
+      </p>
+
+      <div class="diagram">
+        <div class="diagram-flow">
+          <div class="diagram-box">Customer browses</div>
+          <span class="diagram-arrow">&rarr;</span>
+          <div class="diagram-box highlight">Add to Cart</div>
+          <span class="diagram-arrow">&rarr;</span>
+          <div class="diagram-box gold">Cart Drawer</div>
+          <span class="diagram-arrow">&rarr;</span>
+          <div class="diagram-box" style="background:var(--color-secondary);color:#fff;">Shopify Checkout</div>
+        </div>
+        <div class="diagram-caption">Customers stay on your site until checkout, then Shopify handles payment securely.</div>
+      </div>
+
+      <h3>Custom photo magnets</h3>
+      <p>
+        Products tagged "Custom Photo Magnets" in Shopify require photo uploads, so they link to Shopify's
+        product page where customers can upload their photos. The sync script detects these automatically by tag or title.
+      </p>
+
+      <div class="callout success">
+        <div class="callout-title">✅ What this means for you</div>
+        Nothing changes about how you run the business. Orders still come through Shopify.
+        You still manage products, print labels, and handle customer service the same way.
+        The website is just the "front door" &mdash; it's prettier, faster, and free to host.
       </div>
     </section>
+
+    <!-- ── 11. Product Sync ── -->
+    <section class="section" id="product-sync">
+      <span class="section-num">11</span>
+      <h2>Automatic Product Sync</h2>
+
+      <p>
+        The website automatically stays in sync with your Shopify inventory. When you add, edit, or remove
+        products in Shopify, the website updates itself &mdash; no developer needed.
+      </p>
+
+      <h3>How it works</h3>
+      <div class="diagram">
+        <div class="diagram-flow">
+          <div class="diagram-box highlight">Shopify Admin<br><small>You add/edit products here</small></div>
+          <span class="diagram-arrow">&rarr;</span>
+          <div class="diagram-box gold">GitHub Actions<br><small>Runs every 6 hours</small></div>
+          <span class="diagram-arrow">&rarr;</span>
+          <div class="diagram-box" style="background:var(--color-secondary);color:#fff;">Website Updates<br><small>New HTML goes live</small></div>
+        </div>
+        <div class="diagram-caption">The sync script fetches products from Shopify, generates product cards and detail pages, and deploys automatically.</div>
+      </div>
+
+      <h3>What you can control from Shopify</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Action in Shopify</th><th>Effect on Website</th><th>How Fast</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Add a new product</td><td>Appears on Shop page + gets its own detail page</td><td>Within 6 hours</td></tr>
+            <tr><td>Change a price</td><td>New price shows on website</td><td>Within 6 hours</td></tr>
+            <tr><td>Upload new images</td><td>New images load on website</td><td>Within 6 hours</td></tr>
+            <tr><td>Delete/unpublish a product</td><td>Disappears from website, detail page removed</td><td>Within 6 hours</td></tr>
+            <tr><td>Mark as sold out</td><td>"Sold Out" badge appears, button disabled</td><td>Within 6 hours</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tag conventions</h3>
+      <p>You can add tags to products in Shopify to control how they appear on the website:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tag</th><th>What It Does</th></tr></thead>
+          <tbody>
+            <tr><td><code>featured</code></td><td>Shows the product on the Home page's featured section (top 4 shown)</td></tr>
+            <tr><td><code>bestseller</code></td><td>Adds a "Best Seller" badge on the product card</td></tr>
+            <tr><td><code>new</code></td><td>Adds a "New" badge on the product card</td></tr>
+            <tr><td><code>Custom Photo Magnets</code></td><td>Links to Shopify product page (for photo uploads)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout success">
+        <div class="callout-title">✅ Zero maintenance</div>
+        You manage products in Shopify. The website updates itself. No code changes, no developer involvement, no extra cost.
+      </div>
+    </section>
+
+    <!-- ── 12. Product Detail Pages ── -->
+    <section class="section" id="product-pages">
+      <span class="section-num">12</span>
+      <h2>Individual Product Detail Pages (PDPs)</h2>
+
+      <p>
+        Every product now has its own dedicated page at <code>/shop/product-name/</code>.
+        These are automatically generated by the sync script and include:
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Feature</th><th>SEO Impact</th></tr></thead>
+          <tbody>
+            <tr><td>Unique URL per product</td><td>Google can index and rank each product individually</td></tr>
+            <tr><td>Full product description</td><td>Rich content for search engines</td></tr>
+            <tr><td>Image gallery with thumbnails</td><td>Google Images indexing</td></tr>
+            <tr><td>Variant selector (if multiple options)</td><td>Better user experience</td></tr>
+            <tr><td>JSON-LD Product schema</td><td>Rich results in Google (price, availability)</td></tr>
+            <tr><td>Open Graph product tags</td><td>Beautiful social media previews</td></tr>
+            <tr><td>Breadcrumb navigation</td><td>Better click-through in search results</td></tr>
+            <tr><td>"You May Also Like" section</td><td>Internal linking boosts all pages</td></tr>
+            <tr><td>Add to Cart / Customize button</td><td>Direct conversion from search</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        These pages are <strong>fully automatic</strong>. When you add a product in Shopify, the next sync creates
+        a new product page with all SEO elements. When you delete a product, its page is automatically removed.
+      </p>
+    </section>
+
+    <!-- ── 13. How to Add Products in Shopify ── -->
+    <section class="section" id="shopify-guide">
+      <span class="section-num">13</span>
+      <h2>How to Add Products in Shopify</h2>
+
+      <p>
+        Here's a step-by-step guide to adding new products to your Shopify store.
+        Once you add a product, it will automatically appear on the website within 6 hours.
+      </p>
+
+      <h3>Step 1: Log into Shopify Admin</h3>
+      <p>
+        Go to <a href="https://1pp0pw-1f.myshopify.com/admin" target="_blank" rel="noopener"><strong>1pp0pw-1f.myshopify.com/admin</strong></a>
+        and sign in with your Shopify account.
+      </p>
+
+      <h3>Step 2: Click "Products" in the sidebar</h3>
+      <p>
+        In the left sidebar, click <strong>Products</strong> (marked <span style="color:#DC2626;font-weight:700;">①</span> below).
+        This shows your full product list.
+      </p>
+
+      <div style="margin:1.25rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--color-border);">
+        <img src="assets/images/screenshots/shopify-products-list.jpg" alt="Shopify products list — click Products in sidebar (1) then Add product (2)" style="width:100%;height:auto;display:block;" loading="lazy">
+      </div>
+
+      <h3>Step 3: Click "Add product"</h3>
+      <p>
+        Click the <strong>Add product</strong> button (marked <span style="color:#DC2626;font-weight:700;">②</span> above)
+        in the top-right corner of the Products page.
+      </p>
+
+      <h3>Step 4: Fill in the product details</h3>
+      <p>You'll see the "Add product" form. Here's what to fill in:</p>
+
+      <div style="margin:1.25rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--color-border);">
+        <img src="assets/images/screenshots/shopify-add-product.jpg" alt="Shopify add product form — numbered fields for Title (1), Description (2), Media (3), Price (4), Status (5), Save (6)" style="width:100%;height:auto;display:block;" loading="lazy">
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Field</th><th>What to Put</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span style="color:#DC2626;font-weight:700;">①</span></td>
+              <td><strong>Title</strong></td>
+              <td>The product name. Keep it clear and descriptive &mdash; this shows in Google search results.</td>
+              <td>"2x2 Custom Photo Magnets (Set of 9)"</td>
+            </tr>
+            <tr>
+              <td><span style="color:#DC2626;font-weight:700;">②</span></td>
+              <td><strong>Description</strong></td>
+              <td>A detailed description of the product. Include what's included, materials, sizes. Write naturally &mdash; this helps with SEO. You can use bold, italics, and bullet points.</td>
+              <td>"Upload 9 of your favorite photos and we'll turn them into beautiful 2x2 inch magnets. UV-resistant coating. Made and shipped in the USA."</td>
+            </tr>
+            <tr>
+              <td><span style="color:#DC2626;font-weight:700;">③</span></td>
+              <td><strong>Media</strong></td>
+              <td>Upload clear, well-lit product photos. The first image becomes the main image on the website. Upload multiple images for the gallery view.</td>
+              <td>Product on fridge, flat lay, close-up of magnets</td>
+            </tr>
+            <tr>
+              <td><span style="color:#DC2626;font-weight:700;">④</span></td>
+              <td><strong>Price</strong></td>
+              <td>Set the price in USD. If you have multiple sizes/options, use Variants (scroll down) to set different prices.</td>
+              <td>24.99</td>
+            </tr>
+            <tr>
+              <td><span style="color:#DC2626;font-weight:700;">⑤</span></td>
+              <td><strong>Status</strong></td>
+              <td>Set to <strong>Active</strong> to make the product visible. "Draft" products won't appear on the website.</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td><span style="color:#DC2626;font-weight:700;">⑥</span></td>
+              <td><strong>Save</strong></td>
+              <td>Click <strong>Save</strong> when you're done. The product will appear on the website within 6 hours (next sync cycle).</td>
+              <td>&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Other useful fields</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Field</th><th>What It Does</th><th>Tips</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Tags</strong></td>
+              <td>Labels that control how the product appears on the website</td>
+              <td>Use <code>featured</code> to show on the homepage. Use <code>Custom Photo Magnets</code> for products that need photo uploads.</td>
+            </tr>
+            <tr>
+              <td><strong>Product type</strong></td>
+              <td>Category for your organization</td>
+              <td>e.g., "Refrigerator Magnets"</td>
+            </tr>
+            <tr>
+              <td><strong>Vendor</strong></td>
+              <td>Who makes/sells the product</td>
+              <td>"Mack Magnets"</td>
+            </tr>
+            <tr>
+              <td><strong>Variants</strong></td>
+              <td>Different options (size, color, quantity) with separate prices</td>
+              <td>Scroll down on the Add Product page to add variants</td>
+            </tr>
+            <tr>
+              <td><strong>SEO (bottom of page)</strong></td>
+              <td>Custom page title and description for Google</td>
+              <td>Shopify auto-generates this, but you can customize it for better search results</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tips for great product listings</h3>
+      <div class="callout idea">
+        <div class="callout-title">📸 Product photos</div>
+        <ul style="margin-top:0.5rem;">
+          <li>Use natural lighting &mdash; photos near a window look best</li>
+          <li>Show the product on a fridge, in someone's hand, or in a flat lay</li>
+          <li>Upload at least 2&ndash;3 photos per product</li>
+          <li>Square photos (1:1 ratio) display best on the website</li>
+        </ul>
+      </div>
+
+      <div class="callout idea">
+        <div class="callout-title">✍️ SEO-friendly descriptions</div>
+        <ul style="margin-top:0.5rem;">
+          <li>Include the product name naturally in the first sentence</li>
+          <li>Mention materials, sizes, and what's included</li>
+          <li>Use phrases customers would search for: "custom photo magnets," "fridge magnets," "gift magnets"</li>
+          <li>Keep it natural &mdash; write for people, not robots</li>
+        </ul>
+      </div>
+
+      <div class="callout success">
+        <div class="callout-title">⏰ Auto-sync reminder</div>
+        Products sync to the website automatically every 6 hours via GitHub Actions.
+        If you need a product live immediately, let AJ know and he can trigger a manual sync (takes ~2 minutes).
+      </div>
+    </section>
+
+    <div class="callout" style="margin-top:3rem;">
+      <div class="callout-title">💬 Questions?</div>
+      If anything in this report is unclear or you'd like to discuss any of the design decisions,
+      I'm happy to walk through it. The goal was to build something that feels like <em>your</em> brand
+      and works beautifully for your customers.
+    </div>
 
   </main>
 
