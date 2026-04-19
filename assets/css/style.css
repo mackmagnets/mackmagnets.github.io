@@ -652,7 +652,8 @@ p { margin-bottom: 1rem; }
   transition: background var(--transition-fast);
 }
 
-.product-card__btn:hover { background: var(--color-primary-dark); }
+.product-card__btn:hover,
+.product-card__btn:focus { background: var(--color-primary-dark); color: #fff; }
 
 .product-card__link {
   display: block;
