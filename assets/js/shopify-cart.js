@@ -492,6 +492,10 @@
       // Add to cart — any [data-variant-id] button that isn't disabled
       var addBtn = e.target.closest('[data-variant-id]');
       if (addBtn && !addBtn.classList.contains('adding') && !addBtn.disabled) {
+        // Custom PDPs: pdp-uploader.js owns the CTA so it can attach photo
+        // attributes. Skip the generic handler there.
+        var ownerPdp = addBtn.closest('.pdp[data-is-custom="true"]');
+        if (ownerPdp && addBtn.id === 'pdp-cta') return;
         e.preventDefault();
         var vid = addBtn.getAttribute('data-variant-id');
         var origText = addBtn.textContent;
