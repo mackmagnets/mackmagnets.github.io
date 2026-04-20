@@ -9,7 +9,7 @@
   window.MACK_UPLOADER = {
     // Set after `wrangler deploy` — looks like:
     //   https://mackmagnets-uploader.<your-account>.workers.dev/upload
-    endpoint: '',
+    endpoint: 'https://mackmagnets-uploader.ajayadesign.workers.dev/upload',
 
     // Limits enforced client-side before uploading
     maxFileBytes: 20 * 1024 * 1024,    // 20MB
