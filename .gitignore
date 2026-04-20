@@ -4,3 +4,9 @@ playwright-report/
 delete-me/
 assets/images/need-cleanup/
 assets/images/screenshots/
+
+.playwright-mcp/
+worker/node_modules/
+worker/package-lock.json
+*.png.bak
+checkout-with-photo.png
