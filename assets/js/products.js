@@ -194,7 +194,8 @@
 
     // Update availability
     var ctaBtn = pdpSection.querySelector('.pdp-cta');
-    if (ctaBtn) {
+    var isCustom = pdpSection.getAttribute('data-is-custom') === 'true';
+    if (ctaBtn && !isCustom) {
       if (!product.availableForSale) {
         if (ctaBtn.tagName === 'BUTTON') {
           ctaBtn.disabled = true;
@@ -205,6 +206,14 @@
           ctaBtn.disabled = false;
           ctaBtn.textContent = 'Add to Cart';
         }
+      }
+    } else if (ctaBtn && isCustom && !product.availableForSale) {
+      // For custom PDPs, only force Sold Out when the product is unavailable.
+      // Otherwise, let pdp-uploader.js manage the CTA text/disabled state
+      // based on photo upload progress.
+      if (ctaBtn.tagName === 'BUTTON') {
+        ctaBtn.disabled = true;
+        ctaBtn.textContent = 'Sold Out';
       }
     }
 
