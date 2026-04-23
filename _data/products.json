@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-22T19:17:02.305942+00:00",
+  "lastUpdated": "2026-04-23T02:48:16.682347+00:00",
   "shopifyDomain": "1pp0pw-1f.myshopify.com",
   "productCount": 6,
   "products": [
@@ -10,7 +10,7 @@
       "body_html": "<p>Internal test product for photo uploader. Free. Will be deleted.</p>",
       "published_at": "2026-04-19T18:27:17-07:00",
       "created_at": "2026-04-19T18:27:16-07:00",
-      "updated_at": "2026-04-22T12:17:02-07:00",
+      "updated_at": "2026-04-22T19:48:16-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Test",
       "tags": [
@@ -36,7 +36,7 @@
           "position": 1,
           "product_id": 8379061796898,
           "created_at": "2026-04-19T18:27:16-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         }
       ],
       "images": [],
@@ -57,7 +57,7 @@
       "body_html": "<p>Turn one favorite photo into a 9-magnet mosaic. We split your image across 9 magnets that assemble into a single large picture on your fridge. Choose 2x2\" tiles (6\"\u00d76\" finished) or 2x3\" tiles (6\"\u00d79\" finished). Just upload one high-resolution photo \u2014 we handle the splitting and alignment. Made in USA.</p>",
       "published_at": "2026-04-19T13:59:30-07:00",
       "created_at": "2026-04-19T13:59:29-07:00",
-      "updated_at": "2026-04-22T12:17:02-07:00",
+      "updated_at": "2026-04-22T19:48:16-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -99,7 +99,7 @@
           "position": 1,
           "product_id": 8378874396706,
           "created_at": "2026-04-19T13:59:29-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45255174750242,
@@ -131,7 +131,7 @@
           "position": 2,
           "product_id": 8378874396706,
           "created_at": "2026-04-19T13:59:29-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         }
       ],
       "images": [
@@ -180,7 +180,7 @@
       "body_html": "<p>Functional keepsakes that pop open your favorite drink. Choose your quantity and back type \u2014 magnet for the fridge, keyring for your keys, or flat for a clean look. Upload your photo and we'll do the rest.</p>",
       "published_at": "2026-04-19T13:39:07-07:00",
       "created_at": "2026-04-19T13:39:06-07:00",
-      "updated_at": "2026-04-22T12:17:02-07:00",
+      "updated_at": "2026-04-22T19:48:16-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Bottle Openers",
       "tags": [
@@ -223,7 +223,7 @@
           "position": 1,
           "product_id": 8378809647138,
           "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45255085391906,
@@ -257,7 +257,7 @@
           "position": 2,
           "product_id": 8378809647138,
           "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45255085424674,
@@ -291,7 +291,7 @@
           "position": 3,
           "product_id": 8378809647138,
           "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45255085457442,
@@ -325,7 +325,7 @@
           "position": 4,
           "product_id": 8378809647138,
           "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45255085490210,
@@ -359,7 +359,7 @@
           "position": 5,
           "product_id": 8378809647138,
           "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45255085522978,
@@ -393,7 +393,7 @@
           "position": 6,
           "product_id": 8378809647138,
           "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         }
       ],
       "images": [
@@ -455,7 +455,7 @@
       "body_html": "<p>Round photo magnets \u2014 a classic shape with a modern twist. 2\u00bc inches in diameter, perfect for headshots, logos, or single-subject photos. Choose how many you'd like below.</p>",
       "published_at": "2026-04-19T13:21:20-07:00",
       "created_at": "2026-04-19T13:21:19-07:00",
-      "updated_at": "2026-04-22T12:17:02-07:00",
+      "updated_at": "2026-04-22T19:48:16-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -482,7 +482,7 @@
           "position": 1,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45255020806178,
@@ -501,7 +501,7 @@
           "position": 2,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45255020838946,
@@ -520,7 +520,7 @@
           "position": 3,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         }
       ],
       "images": [],
@@ -543,7 +543,7 @@
       "body_html": "<p>Capture your favorite memories on compact 2x2\" square magnets. Choose your quantity below \u2014 perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>",
       "published_at": "2026-04-02T19:05:35-07:00",
       "created_at": "2026-04-02T19:05:34-07:00",
-      "updated_at": "2026-04-22T12:17:02-07:00",
+      "updated_at": "2026-04-22T19:48:16-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -588,7 +588,7 @@
           "position": 1,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45254920929314,
@@ -621,7 +621,7 @@
           "position": 2,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45254920962082,
@@ -654,7 +654,7 @@
           "position": 3,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45254920994850,
@@ -687,7 +687,7 @@
           "position": 4,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         }
       ],
       "images": [
@@ -751,7 +751,7 @@
       "body_html": "<p>Capture your favorite memories on compact 2x3\" square magnets. Choose your quantity below \u2014 perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>",
       "published_at": "2026-03-31T20:39:23-07:00",
       "created_at": "2026-03-31T20:39:22-07:00",
-      "updated_at": "2026-04-22T12:17:02-07:00",
+      "updated_at": "2026-04-22T19:48:16-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -794,7 +794,7 @@
           "position": 1,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45254968442914,
@@ -826,7 +826,7 @@
           "position": 2,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         },
         {
           "id": 45254968475682,
@@ -858,7 +858,7 @@
           "position": 3,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-22T12:17:02-07:00"
+          "updated_at": "2026-04-22T19:48:16-07:00"
         }
       ],
       "images": [
