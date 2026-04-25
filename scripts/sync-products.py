@@ -74,6 +74,12 @@ def save_json(products):
     print(f'  Saved {DATA_FILE}')
 
 
+def is_test_product(product):
+    """Check if product is a test/internal product that should not appear on the site."""
+    title = (product.get('title', '') or '').strip()
+    return title.upper().startswith('TEST')
+
+
 def is_custom_product(product):
     """Check if product requires Shopify hosted page (photo upload).
 
@@ -180,6 +186,10 @@ def build_product_card(product):
     is_custom = is_custom_product(product)
     variant_id = get_first_variant_id(product)
 
+    # Skip test/internal products
+    if is_test_product(product):
+        return ''
+
     # All products link to local PDP pages
     product_url = f'/shop/{handle}/'
 
@@ -213,6 +223,20 @@ def build_product_card(product):
             {cta}
           </div>
         </div>"""
+
+
+def get_crop_config(product):
+    """Return (ratio, shape) for the crop modal on custom products."""
+    handle = product.get('handle', '')
+    title_lower = (product.get('title', '') or '').lower()
+    if 'round' in handle or 'round' in title_lower:
+        return '1:1', 'circle'
+    if 'bottle' in handle or 'bottle' in title_lower:
+        return '1:1', 'circle'
+    if '2x3' in handle or '2x3' in title_lower:
+        return '2:3', 'square'
+    # Default: 1:1 square (2x2, puzzle, etc.)
+    return '1:1', 'square'
 
 
 def build_product_page_html(product, all_products):
@@ -455,7 +479,7 @@ def build_product_page_html(product, all_products):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">{'\n  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1/dist/cropper.min.css">' if is_custom else ''}
   <script type="application/ld+json">
   {jsonld_str}
   </script>
@@ -509,7 +533,7 @@ def build_product_page_html(product, all_products):
            data-product-id="{escape(product_id)}"
            data-product-handle="{escape(handle)}"
            data-shopify-url="{escape(shopify_product_url)}"
-           data-is-custom="{str(is_custom).lower()}">
+           data-is-custom="{str(is_custom).lower()}"{(' data-crop-ratio="' + get_crop_config(product)[0] + '" data-crop-shape="' + get_crop_config(product)[1] + '"') if is_custom else ''}>
     <div class="container">
       <div class="pdp-layout">
 
@@ -629,7 +653,7 @@ def build_product_page_html(product, all_products):
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/shopify-cart.js" defer></script>
   <script src="/assets/js/products.js" defer></script>
-  <script src="/assets/js/uploader-config.js" defer></script>
+  <script src="/assets/js/uploader-config.js" defer></script>{'\n  <script src="https://cdn.jsdelivr.net/npm/cropperjs@1/dist/cropper.min.js" defer></script>' if is_custom else ''}{'\n  <script src="/assets/js/pdp-cropper.js" defer></script>' if is_custom else ''}
   <script src="/assets/js/pdp-uploader.js" defer></script>
 
   <!-- Image gallery -->
@@ -690,6 +714,10 @@ def generate_product_pages(products):
         handle = product.get('handle', '')
         if not handle:
             continue
+        # Skip test/internal products
+        if is_test_product(product):
+            print(f'  ⏭ Skipping test product: {product.get("title")}')
+            continue
         current_handles.add(handle)
 
         page_dir = os.path.join(shop_dir, handle)
@@ -727,6 +755,8 @@ def build_jsonld_products(products):
     """Build JSON-LD Product structured data for SEO."""
     items = []
     for p in products:
+        if is_test_product(p):
+            continue
         variants = p.get('variants', [])
         min_price = str(min(float(v.get('price', '0')) for v in variants)) if variants else '0'
         currency = 'USD'
@@ -815,6 +845,7 @@ def update_shop_page(products):
     print('\nUpdating shop page...')
 
     cards = [build_product_card(p) for p in products]
+    cards = [c for c in cards if c]  # skip test products
     cards_html = '\n\n'.join(cards)
 
     inject_into_html(
@@ -842,6 +873,7 @@ def update_home_page(products):
     print(f'  {len(featured)} featured products')
 
     cards = [build_product_card(p) for p in featured]
+    cards = [c for c in cards if c]  # skip test products
     cards_html = '\n\n'.join(cards)
 
     inject_into_html(

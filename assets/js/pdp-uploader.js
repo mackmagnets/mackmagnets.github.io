@@ -39,8 +39,23 @@
     }
 
     // ─── State ────────────────────────────────────────────
-    var uploads = []; // [{ status: 'idle'|'uploading'|'done'|'error', url, file, progress }]
+    var uploads = []; // [{ status: 'idle'|'uploading'|'done'|'error', url, file, originalFile, progress }]
     var currentVariant = findCurrentVariant();
+
+    // ─── Crop config ─────────────────────────────────────
+    function getCropConfig() {
+      var ratio = pdp.getAttribute('data-crop-ratio') || '1:1';
+      var shape = pdp.getAttribute('data-crop-shape') || 'square';
+      // For puzzle magnets, ratio depends on selected variant
+      if (currentVariant && currentVariant.option1) {
+        var opt = currentVariant.option1.toLowerCase();
+        if (opt.indexOf('2x3') !== -1) { ratio = '2:3'; }
+        else if (opt.indexOf('2x2') !== -1) { ratio = '1:1'; }
+      }
+      var parts = ratio.split(':');
+      var numeric = parts.length === 2 ? parseFloat(parts[0]) / parseFloat(parts[1]) : 1;
+      return { aspectRatio: numeric, shape: shape };
+    }
 
     // ─── Helpers ──────────────────────────────────────────
     function findCurrentVariant() {
@@ -130,8 +145,11 @@
     }
 
     function buildSlot(idx) {
-      var slot = document.createElement('label');
+      var slot = document.createElement('div');
       slot.className = 'pdp-uploader__slot';
+      if (getCropConfig().shape === 'circle') {
+        slot.classList.add('is-circle-preview');
+      }
       slot.setAttribute('data-slot', idx);
       slot.innerHTML =
         '<input type="file" accept="image/*" hidden>' +
@@ -144,10 +162,16 @@
             '<span class="pdp-uploader__slot-state">Tap to choose</span>' +
           '</div>' +
         '</div>' +
+        '<button type="button" class="pdp-uploader__slot-edit" aria-label="Edit crop" title="Edit crop">✎</button>' +
         '<button type="button" class="pdp-uploader__slot-remove" aria-label="Remove photo" hidden>×</button>';
 
       var input = slot.querySelector('input');
       var removeBtn = slot.querySelector('.pdp-uploader__slot-remove');
+      var editBtn = slot.querySelector('.pdp-uploader__slot-edit');
+      var inner = slot.querySelector('.pdp-uploader__slot-inner');
+
+      // Tap the slot area (inner) to open file picker
+      inner.addEventListener('click', function () { input.click(); });
 
       input.addEventListener('change', function (e) {
         var f = e.target.files && e.target.files[0];
@@ -158,6 +182,13 @@
         e.preventDefault();
         e.stopPropagation();
         clearSlot(idx, slot);
+      });
+
+      editBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var orig = uploads[idx] && uploads[idx].originalFile;
+        if (orig) handleFile(idx, orig, slot);
       });
 
       return slot;
@@ -197,41 +228,76 @@
       if (cfg.acceptedTypes && cfg.acceptedTypes.indexOf(file.type) === -1 &&
           !/^image\//.test(file.type)) {
         setSlotState(slot, 'Image files only', 'error', '');
-        uploads[idx] = { status: 'error', url: '', file: null, progress: 0 };
+        uploads[idx] = { status: 'error', url: '', file: null, originalFile: null, progress: 0 };
         refreshCTA();
         return;
       }
       if (cfg.maxFileBytes && file.size > cfg.maxFileBytes) {
         var mb = (cfg.maxFileBytes / 1024 / 1024).toFixed(0);
         setSlotState(slot, 'Too large (max ' + mb + 'MB)', 'error', '');
-        uploads[idx] = { status: 'error', url: '', file: null, progress: 0 };
+        uploads[idx] = { status: 'error', url: '', file: null, originalFile: null, progress: 0 };
         refreshCTA();
         return;
       }
 
-      // Show local preview immediately
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        setSlotState(slot, 'Uploading…', 'uploading', e.target.result);
-      };
-      reader.readAsDataURL(file);
+      // Open crop modal if MackCrop is available
+      if (window.MackCrop && typeof window.MackCrop.open === 'function') {
+        var cropCfg = getCropConfig();
+        cropCfg.title = 'Crop Photo ' + (idx + 1);
+        setSlotState(slot, 'Cropping…', 'uploading', '');
 
-      uploads[idx] = { status: 'uploading', url: '', file: file, progress: 0 };
-      refreshCTA();
+        MackCrop.open(file, cropCfg, function (blob, previewUrl) {
+          if (!blob) {
+            // User cancelled crop
+            if (!uploads[idx] || !uploads[idx].url) {
+              clearSlot(idx, slot);
+            }
+            return;
+          }
+          // Show cropped preview and upload
+          setSlotState(slot, 'Uploading…', 'uploading', previewUrl);
+          uploads[idx] = { status: 'uploading', url: '', file: blob, originalFile: file, progress: 0 };
+          refreshCTA();
 
-      uploadToWorker(file, function (pct) {
-        var s = slot.querySelector('.pdp-uploader__slot-state');
-        if (s) s.textContent = 'Uploading… ' + pct + '%';
-      }).then(function (url) {
-        uploads[idx] = { status: 'done', url: url, file: file, progress: 100 };
-        setSlotState(slot, 'Ready ✓', 'done', url);
+          uploadToWorker(blob, function (pct) {
+            var s = slot.querySelector('.pdp-uploader__slot-state');
+            if (s) s.textContent = 'Uploading… ' + pct + '%';
+          }).then(function (url) {
+            uploads[idx] = { status: 'done', url: url, file: blob, originalFile: file, progress: 100 };
+            setSlotState(slot, 'Ready ✓', 'done', previewUrl);
+            refreshCTA();
+          }).catch(function (err) {
+            console.error('Upload failed', err);
+            uploads[idx] = { status: 'error', url: '', file: null, originalFile: file, progress: 0 };
+            setSlotState(slot, 'Upload failed — tap to retry', 'error', '');
+            refreshCTA();
+          });
+        });
+      } else {
+        // Fallback: no crop, upload original directly
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          setSlotState(slot, 'Uploading…', 'uploading', e.target.result);
+        };
+        reader.readAsDataURL(file);
+
+        uploads[idx] = { status: 'uploading', url: '', file: file, originalFile: file, progress: 0 };
         refreshCTA();
-      }).catch(function (err) {
-        console.error('Upload failed', err);
-        uploads[idx] = { status: 'error', url: '', file: null, progress: 0 };
-        setSlotState(slot, 'Upload failed — tap to retry', 'error', '');
-        refreshCTA();
-      });
+
+        uploadToWorker(file, function (pct) {
+          var s = slot.querySelector('.pdp-uploader__slot-state');
+          if (s) s.textContent = 'Uploading… ' + pct + '%';
+        }).then(function (url) {
+          uploads[idx] = { status: 'done', url: url, file: file, originalFile: file, progress: 100 };
+          setSlotState(slot, 'Ready ✓', 'done', url);
+          refreshCTA();
+        }).catch(function (err) {
+          console.error('Upload failed', err);
+          uploads[idx] = { status: 'error', url: '', file: null, originalFile: null, progress: 0 };
+          setSlotState(slot, 'Upload failed — tap to retry', 'error', '');
+          refreshCTA();
+        });
+      }
     }
 
     function uploadToWorker(file, onProgress) {

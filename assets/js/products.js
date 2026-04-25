@@ -108,9 +108,15 @@
 
   // ─── Update existing product cards ──────────────────
 
+  function isTestProduct(product) {
+    return /^TEST\b/i.test((product.title || '').trim());
+  }
+
   function updateExistingCards(liveProducts) {
     var productMap = {};
-    liveProducts.forEach(function (p) { productMap[p.handle] = p; });
+    liveProducts.forEach(function (p) {
+      if (!isTestProduct(p)) productMap[p.handle] = p;
+    });
 
     document.querySelectorAll('.product-card').forEach(function (card) {
       // Try to match by handle from link href or data attribute
