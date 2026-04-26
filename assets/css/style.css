@@ -2414,14 +2414,22 @@ p { margin-bottom: 1rem; }
 }
 
 .shipping-rate {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-  gap: 0.15rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: var(--color-bg);
   border-radius: 0.75rem;
   padding: 0.875rem 1rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.shipping-rate__left,
+.shipping-rate__right {
+  display: flex;
+  flex-direction: column;
+}
+.shipping-rate__right {
+  text-align: right;
+  flex-shrink: 0;
 }
 .shipping-rate__label {
   font-weight: 600;
@@ -2432,7 +2440,6 @@ p { margin-bottom: 1rem; }
   font-weight: 700;
   color: var(--color-primary-dark);
   font-size: 0.925rem;
-  text-align: right;
 }
 .shipping-rate__detail {
   color: var(--color-text-muted);
@@ -2441,7 +2448,6 @@ p { margin-bottom: 1rem; }
 .shipping-rate__time {
   color: var(--color-text-muted);
   font-size: 0.8rem;
-  text-align: right;
 }
 
 .shipping-cta {
