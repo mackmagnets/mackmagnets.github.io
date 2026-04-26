@@ -322,8 +322,8 @@ def build_product_page_html(product, all_products):
     else:
         cta_html = f'<button class="btn btn--primary btn--lg pdp-cta" id="pdp-cta" data-variant-id="{escape(variant_id)}" aria-label="Add {title} to cart">Add to Cart</button>'
 
-    # Related products (excluding self, max 4)
-    related = [p for p in all_products if str(p.get('id', '')) != product_id][:4]
+    # Related products (excluding self and test products, max 4)
+    related = [p for p in all_products if str(p.get('id', '')) != product_id and not is_test_product(p)][:4]
     related_cards = []
     for rp in related:
         rp_title = escape(rp.get('title', ''))
