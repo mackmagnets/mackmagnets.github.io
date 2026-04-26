@@ -206,7 +206,7 @@ test.describe('Photo Crop Feature', () => {
     expect(state).toBe('idle');
   });
 
-  test('Rotate buttons work', async ({ page }) => {
+  test('Zoom buttons work', async ({ page }) => {
     await page.goto(BASE + '/shop/2x2-custom-photo-magnets-set-of-9/');
     await page.waitForSelector('.pdp-uploader__slot');
 
@@ -218,17 +218,15 @@ test.describe('Photo Crop Feature', () => {
     await expect(page.locator('.mack-crop-modal.is-open')).toBeVisible({ timeout: 5000 });
     await expect(page.locator('.cropper-container')).toBeVisible({ timeout: 5000 });
 
-    // Click rotate left
-    await page.click('[data-action="rotate-left"]');
+    // Click zoom in
+    await page.click('[data-action="zoom-in"]');
     await page.waitForTimeout(300);
 
-    // Click rotate right twice
-    await page.click('[data-action="rotate-right"]');
+    // Click zoom out twice
+    await page.click('[data-action="zoom-out"]');
     await page.waitForTimeout(300);
-    await page.click('[data-action="rotate-right"]');
+    await page.click('[data-action="zoom-out"]');
     await page.waitForTimeout(300);
-
-    await page.screenshot({ path: 'test-results/crop-rotated.png', fullPage: false });
 
     // Still should be able to apply
     await page.click('[data-action="apply"]');

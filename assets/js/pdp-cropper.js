@@ -11,6 +11,7 @@
 
   var modal, imgEl, cropper, currentCallback;
   var MAX_CANVAS = 2000;
+  var baseAspectRatio, currentAspectRatio, currentOpts;
 
   function buildModal() {
     if (modal) return;
@@ -32,8 +33,7 @@
         '</div>' +
         '<div class="mack-crop-modal__controls">' +
           '<div class="mack-crop-modal__actions-left">' +
-            '<button type="button" class="mack-crop-modal__btn mack-crop-modal__btn--icon" data-action="rotate-left" aria-label="Rotate left" title="Rotate left">↺</button>' +
-            '<button type="button" class="mack-crop-modal__btn mack-crop-modal__btn--icon" data-action="rotate-right" aria-label="Rotate right" title="Rotate right">↻</button>' +
+            '<button type="button" class="mack-crop-modal__btn mack-crop-modal__btn--icon" data-action="flip-orientation" aria-label="Switch landscape/portrait" title="Switch landscape/portrait">⟲</button>' +
             '<button type="button" class="mack-crop-modal__btn mack-crop-modal__btn--icon" data-action="zoom-in" aria-label="Zoom in" title="Zoom in">+</button>' +
             '<button type="button" class="mack-crop-modal__btn mack-crop-modal__btn--icon" data-action="zoom-out" aria-label="Zoom out" title="Zoom out">−</button>' +
           '</div>' +
@@ -62,8 +62,7 @@
       if (!action || !cropper) return;
 
       switch (action) {
-        case 'rotate-left':  cropper.rotate(-90); break;
-        case 'rotate-right': cropper.rotate(90); break;
+        case 'flip-orientation': flipOrientation(); break;
         case 'zoom-in':      cropper.zoom(0.1); break;
         case 'zoom-out':     cropper.zoom(-0.1); break;
         case 'cancel':       close(null); break;
@@ -82,6 +81,7 @@
   function open(file, opts, callback) {
     buildModal();
     currentCallback = callback;
+    currentOpts = opts;
     var title = opts.title || 'Crop Photo';
     modal.querySelector('.mack-crop-modal__title').textContent = title;
 
@@ -91,6 +91,15 @@
       wrap.classList.add('is-circle');
     } else {
       wrap.classList.remove('is-circle');
+    }
+
+    // Store base aspect ratio
+    baseAspectRatio = opts.aspectRatio || NaN;
+
+    // Show/hide flip button — only useful for non-square, fixed ratios
+    var flipBtn = modal.querySelector('[data-action="flip-orientation"]');
+    if (flipBtn) {
+      flipBtn.style.display = (baseAspectRatio && baseAspectRatio !== 1) ? '' : 'none';
     }
 
     // Hide warning
@@ -106,30 +115,57 @@
       // Destroy previous instance
       if (cropper) { cropper.destroy(); cropper = null; }
 
-      cropper = new Cropper(imgEl, {
-        aspectRatio: opts.aspectRatio || NaN,
-        viewMode: 1,
-        dragMode: 'move',
-        autoCropArea: 0.9,
-        responsive: true,
-        restore: false,
-        guides: true,
-        center: true,
-        highlight: false,
-        cropBoxMovable: true,
-        cropBoxResizable: !opts.aspectRatio, // locked if ratio set
-        toggleDragModeOnDblclick: false,
-        minCropBoxWidth: 50,
-        minCropBoxHeight: 50,
-        ready: function () {
-          checkResolution();
-        },
-        cropend: function () {
-          checkResolution();
+      // Auto-detect: if image is landscape and ratio is portrait (< 1), flip it
+      var img = new Image();
+      img.onload = function () {
+        var imgIsLandscape = img.naturalWidth > img.naturalHeight;
+        var ratioIsPortrait = baseAspectRatio && baseAspectRatio < 1;
+        var ratioIsLandscape = baseAspectRatio && baseAspectRatio > 1;
+
+        if ((imgIsLandscape && ratioIsPortrait) || (!imgIsLandscape && ratioIsLandscape)) {
+          currentAspectRatio = 1 / baseAspectRatio;
+        } else {
+          currentAspectRatio = baseAspectRatio;
         }
-      });
+
+        initCropper();
+      };
+      img.src = e.target.result;
     };
     reader.readAsDataURL(file);
+  }
+
+  function initCropper() {
+    if (cropper) { cropper.destroy(); cropper = null; }
+
+    cropper = new Cropper(imgEl, {
+      aspectRatio: currentAspectRatio || NaN,
+      viewMode: 1,
+      dragMode: 'move',
+      autoCropArea: 0.9,
+      responsive: true,
+      restore: false,
+      guides: true,
+      center: true,
+      highlight: false,
+      cropBoxMovable: true,
+      cropBoxResizable: !currentAspectRatio, // locked if ratio set
+      toggleDragModeOnDblclick: false,
+      minCropBoxWidth: 50,
+      minCropBoxHeight: 50,
+      ready: function () {
+        checkResolution();
+      },
+      cropend: function () {
+        checkResolution();
+      }
+    });
+  }
+
+  function flipOrientation() {
+    if (!cropper || !currentAspectRatio || currentAspectRatio === 1) return;
+    currentAspectRatio = 1 / currentAspectRatio;
+    initCropper();
   }
 
   function checkResolution() {
