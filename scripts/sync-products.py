@@ -566,7 +566,7 @@ def build_product_page_html(product, all_products):
             </div>
             <div class="pdp-feature">
               <span>📦</span>
-              <span>Standard shipping $4.99 · Weight-based for larger orders</span>
+              <span>Standard shipping starts at $4.99</span>
             </div>
             <div class="pdp-feature">
               <span>🎁</span>
