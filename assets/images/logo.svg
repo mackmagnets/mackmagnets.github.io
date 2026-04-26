@@ -11,9 +11,9 @@
     <circle cx="24" cy="22" r="1.5" fill="#2D2D2D"/>
   </g>
   <!-- Text: "Mack" -->
-  <text x="56" y="40" font-family="Georgia, 'Playfair Display', serif" font-size="32" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">Mack</text>
+  <text x="56" y="40" font-family="Georgia, 'Playfair Display', serif" font-size="32" font-weight="700" fill="#2D2D2D" letter-spacing="-0.5">Mack</text>
   <!-- Text: "Magnets" -->
   <text x="148" y="40" font-family="Georgia, 'Playfair Display', serif" font-size="32" font-weight="700" fill="#81B29A" letter-spacing="-0.5">Magnets</text>
   <!-- Subtle tagline -->
-  <text x="57" y="54" font-family="'Cormorant Garamond', Georgia, serif" font-size="10" fill="#F2CC8F" letter-spacing="2" font-weight="600">CUSTOM PHOTO MAGNETS</text>
+  <text x="57" y="54" font-family="'Cormorant Garamond', Georgia, serif" font-size="10" fill="#8A8A8A" letter-spacing="2" font-weight="600">CUSTOM PHOTO MAGNETS</text>
 </svg>

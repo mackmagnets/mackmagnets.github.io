@@ -30,7 +30,7 @@
     if (!configured) {
       slotsEl.innerHTML =
         '<p class="pdp-uploader__error">Photo upload is being set up. ' +
-        'Please email <a href="mailto:anita@mackmagnets.com">anita@mackmagnets.com</a> ' +
+        'Please email <a href="mailto:mackmagnets@gmail.com">mackmagnets@gmail.com</a> ' +
         'to place an order.</p>';
       ctaEl.setAttribute('disabled', 'true');
       ctaEl.classList.add('is-disabled');

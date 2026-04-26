@@ -488,11 +488,6 @@ def build_product_page_html(product, all_products):
   <a href="#main" class="skip-link">Skip to main content</a>
   <div class="mobile-overlay" aria-hidden="true"></div>
 
-  <!-- Announcement Bar -->
-  <div class="announcement-bar" role="banner">
-    ✨ Women-Owned Small Business — Proudly Crafted in Rancho Cucamonga, CA ✨
-  </div>
-
   <!-- Navbar -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
@@ -571,7 +566,7 @@ def build_product_page_html(product, all_products):
             </div>
             <div class="pdp-feature">
               <span>📦</span>
-              <span>Free shipping on orders $75+</span>
+              <span>Standard shipping $4.99 · Weight-based for larger orders</span>
             </div>
             <div class="pdp-feature">
               <span>🎁</span>
@@ -613,7 +608,7 @@ def build_product_page_html(product, all_products):
           <p style="margin-top: 0.75rem;">📍 Rancho Cucamonga, California</p>
           <div class="footer__social">
             <a href="https://www.instagram.com/mackmagnets/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
-            <a href="mailto:anita@mackmagnets.com" aria-label="Email">✉️</a>
+            <a href="mailto:mackmagnets@gmail.com" aria-label="Email">✉️</a>
           </div>
         </div>
         <div>
