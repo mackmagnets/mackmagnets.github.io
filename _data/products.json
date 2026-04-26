@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-26T03:40:48.710793+00:00",
+  "lastUpdated": "2026-04-26T03:51:08.564387+00:00",
   "shopifyDomain": "1pp0pw-1f.myshopify.com",
-  "productCount": 6,
+  "productCount": 5,
   "products": [
     {
       "id": 8379061796898,
@@ -10,7 +10,7 @@
       "body_html": "<p>Internal test product for photo uploader. Free. Will be deleted.</p>",
       "published_at": "2026-04-19T18:27:17-07:00",
       "created_at": "2026-04-19T18:27:16-07:00",
-      "updated_at": "2026-04-25T20:40:48-07:00",
+      "updated_at": "2026-04-25T20:51:08-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Test",
       "tags": [
@@ -36,7 +36,7 @@
           "position": 1,
           "product_id": 8379061796898,
           "created_at": "2026-04-19T18:27:16-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         }
       ],
       "images": [],
@@ -57,7 +57,7 @@
       "body_html": "<p>Turn one favorite photo into a 9-magnet mosaic. We split your image across 9 magnets that assemble into a single large picture on your fridge. Choose 2x2\" tiles (6\"\u00d76\" finished) or 2x3\" tiles (6\"\u00d79\" finished). Just upload one high-resolution photo \u2014 we handle the splitting and alignment. Made in USA.</p>",
       "published_at": "2026-04-19T13:59:30-07:00",
       "created_at": "2026-04-19T13:59:29-07:00",
-      "updated_at": "2026-04-25T20:40:48-07:00",
+      "updated_at": "2026-04-25T20:51:08-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -99,7 +99,7 @@
           "position": 1,
           "product_id": 8378874396706,
           "created_at": "2026-04-19T13:59:29-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         },
         {
           "id": 45255174750242,
@@ -131,7 +131,7 @@
           "position": 2,
           "product_id": 8378874396706,
           "created_at": "2026-04-19T13:59:29-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         }
       ],
       "images": [
@@ -174,288 +174,13 @@
       ]
     },
     {
-      "id": 8378809647138,
-      "title": "Custom Photo Bottle Openers",
-      "handle": "custom-photo-bottle-openers",
-      "body_html": "<p>Functional keepsakes that pop open your favorite drink. Choose your quantity and back type \u2014 magnet for the fridge, keyring for your keys, or flat for a clean look. Upload your photo and we'll do the rest.</p>",
-      "published_at": "2026-04-19T13:39:07-07:00",
-      "created_at": "2026-04-19T13:39:06-07:00",
-      "updated_at": "2026-04-25T20:40:48-07:00",
-      "vendor": "Mack Magnets",
-      "product_type": "Custom Photo Bottle Openers",
-      "tags": [
-        "bottle openers",
-        "custom",
-        "keychain",
-        "magnet",
-        "personalized"
-      ],
-      "variants": [
-        {
-          "id": 45255085359138,
-          "title": "1 Opener / Magnet Back",
-          "option1": "1 Opener",
-          "option2": "Magnet Back",
-          "option3": null,
-          "sku": null,
-          "requires_shipping": true,
-          "taxable": true,
-          "featured_image": {
-            "id": 39656623865890,
-            "product_id": 8378809647138,
-            "position": 2,
-            "created_at": "2026-04-19T13:23:53-07:00",
-            "updated_at": "2026-04-19T13:23:55-07:00",
-            "alt": null,
-            "width": 1726,
-            "height": 1006,
-            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235",
-            "variant_ids": [
-              45255085359138,
-              45255085391906,
-              45255085424674
-            ]
-          },
-          "available": true,
-          "price": "5.99",
-          "grams": 0,
-          "compare_at_price": null,
-          "position": 1,
-          "product_id": 8378809647138,
-          "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
-        },
-        {
-          "id": 45255085391906,
-          "title": "1 Opener / Keyring",
-          "option1": "1 Opener",
-          "option2": "Keyring",
-          "option3": null,
-          "sku": null,
-          "requires_shipping": true,
-          "taxable": true,
-          "featured_image": {
-            "id": 39656623865890,
-            "product_id": 8378809647138,
-            "position": 2,
-            "created_at": "2026-04-19T13:23:53-07:00",
-            "updated_at": "2026-04-19T13:23:55-07:00",
-            "alt": null,
-            "width": 1726,
-            "height": 1006,
-            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235",
-            "variant_ids": [
-              45255085359138,
-              45255085391906,
-              45255085424674
-            ]
-          },
-          "available": true,
-          "price": "5.99",
-          "grams": 0,
-          "compare_at_price": null,
-          "position": 2,
-          "product_id": 8378809647138,
-          "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
-        },
-        {
-          "id": 45255085424674,
-          "title": "1 Opener / Flat",
-          "option1": "1 Opener",
-          "option2": "Flat",
-          "option3": null,
-          "sku": null,
-          "requires_shipping": true,
-          "taxable": true,
-          "featured_image": {
-            "id": 39656623865890,
-            "product_id": 8378809647138,
-            "position": 2,
-            "created_at": "2026-04-19T13:23:53-07:00",
-            "updated_at": "2026-04-19T13:23:55-07:00",
-            "alt": null,
-            "width": 1726,
-            "height": 1006,
-            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235",
-            "variant_ids": [
-              45255085359138,
-              45255085391906,
-              45255085424674
-            ]
-          },
-          "available": true,
-          "price": "5.99",
-          "grams": 0,
-          "compare_at_price": null,
-          "position": 3,
-          "product_id": 8378809647138,
-          "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
-        },
-        {
-          "id": 45255085457442,
-          "title": "3 Openers / Magnet Back",
-          "option1": "3 Openers",
-          "option2": "Magnet Back",
-          "option3": null,
-          "sku": null,
-          "requires_shipping": true,
-          "taxable": true,
-          "featured_image": {
-            "id": 39656623898658,
-            "product_id": 8378809647138,
-            "position": 1,
-            "created_at": "2026-04-19T13:23:53-07:00",
-            "updated_at": "2026-04-19T13:23:55-07:00",
-            "alt": null,
-            "width": 1722,
-            "height": 1932,
-            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235",
-            "variant_ids": [
-              45255085457442,
-              45255085490210,
-              45255085522978
-            ]
-          },
-          "available": true,
-          "price": "14.99",
-          "grams": 0,
-          "compare_at_price": null,
-          "position": 4,
-          "product_id": 8378809647138,
-          "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
-        },
-        {
-          "id": 45255085490210,
-          "title": "3 Openers / Keyring",
-          "option1": "3 Openers",
-          "option2": "Keyring",
-          "option3": null,
-          "sku": null,
-          "requires_shipping": true,
-          "taxable": true,
-          "featured_image": {
-            "id": 39656623898658,
-            "product_id": 8378809647138,
-            "position": 1,
-            "created_at": "2026-04-19T13:23:53-07:00",
-            "updated_at": "2026-04-19T13:23:55-07:00",
-            "alt": null,
-            "width": 1722,
-            "height": 1932,
-            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235",
-            "variant_ids": [
-              45255085457442,
-              45255085490210,
-              45255085522978
-            ]
-          },
-          "available": true,
-          "price": "14.99",
-          "grams": 0,
-          "compare_at_price": null,
-          "position": 5,
-          "product_id": 8378809647138,
-          "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
-        },
-        {
-          "id": 45255085522978,
-          "title": "3 Openers / Flat",
-          "option1": "3 Openers",
-          "option2": "Flat",
-          "option3": null,
-          "sku": null,
-          "requires_shipping": true,
-          "taxable": true,
-          "featured_image": {
-            "id": 39656623898658,
-            "product_id": 8378809647138,
-            "position": 1,
-            "created_at": "2026-04-19T13:23:53-07:00",
-            "updated_at": "2026-04-19T13:23:55-07:00",
-            "alt": null,
-            "width": 1722,
-            "height": 1932,
-            "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235",
-            "variant_ids": [
-              45255085457442,
-              45255085490210,
-              45255085522978
-            ]
-          },
-          "available": true,
-          "price": "14.99",
-          "grams": 0,
-          "compare_at_price": null,
-          "position": 6,
-          "product_id": 8378809647138,
-          "created_at": "2026-04-19T13:39:06-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
-        }
-      ],
-      "images": [
-        {
-          "id": 39656623898658,
-          "created_at": "2026-04-19T13:23:53-07:00",
-          "position": 1,
-          "updated_at": "2026-04-19T13:23:55-07:00",
-          "product_id": 8378809647138,
-          "variant_ids": [
-            45255085457442,
-            45255085490210,
-            45255085522978
-          ],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_120058.jpg?v=1776630235",
-          "width": 1722,
-          "height": 1932
-        },
-        {
-          "id": 39656623865890,
-          "created_at": "2026-04-19T13:23:53-07:00",
-          "position": 2,
-          "updated_at": "2026-04-19T13:23:55-07:00",
-          "product_id": 8378809647138,
-          "variant_ids": [
-            45255085359138,
-            45255085391906,
-            45255085424674
-          ],
-          "src": "https://cdn.shopify.com/s/files/1/0778/5732/5090/files/20260418_115529.jpg?v=1776630235",
-          "width": 1726,
-          "height": 1006
-        }
-      ],
-      "options": [
-        {
-          "name": "Quantity",
-          "position": 1,
-          "values": [
-            "1 Opener",
-            "3 Openers"
-          ]
-        },
-        {
-          "name": "Type",
-          "position": 2,
-          "values": [
-            "Magnet Back",
-            "Keyring",
-            "Flat"
-          ]
-        }
-      ]
-    },
-    {
       "id": 8378760429602,
       "title": "2\u00bc Inch Round Custom Photo Magnets",
       "handle": "2-inch-round-custom-photo-magnets",
       "body_html": "<p>Round photo magnets \u2014 a classic shape with a modern twist. 2\u00bc inches in diameter, perfect for headshots, logos, or single-subject photos. Choose how many you'd like below.</p>",
       "published_at": "2026-04-19T13:21:20-07:00",
       "created_at": "2026-04-19T13:21:19-07:00",
-      "updated_at": "2026-04-25T20:40:48-07:00",
+      "updated_at": "2026-04-25T20:51:08-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -497,7 +222,7 @@
           "position": 1,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         },
         {
           "id": 45255020806178,
@@ -531,7 +256,7 @@
           "position": 2,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         },
         {
           "id": 45255020838946,
@@ -565,7 +290,7 @@
           "position": 3,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         }
       ],
       "images": [
@@ -604,7 +329,7 @@
       "body_html": "<p>Capture your favorite memories on compact 2x2\" square magnets. Choose your quantity below \u2014 perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>",
       "published_at": "2026-04-02T19:05:35-07:00",
       "created_at": "2026-04-02T19:05:34-07:00",
-      "updated_at": "2026-04-25T20:40:48-07:00",
+      "updated_at": "2026-04-25T20:51:08-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -649,7 +374,7 @@
           "position": 1,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         },
         {
           "id": 45254920929314,
@@ -682,7 +407,7 @@
           "position": 2,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         },
         {
           "id": 45254920962082,
@@ -715,7 +440,7 @@
           "position": 3,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         },
         {
           "id": 45254920994850,
@@ -748,7 +473,7 @@
           "position": 4,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         }
       ],
       "images": [
@@ -801,7 +526,7 @@
       "body_html": "<p>Capture your favorite memories on compact 2x3\" square magnets. Choose your quantity below \u2014 perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>",
       "published_at": "2026-03-31T20:39:23-07:00",
       "created_at": "2026-03-31T20:39:22-07:00",
-      "updated_at": "2026-04-25T20:40:48-07:00",
+      "updated_at": "2026-04-25T20:51:08-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -844,7 +569,7 @@
           "position": 1,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         },
         {
           "id": 45254968442914,
@@ -876,7 +601,7 @@
           "position": 2,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         },
         {
           "id": 45254968475682,
@@ -908,7 +633,7 @@
           "position": 3,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-25T20:40:48-07:00"
+          "updated_at": "2026-04-25T20:51:08-07:00"
         }
       ],
       "images": [
