@@ -603,7 +603,7 @@ def build_product_page_html(product, all_products):
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <span class="footer__logo"><img src="/assets/images/logo.svg" alt="Mack Magnets" height="36"></span>
+          <span class="footer__logo"><img src="/assets/images/logo-light.svg" alt="Mack Magnets" height="36"></span>
           <p>Transforming your special moments into vibrant, high-quality magnets since 2024.</p>
           <p style="margin-top: 0.75rem;">📍 Rancho Cucamonga, California</p>
           <div class="footer__social">
