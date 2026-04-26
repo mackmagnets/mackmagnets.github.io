@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-26T07:43:14.352916+00:00",
+  "lastUpdated": "2026-04-26T13:11:35.609411+00:00",
   "shopifyDomain": "1pp0pw-1f.myshopify.com",
   "productCount": 5,
   "products": [
@@ -10,7 +10,7 @@
       "body_html": "<p>Internal test product for photo uploader. Free. Will be deleted.</p>",
       "published_at": "2026-04-19T18:27:17-07:00",
       "created_at": "2026-04-19T18:27:16-07:00",
-      "updated_at": "2026-04-26T00:43:14-07:00",
+      "updated_at": "2026-04-26T06:11:35-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Test",
       "tags": [
@@ -36,7 +36,7 @@
           "position": 1,
           "product_id": 8379061796898,
           "created_at": "2026-04-19T18:27:16-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         }
       ],
       "images": [],
@@ -57,7 +57,7 @@
       "body_html": "<p>Turn one favorite photo into a 9-magnet mosaic. We split your image across 9 magnets that assemble into a single large picture on your fridge. Choose 2x2\" tiles (6\"\u00d76\" finished) or 2x3\" tiles (6\"\u00d79\" finished). Just upload one high-resolution photo \u2014 we handle the splitting and alignment. Made in USA.</p>",
       "published_at": "2026-04-19T13:59:30-07:00",
       "created_at": "2026-04-19T13:59:29-07:00",
-      "updated_at": "2026-04-26T00:43:14-07:00",
+      "updated_at": "2026-04-26T06:11:35-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -99,7 +99,7 @@
           "position": 1,
           "product_id": 8378874396706,
           "created_at": "2026-04-19T13:59:29-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         },
         {
           "id": 45255174750242,
@@ -131,7 +131,7 @@
           "position": 2,
           "product_id": 8378874396706,
           "created_at": "2026-04-19T13:59:29-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         }
       ],
       "images": [
@@ -180,7 +180,7 @@
       "body_html": "<p>Round photo magnets \u2014 a classic shape with a modern twist. 2\u00bc inches in diameter, perfect for headshots, logos, or single-subject photos. Choose how many you'd like below.</p>",
       "published_at": "2026-04-19T13:21:20-07:00",
       "created_at": "2026-04-19T13:21:19-07:00",
-      "updated_at": "2026-04-26T00:43:14-07:00",
+      "updated_at": "2026-04-26T06:11:35-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -222,7 +222,7 @@
           "position": 1,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         },
         {
           "id": 45255020806178,
@@ -256,7 +256,7 @@
           "position": 2,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         },
         {
           "id": 45255020838946,
@@ -290,7 +290,7 @@
           "position": 3,
           "product_id": 8378760429602,
           "created_at": "2026-04-19T13:21:19-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         }
       ],
       "images": [
@@ -329,7 +329,7 @@
       "body_html": "<p>Capture your favorite memories on compact 2x2\" square magnets. Choose your quantity below \u2014 perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>",
       "published_at": "2026-04-02T19:05:35-07:00",
       "created_at": "2026-04-02T19:05:34-07:00",
-      "updated_at": "2026-04-26T00:43:14-07:00",
+      "updated_at": "2026-04-26T06:11:35-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -374,7 +374,7 @@
           "position": 1,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         },
         {
           "id": 45254920929314,
@@ -407,7 +407,7 @@
           "position": 2,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         },
         {
           "id": 45254920962082,
@@ -440,7 +440,7 @@
           "position": 3,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         },
         {
           "id": 45254920994850,
@@ -473,7 +473,7 @@
           "position": 4,
           "product_id": 8357898321954,
           "created_at": "2026-04-19T12:55:17-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         }
       ],
       "images": [
@@ -526,7 +526,7 @@
       "body_html": "<p>Capture your favorite memories on compact 2x3\" square magnets. Choose your quantity below \u2014 perfect for mini photos, pet portraits, kid pics, or Instagram-style squares. UV-resistant coating, made in USA.</p>",
       "published_at": "2026-03-31T20:39:23-07:00",
       "created_at": "2026-03-31T20:39:22-07:00",
-      "updated_at": "2026-04-26T00:43:14-07:00",
+      "updated_at": "2026-04-26T06:11:35-07:00",
       "vendor": "Mack Magnets",
       "product_type": "Custom Photo Magnets",
       "tags": [
@@ -569,7 +569,7 @@
           "position": 1,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         },
         {
           "id": 45254968442914,
@@ -601,7 +601,7 @@
           "position": 2,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         },
         {
           "id": 45254968475682,
@@ -633,7 +633,7 @@
           "position": 3,
           "product_id": 8355682517026,
           "created_at": "2026-04-19T13:11:26-07:00",
-          "updated_at": "2026-04-26T00:43:14-07:00"
+          "updated_at": "2026-04-26T06:11:35-07:00"
         }
       ],
       "images": [
