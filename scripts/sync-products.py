@@ -498,7 +498,7 @@ def build_product_page_html(product, all_products):
       <ul class="navbar__links">
         <li><a href="/">Home</a></li>
         <li><a href="/shop/">Shop</a></li>
-        <!-- <li><a href="/events/">Events</a></li> -->
+        <li><a href="/events/">Events</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/faq/">FAQ</a></li>
         <li><a href="/contact/">Contact</a></li>
@@ -616,7 +616,7 @@ def build_product_page_html(product, all_products):
           <ul class="footer__links">
             <li><a href="/">Home</a></li>
             <li><a href="/shop/">Shop</a></li>
-            <!-- <li><a href="/events/">Events</a></li> -->
+            <li><a href="/events/">Events</a></li>
             <li><a href="/about/">About Us</a></li>
             <li><a href="/wholesale/">Wholesale</a></li>
           </ul>
