@@ -426,8 +426,12 @@
       <div class="container">
         <h2 id="newsletter-heading">Stay in the Loop</h2>
         <p>Get early access to new collections, exclusive offers, and event availability.</p>
-        <form class="newsletter__form" aria-label="Newsletter signup">
-          <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+        <form class="newsletter__form" action="https://formsubmit.co/mackmagnets@gmail.com" method="POST" aria-label="Newsletter signup">
+          <input type="hidden" name="_subject" value="New Newsletter Signup — Mack Magnets">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://mackmagnets.com/?subscribed=true">
+          <input type="text" name="_honey" style="display:none">
+          <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" required>
           <button type="submit" class="btn btn--primary">Subscribe</button>
         </form>
       </div>

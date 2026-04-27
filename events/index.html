@@ -242,22 +242,26 @@
           <h2 id="booking-heading">Request a Quote</h2>
           <p>Tell us about your event and we'll get back to you within 24 hours with availability and a custom quote.</p>
         </div>
-        <form class="contact-form fade-in" aria-label="Event booking form">
+        <form class="contact-form fade-in" action="https://formsubmit.co/mackmagnets@gmail.com" method="POST" aria-label="Event booking form">
+          <input type="hidden" name="_subject" value="New Event Booking Request — Mack Magnets">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://mackmagnets.com/events/?submitted=true">
+          <input type="text" name="_honey" style="display:none">
           <div class="form-group">
             <label for="event-name">Your Name</label>
-            <input type="text" id="event-name" required>
+            <input type="text" id="event-name" name="name" required>
           </div>
           <div class="form-group">
             <label for="event-email">Email</label>
-            <input type="email" id="event-email" required>
+            <input type="email" id="event-email" name="email" required>
           </div>
           <div class="form-group">
             <label for="event-phone">Phone Number</label>
-            <input type="tel" id="event-phone">
+            <input type="tel" id="event-phone" name="phone">
           </div>
           <div class="form-group">
             <label for="event-type">Event Type</label>
-            <select id="event-type">
+            <select id="event-type" name="event_type">
               <option value="">Select event type...</option>
               <option>Wedding / Reception</option>
               <option>Birthday Party</option>
@@ -274,11 +278,11 @@
           </div>
           <div class="form-group">
             <label for="event-date">Preferred Date</label>
-            <input type="date" id="event-date">
+            <input type="date" id="event-date" name="event_date">
           </div>
           <div class="form-group">
             <label for="event-guests">Estimated Guest Count</label>
-            <select id="event-guests">
+            <select id="event-guests" name="guest_count">
               <option value="">Select...</option>
               <option>Under 25</option>
               <option>25–50</option>
@@ -289,11 +293,11 @@
           </div>
           <div class="form-group">
             <label for="event-venue">Venue Location (City)</label>
-            <input type="text" id="event-venue" placeholder="e.g. Rancho Cucamonga, CA">
+            <input type="text" id="event-venue" name="venue_location" placeholder="e.g. Rancho Cucamonga, CA">
           </div>
           <div class="form-group">
             <label for="event-details">Additional Details</label>
-            <textarea id="event-details" rows="4" placeholder="Tell us about your event — theme, special requests, anything we should know!"></textarea>
+            <textarea id="event-details" name="details" rows="4" placeholder="Tell us about your event — theme, special requests, anything we should know!"></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--lg w-full">Request a Quote</button>
         </form>

@@ -131,22 +131,26 @@
             </div>
           </div>
 
-          <form class="contact-form fade-in" aria-label="Contact form">
+          <form class="contact-form fade-in" action="https://formsubmit.co/mackmagnets@gmail.com" method="POST" aria-label="Contact form">
+            <input type="hidden" name="_subject" value="New Contact Form Submission — Mack Magnets">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://mackmagnets.com/contact/?submitted=true">
+            <input type="text" name="_honey" style="display:none">
             <div class="form-group">
               <label for="contact-name">Full Name <span class="required">*</span></label>
-              <input type="text" id="contact-name" required>
+              <input type="text" id="contact-name" name="name" required>
             </div>
             <div class="form-group">
               <label for="contact-email">Email Address <span class="required">*</span></label>
-              <input type="email" id="contact-email" required>
+              <input type="email" id="contact-email" name="email" required>
             </div>
             <div class="form-group">
               <label for="contact-phone">Phone Number</label>
-              <input type="tel" id="contact-phone">
+              <input type="tel" id="contact-phone" name="phone">
             </div>
             <div class="form-group">
               <label for="contact-subject">Subject</label>
-              <select id="contact-subject">
+              <select id="contact-subject" name="subject">
                 <option value="">Select a subject...</option>
                 <option>Product Question</option>
                 <option>Custom Order</option>
@@ -160,7 +164,7 @@
             </div>
             <div class="form-group">
               <label for="contact-message">Message <span class="required">*</span></label>
-              <textarea id="contact-message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+              <textarea id="contact-message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--lg w-full">Send Message</button>
             <p class="form-note">We respect your privacy and will never share your information.</p>

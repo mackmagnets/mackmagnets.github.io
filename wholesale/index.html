@@ -208,26 +208,30 @@
           <h2>Wholesale Inquiry</h2>
           <p>Tell us about your needs and we'll prepare a custom quote within 24 hours.</p>
         </div>
-        <form class="contact-form fade-in" aria-label="Wholesale inquiry form">
+        <form class="contact-form fade-in" action="https://formsubmit.co/mackmagnets@gmail.com" method="POST" aria-label="Wholesale inquiry form">
+          <input type="hidden" name="_subject" value="New Wholesale Inquiry — Mack Magnets">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://mackmagnets.com/wholesale/?submitted=true">
+          <input type="text" name="_honey" style="display:none">
           <div class="form-group">
             <label for="ws-name">Business/Organization Name</label>
-            <input type="text" id="ws-name" required>
+            <input type="text" id="ws-name" name="business_name" required>
           </div>
           <div class="form-group">
             <label for="ws-contact">Contact Name</label>
-            <input type="text" id="ws-contact" required>
+            <input type="text" id="ws-contact" name="contact_name" required>
           </div>
           <div class="form-group">
             <label for="ws-email">Email</label>
-            <input type="email" id="ws-email" required>
+            <input type="email" id="ws-email" name="email" required>
           </div>
           <div class="form-group">
             <label for="ws-phone">Phone</label>
-            <input type="tel" id="ws-phone">
+            <input type="tel" id="ws-phone" name="phone">
           </div>
           <div class="form-group">
             <label for="ws-qty">Estimated Quantity</label>
-            <select id="ws-qty">
+            <select id="ws-qty" name="estimated_quantity">
               <option value="">Select range...</option>
               <option>50–99 units</option>
               <option>100–249 units</option>
@@ -238,7 +242,7 @@
           </div>
           <div class="form-group">
             <label for="ws-use">How will you use these magnets?</label>
-            <select id="ws-use">
+            <select id="ws-use" name="use_case">
               <option value="">Select use case...</option>
               <option>Corporate branding</option>
               <option>Trade show / event giveaway</option>
@@ -251,7 +255,7 @@
           </div>
           <div class="form-group">
             <label for="ws-details">Additional Details</label>
-            <textarea id="ws-details" rows="4" placeholder="Tell us about your project, timeline, design needs, etc."></textarea>
+            <textarea id="ws-details" name="details" rows="4" placeholder="Tell us about your project, timeline, design needs, etc."></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Submit Inquiry</button>
         </form>
