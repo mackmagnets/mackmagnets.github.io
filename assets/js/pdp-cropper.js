@@ -142,7 +142,7 @@
       aspectRatio: currentAspectRatio || NaN,
       viewMode: 1,
       dragMode: 'move',
-      autoCropArea: 0.9,
+      autoCropArea: 1,
       responsive: true,
       restore: false,
       guides: true,

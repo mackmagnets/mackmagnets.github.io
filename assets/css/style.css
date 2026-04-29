@@ -3181,8 +3181,8 @@ a:focus-visible {
   z-index: 1;
   background: #fff;
   border-radius: 16px;
-  width: min(94vw, 680px);
-  max-height: 92vh;
+  width: min(96vw, 800px);
+  max-height: 94vh;
   display: flex;
   flex-direction: column;
   box-shadow: 0 20px 60px rgba(0,0,0,.3);
@@ -3217,8 +3217,8 @@ a:focus-visible {
   align-items: center;
   justify-content: center;
   background: #1a1a1a;
-  min-height: 300px;
-  max-height: 60vh;
+  min-height: 400px;
+  max-height: 75vh;
 }
 .mack-crop-modal__canvas-wrap {
   width: 100%;
