@@ -140,7 +140,7 @@
 
     cropper = new Cropper(imgEl, {
       aspectRatio: currentAspectRatio || NaN,
-      viewMode: 0,
+      viewMode: 1,
       dragMode: 'move',
       autoCropArea: 1,
       responsive: true,
