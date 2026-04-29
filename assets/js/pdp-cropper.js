@@ -140,7 +140,7 @@
 
     cropper = new Cropper(imgEl, {
       aspectRatio: currentAspectRatio || NaN,
-      viewMode: 1,
+      viewMode: 0,
       dragMode: 'move',
       autoCropArea: 1,
       responsive: true,
@@ -151,6 +151,8 @@
       cropBoxMovable: true,
       cropBoxResizable: !currentAspectRatio, // locked if ratio set
       toggleDragModeOnDblclick: false,
+      minContainerWidth: 300,
+      minContainerHeight: 300,
       minCropBoxWidth: 50,
       minCropBoxHeight: 50,
       ready: function () {
