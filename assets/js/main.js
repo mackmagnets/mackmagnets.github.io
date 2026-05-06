@@ -120,6 +120,20 @@
     setInterval(() => goTo(current + 1), 5000);
   });
 
+  // --- Form submission confirmation ---
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('submitted') === 'true' || params.get('subscribed') === 'true') {
+    const form = document.querySelector('.contact-form') || document.querySelector('.newsletter__form');
+    if (form) {
+      const msg = document.createElement('div');
+      msg.className = 'form-success-msg';
+      msg.innerHTML = '<p>✓ Thank you! Your message has been sent. We\'ll get back to you soon.</p>';
+      msg.style.cssText = 'background:#e8f5e9;border:1px solid #81B29A;border-radius:12px;padding:1.25rem;text-align:center;font-size:1.05rem;color:#2e7d32;margin-bottom:1.5rem;';
+      form.parentNode.insertBefore(msg, form);
+      form.style.display = 'none';
+    }
+  }
+
   // --- Active nav link ---
   const currentPath = window.location.pathname.replace(/\/index\.html$/, '/');
   document.querySelectorAll('.navbar__links a').forEach(link => {
