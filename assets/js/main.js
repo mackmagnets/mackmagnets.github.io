@@ -120,40 +120,6 @@
     setInterval(() => goTo(current + 1), 5000);
   });
 
-  // --- Contact Form (demo handler) ---
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Message Sent! ✓';
-      btn.disabled = true;
-      btn.style.background = 'var(--color-secondary)';
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.disabled = false;
-        btn.style.background = '';
-        contactForm.reset();
-      }, 3000);
-    });
-  }
-
-  // --- Newsletter Form (demo handler) ---
-  const nlForm = document.querySelector('.newsletter__form');
-  if (nlForm) {
-    nlForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const input = nlForm.querySelector('input');
-      const btn = nlForm.querySelector('button');
-      btn.textContent = 'Subscribed! ✓';
-      setTimeout(() => {
-        btn.textContent = 'Subscribe';
-        input.value = '';
-      }, 3000);
-    });
-  }
-
   // --- Active nav link ---
   const currentPath = window.location.pathname.replace(/\/index\.html$/, '/');
   document.querySelectorAll('.navbar__links a').forEach(link => {
